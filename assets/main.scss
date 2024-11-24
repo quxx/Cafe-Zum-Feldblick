@@ -133,7 +133,7 @@ $link-decoration: none;
 
 .hard {
   p {
-    color: black !important;
+    color: var(--bs-body-color) !important;
     text-align: center !important;
   }
 }
@@ -196,7 +196,7 @@ img {
   --bs-navbar-color: white;
 }
 .nav-color-black {
-  --bs-navbar-color: black;
+  --bs-navbar-color: var(--bs-body-color);
 }
 
 .navbar-nav {

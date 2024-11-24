@@ -7,39 +7,39 @@
 	<?php wp_head(); ?>
 </head>
 
-<?php
-	$navbar_scheme   = get_theme_mod( 'navbar_scheme', 'navbar-light bg-light' ); // Get custom meta-value.
-	$navbar_position = get_theme_mod( 'navbar_position', 'static' ); // Get custom meta-value.
-
-	$search_enabled  = get_theme_mod( 'search_enabled', '1' ); // Get custom meta-value.
-?>
-
 <body <?php body_class(); ?>>
 
 <?php wp_body_open(); ?>
 
 <a href="#main" class="visually-hidden-focusable"><?php esc_html_e( 'Skip to main content', 'cafe-zum-feldblick' ); ?></a>
 
-	<header>
-		<nav id="header" class="navbar navbar-expand-md <?php echo esc_attr( $navbar_scheme ); if ( isset( $navbar_position ) && 'fixed_top' === $navbar_position ) : echo ' fixed-top'; elseif ( isset( $navbar_position ) && 'fixed_bottom' === $navbar_position ) : echo ' fixed-bottom'; endif; if ( is_home() || is_front_page() ) : echo ' home'; endif; ?>">
-			<div class="container">
+	<!-- Navbar  -->
 
-				<div id="navbar" class="collapse navbar-collapse">
-					<?php
-						// Loading WordPress Custom Menu (theme_location).
-						wp_nav_menu(
-							array(
-								'menu_class'     => 'navbar-nav me-auto',
-								'container'      => '',
-								'fallback_cb'    => 'WP_Bootstrap_Navwalker::fallback',
-								'walker'         => new WP_Bootstrap_Navwalker(),
-								'theme_location' => 'main-menu',
-							)
-						);
-					?>
-				</div><!-- /.navbar-collapse -->
-			</div><!-- /.container -->
-		</nav><!-- /#header -->
-	</header>
+<nav class="navbar navbar-expand-lg fixed-top nav-color-white">
+  <div class="container-fluid flex">
+    <a id="nav-brand" class="navbar-brand hide" href="#">
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo_original.svg" width="200" height="50" class="d-inline-block align-center" alt="">
+		</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Aktuelles</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Speisekarte</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Kontakt</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
 	<main id="main">

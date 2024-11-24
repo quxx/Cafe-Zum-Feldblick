@@ -178,19 +178,21 @@ img {
 
 /* Header */
 
-#header {
-  background-color: transparent;
-  position: sticky;
+.nav-color-white {
+  --bs-navbar-color: white;
+}
+.nav-color-black {
+  --bs-navbar-color: black;
 }
 
-.navbar-brand {
-  img {
-    height: 40px;
-  }
+.navbar-nav {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
 }
 
-.navbar-static-top {
-  margin-bottom: $grid-gutter-width;
+.hide {
+  visibility: hidden;
 }
 
 /* Main */
@@ -361,6 +363,13 @@ img {
   video {
     height: auto;
   }
+}
+
+.parallax-video {
+  min-width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: -999;
 }
 
 /**

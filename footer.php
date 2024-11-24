@@ -44,6 +44,12 @@
 				</div><!-- /.row -->
 			</div><!-- /.container -->
 		</footer><!-- /#footer -->
+
+  <!-- Scroll-to-top button -->
+  <button id="scrollToTopBtn">&#8593;</button>
+
+
+
 	<?php
 		wp_footer();
 	?>

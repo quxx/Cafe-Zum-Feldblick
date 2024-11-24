@@ -34,32 +34,26 @@ $page_id = get_option( 'page_for_posts' );
 						<br>Erleben Sie einen gemütlichen Ort in der Natur – perfekt für Genuss, Entspannung und schöne Gespräche.
 						<br><br>Wir freuen uns auf Ihren Besuch!
 					</p>
+					<br>
 					<p class="text-uppercase h-small">
 						Öffnungszeiten
 					</p>
-					<?php
-							$loop = new WP_Query( // The query
-							array( // WP_Query arguments:
-							'post_type' => 'opening', // This is the name of your post type
-							'posts_per_page' => 1 // This is the amount of posts you want to show
-							)
-							);
-							while ( $loop->have_posts() ) : $loop->the_post(); // The loop
-							?>
+						<?php
+						$mypod = pods('oeffnungszeit');
+						$mypod->find();
 
-							<!-- The content you want to display goes here: -->
-							<div class="hard">
-								<?php
-									// $my_content = get_the_content();
-									// $clean_content = strip_tags($my_content , '<p>');
-									// echo $clean_content;
-									the_content();
-								?>
-							</div>
+						$opening_hours = '';
 
-							<?php endwhile;
-							wp_reset_postdata(); // Restore original post data
-					?>
+						// Daten aus Pods abrufen
+						while ($mypod->fetch()) {
+								$opening_hours = $mypod->display('text');
+						}
+
+						// Gruppierte Öffnungszeiten ausgeben
+						echo '<p class="lead">';
+						echo str_replace(['<p>', '</p>'], '', $opening_hours);
+						echo '</p>';
+						?>
 			</div>
     </section>
 

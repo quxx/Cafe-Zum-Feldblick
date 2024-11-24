@@ -39,20 +39,32 @@ $page_id = get_option( 'page_for_posts' );
 						Öffnungszeiten
 					</p>
 						<?php
+						// Pods-Instanz für den benutzerdefinierten Post-Typ 'oeffnungszeit' abrufen
 						$mypod = pods('oeffnungszeit');
-						$mypod->find();
 
-						$opening_hours = '';
+						// Überprüfen, ob $mypod erfolgreich initialisiert wurde
+						if ($mypod && $mypod->find()) {
+								$opening_hours = '';
 
-						// Daten aus Pods abrufen
-						while ($mypod->fetch()) {
-								$opening_hours = $mypod->display('text');
+								// Öffnungszeiten-Daten aus Pods abrufen
+								while ($mypod->fetch()) {
+										$opening_hours = $mypod->display('text');
+								}
+
+								// Gruppierte Öffnungszeiten anzeigen
+								if (!empty($opening_hours)) {
+										echo '<p class="lead">';
+										// Öffnungszeiten in HTML formatieren
+										echo str_replace(['<p>', '</p>'], '', $opening_hours);
+										echo '</p>';
+								} else {
+										// Fallback-Text für leere Ergebnisse
+										echo '<p class="lead">Keine Öffnungszeiten verfügbar.</p>';
+								}
+						} else {
+								// Fehler-Handling, wenn Pods-Instanz nicht verfügbar ist
+								echo '<p class="lead">Fehler: Öffnungszeiten konnten nicht geladen werden.</p>';
 						}
-
-						// Gruppierte Öffnungszeiten ausgeben
-						echo '<p class="lead">';
-						echo str_replace(['<p>', '</p>'], '', $opening_hours);
-						echo '</p>';
 						?>
 			</div>
     </section>

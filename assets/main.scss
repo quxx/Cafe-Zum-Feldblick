@@ -55,6 +55,9 @@ $green: #198754;
 $teal: #20c997;
 $cyan: #0dcaf0;
 
+$feldblick-gruen: #0a462b;
+$feldblick-braun: #462922;
+
 // Fonts
 $font-family-sans-serif:
   system-ui,
@@ -198,6 +201,40 @@ img {
 /* Main */
 #main {
   margin-top: 0px !important;
+}
+
+.block {
+  padding-top: 122px;
+  padding-bottom: 122px;
+
+  // Öffnungzeiten
+  .oeffnungzeiten {
+    .h-small {
+      font-size: 20px;
+    }
+    h1 {
+      display: block;
+      padding: 0 0 29px;
+      margin: 0 auto 29px;
+      position: relative;
+      &:before {
+        content: " ";
+        position: absolute;
+        display: block;
+        width: 56px;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        transform: translateX(-50%);
+        bottom: 0;
+        opacity: 1;
+        border-top: 4px solid $feldblick-gruen;
+        -webkit-transition: all 0.3s ease-in-out 0.3s;
+        -moz-transition: all 0.3s ease-in-out 0.3s;
+        transition: all 0.3s ease-in-out 0.3s;
+      }
+    }
+  }
 }
 
 /* Footer */

@@ -127,6 +127,13 @@ $link-decoration: none;
  * General
  */
 
+.hard {
+  p {
+    color: black !important;
+    text-align: center !important;
+  }
+}
+
 body {
   &.page-template-page-full {
     #main {

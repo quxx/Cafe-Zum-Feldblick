@@ -179,6 +179,8 @@ function cafe_zum_feldblick_custom_edit_post_link( $link ) {
 	return str_replace( 'class="post-edit-link"', 'class="post-edit-link badge bg-secondary"', $link );
 }
 add_filter( 'edit_post_link', 'cafe_zum_feldblick_custom_edit_post_link' );
+// Remove p tags from category description
+remove_filter( 'the_content', 'wpautop' );
 
 /**
  * Style Edit buttons as badges: https://getbootstrap.com/docs/5.0/components/badge

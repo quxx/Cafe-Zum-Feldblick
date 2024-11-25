@@ -55,6 +55,7 @@ $green: #198754;
 $teal: #20c997;
 $cyan: #0dcaf0;
 
+$background-color-light: #f2f2f2;
 $feldblick-gruen: #0a462b;
 $feldblick-gruen_highlight: #127b4b;
 $feldblick-braun: #462922;
@@ -215,8 +216,11 @@ img {
 }
 
 .block {
-  padding-top: 122px;
-  padding-bottom: 122px;
+  &.block-padding {
+    padding-top: 122px;
+    padding-bottom: 122px;
+  }
+  background: $background-color-light;
 
   // Öffnungzeiten
   .oeffnungzeiten {
@@ -292,7 +296,13 @@ img {
     margin-top: 0;
   }
 }
-
+.imagetiles {
+  img {
+    width: 100%; /* You can set the dimensions to whatever you want */
+    height: 100%;
+    object-fit: cover;
+  }
+}
 /* Posts */
 
 .sticky {

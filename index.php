@@ -94,8 +94,7 @@ $page_id = get_option('page_for_posts');
 			query_posts('posts_per_page=4');
 			while (have_posts()) : the_post(); ?>
 				<div class="card col-3 border-0">
-					<img class="card-img-top card-img" src="<?php if (has_post_thumbnail()) echo get_the_post_thumbnail_url();
-																									else echo get_template_directory_uri() + "/assets/img/schild.jpeg" ?>" alt="Card image cap">
+					<img class="card-img-top card-img" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="Card image cap">
 					<div class="card-body">
 						<h5 class="card-title"><?php echo get_the_title(); ?></h5>
 						<p class="card-text"><?php echo get_the_excerpt(); ?></p>
@@ -109,15 +108,35 @@ $page_id = get_option('page_for_posts');
 		</div>
 	</div>
 </section>
-<div class="bg-white">
-	Bilder
-</div>
+<section class="container-fluid pe-0 ps-0 ms-0 me-0 block">
+	<div class="row pe-0 ps-0 me-0">
+		<div class=" col-lg-4 col-md-4 col-sm-4 col-xs-12 imagetiles pe-0 ps-0">
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/fahrradcafe-getraenk.jpeg" height="auto" alt="Das Fahrradcafe von vorne">
+		</div>
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 imagetiles pe-0 ps-0">
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/fahrradcafe-tor.jpg" height="auto" alt="Fahrradcafe Holzschild">
+		</div>
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 imagetiles pe-0 ps-0">
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/fahrradcafe-getraenk2.jpeg" height="auto" alt="Gartenansicht vom Fahrradcafe">
+		</div>
+	</div>
+</section>
 <div class="bg-white">
 	Speisekarte
 </div>
-<div class="bg-white">
-	Bilder
-</div>
+<section class="container-fluid pe-0 ps-0 ms-0 me-0 block">
+	<div class="row pe-0 ps-0 me-0">
+		<div class=" col-lg-4 col-md-4 col-sm-4 col-xs-12 imagetiles pe-0 ps-0">
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/fahrradcafe-fahrrad.jpg" height="auto" alt="Das Fahrradcafe von vorne">
+		</div>
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 imagetiles pe-0 ps-0">
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/fahrradcafe-katze.jpg" height="auto" alt="Fahrradcafe Holzschild">
+		</div>
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 imagetiles pe-0 ps-0">
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/fahrradcafe-ausblick.jpg" height="auto" alt="Gartenansicht vom Fahrradcafe">
+		</div>
+	</div>
+</section>
 <section class="container-fluid block block-padding kontakt">
 	<div class="container">
 		<div class="row justify-content-center">

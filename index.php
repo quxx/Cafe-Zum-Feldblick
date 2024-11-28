@@ -94,7 +94,13 @@ $page_id = get_option('page_for_posts');
 			query_posts('posts_per_page=4');
 			while (have_posts()) : the_post(); ?>
 				<div class="card col-3 border-0">
-					<img class="card-img-top card-img" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="Card image cap">
+					<?php
+					if (has_post_thumbnail()) {
+						echo '<img class="card-img-top card-img" src="' . get_the_post_thumbnail_url() . '" alt="Card image cap">';
+					} else {
+						echo '<img class="card-img-top card-img" src="' . get_template_directory_uri() . '/assets/img/fahrradcafe-schild-2.jpeg" alt="Card image cap">';
+					}
+					?>
 					<div class="card-body">
 						<h5 class="card-title"><?php echo get_the_title(); ?></h5>
 						<p class="card-text"><?php echo get_the_excerpt(); ?></p>

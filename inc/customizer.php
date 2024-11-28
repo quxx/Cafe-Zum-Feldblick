@@ -1,6 +1,6 @@
 <?php
 
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 
 /**
  * Implement Theme Customizer additions and adjustments.
@@ -16,14 +16,15 @@ defined( 'ABSPATH' ) || exit;
  *
  * @return void
  */
-function cafe_zum_feldblick_customize( $wp_customize ) {
+function cafe_zum_feldblick_customize($wp_customize)
+{
 	/**
 	 * Initialize sections
 	 */
 	$wp_customize->add_section(
 		'theme_header_section',
 		array(
-			'title'    => __( 'Header', 'cafe-zum-feldblick' ),
+			'title'    => __('Header', 'cafe-zum-feldblick'),
 			'priority' => 1000,
 		)
 	);
@@ -44,8 +45,8 @@ function cafe_zum_feldblick_customize( $wp_customize ) {
 			$wp_customize,
 			'header_logo',
 			array(
-				'label'       => __( 'Upload Header Logo', 'cafe-zum-feldblick' ),
-				'description' => __( 'Height: &gt;80px', 'cafe-zum-feldblick' ),
+				'label'       => __('Upload Header Logo', 'cafe-zum-feldblick'),
+				'description' => __('Height: &gt;80px', 'cafe-zum-feldblick'),
 				'section'     => 'theme_header_section',
 			)
 		)
@@ -63,12 +64,12 @@ function cafe_zum_feldblick_customize( $wp_customize ) {
 		'navbar_scheme',
 		array(
 			'type'    => 'radio',
-			'label'   => __( 'Navbar Scheme', 'cafe-zum-feldblick' ),
+			'label'   => __('Navbar Scheme', 'cafe-zum-feldblick'),
 			'section' => 'theme_header_section',
 			'choices' => array(
-				'navbar-light bg-light'  => __( 'Default', 'cafe-zum-feldblick' ),
-				'navbar-dark bg-dark'    => __( 'Dark', 'cafe-zum-feldblick' ),
-				'navbar-dark bg-primary' => __( 'Primary', 'cafe-zum-feldblick' ),
+				'navbar-light bg-light'  => __('Default', 'cafe-zum-feldblick'),
+				'navbar-dark bg-dark'    => __('Dark', 'cafe-zum-feldblick'),
+				'navbar-dark bg-primary' => __('Primary', 'cafe-zum-feldblick'),
 			),
 		)
 	);
@@ -85,12 +86,12 @@ function cafe_zum_feldblick_customize( $wp_customize ) {
 		'navbar_position',
 		array(
 			'type'    => 'radio',
-			'label'   => __( 'Navbar', 'cafe-zum-feldblick' ),
+			'label'   => __('Navbar', 'cafe-zum-feldblick'),
 			'section' => 'theme_header_section',
 			'choices' => array(
-				'static'       => __( 'Static', 'cafe-zum-feldblick' ),
-				'fixed_top'    => __( 'Fixed to top', 'cafe-zum-feldblick' ),
-				'fixed_bottom' => __( 'Fixed to bottom', 'cafe-zum-feldblick' ),
+				'static'       => __('Static', 'cafe-zum-feldblick'),
+				'fixed_top'    => __('Fixed to top', 'cafe-zum-feldblick'),
+				'fixed_bottom' => __('Fixed to bottom', 'cafe-zum-feldblick'),
 			),
 		)
 	);
@@ -107,19 +108,27 @@ function cafe_zum_feldblick_customize( $wp_customize ) {
 		'search_enabled',
 		array(
 			'type'    => 'checkbox',
-			'label'   => __( 'Show Searchfield?', 'cafe-zum-feldblick' ),
+			'label'   => __('Show Searchfield?', 'cafe-zum-feldblick'),
 			'section' => 'theme_header_section',
 		)
 	);
 }
-add_action( 'customize_register', 'cafe_zum_feldblick_customize' );
+add_action('customize_register', 'cafe_zum_feldblick_customize');
 
 /**
  * Bind JS handlers to make Theme Customizer preview reload changes asynchronously.
  *
  * @return void
  */
-function cafe_zum_feldblick_customize_preview_js() {
-	wp_enqueue_script( 'customizer', get_template_directory_uri() . '/inc/customizer.js', array( 'jquery' ), null, true );
+function cafe_zum_feldblick_customize_preview_js()
+{
+	wp_enqueue_script('customizer', get_template_directory_uri() . '/inc/customizer.js', array('jquery'), null, true);
 }
-add_action( 'customize_preview_init', 'cafe_zum_feldblick_customize_preview_js' );
+add_action('customize_preview_init', 'cafe_zum_feldblick_customize_preview_js');
+
+// Contact Form 7
+function my_wpcf7_ajax_loader()
+{
+	return  get_stylesheet_directory_uri() . '/images/my-loader-image.gif';
+}
+add_filter('wpcf7_ajax_loader', 'my_wpcf7_ajax_loader');

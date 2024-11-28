@@ -76,18 +76,21 @@ $page_id = get_option('page_for_posts');
 <section class="container-fluid pe-0 ps-0 ms-0 me-0 block">
 	<div class="row pe-0 ps-0 me-0">
 		<div class=" col-lg-4 col-md-4 col-sm-4 col-xs-12 imagetiles pe-0 ps-0">
-			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/fahrradcafe-1.jpeg" height="auto">
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/fahrradcafe-1.jpeg" height="auto" alt="Das Fahrradcafe von vorne">
 		</div>
 		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 imagetiles pe-0 ps-0">
-			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/fahrradcafe-schild.jpg" height="auto">
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/fahrradcafe-schild.jpg" height="auto" alt="Fahrradcafe Holzschild">
 		</div>
 		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 imagetiles pe-0 ps-0">
-			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/fahrradcafe-garten.jpg" height="auto">
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/fahrradcafe-garten.jpg" height="auto" alt="Gartenansicht vom Fahrradcafe">
 		</div>
 	</div>
 </section>
 <div class="bg-white">
 	Aktuelles
+	<?php
+	the_content();
+	?>
 </div>
 <div class="bg-white">
 	Bilder
@@ -98,9 +101,19 @@ $page_id = get_option('page_for_posts');
 <div class="bg-white">
 	Bilder
 </div>
-<div class="bg-white">
-	Kontakt
-</div>
+<section class="container-fluid block block-padding kontakt">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-8">
+				<?php
+				echo do_shortcode(
+					'[contact-form-7 id="2c99f4d" title="Kontakt"]'
+				);
+				?>
+			</div>
+		</div>
+	</div>
+</section>
 <?php
 get_footer();
 ?>

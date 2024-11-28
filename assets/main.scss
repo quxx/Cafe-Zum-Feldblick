@@ -83,6 +83,8 @@ $link-decoration: none;
 @import "../node_modules/bootstrap/scss/variables-dark";
 
 // 4. Include any default map overrides here
+$primary: $feldblick-gruen;
+$secondary: $feldblick-braun;
 
 // merge with existing $theme-colors map
 $theme-colors: map-merge(
@@ -179,6 +181,11 @@ img {
   vertical-align: middle;
 }
 
+.btn {
+  border-radius: 0;
+  max-width: 300px;
+}
+
 /**
  * WordPress customization
  */
@@ -226,38 +233,39 @@ img {
 
 .block {
   &.block-padding {
-    padding-top: 122px;
-    padding-bottom: 122px;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
   }
   background: $background-color-light;
 
+  .h-small {
+    font-size: 20px;
+  }
+  h1 {
+    display: block;
+    padding: 0 0 29px;
+    margin: 0 auto 29px;
+    position: relative;
+    &:before {
+      content: " ";
+      position: absolute;
+      display: block;
+      width: 56px;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      -moz-transform: translateX(-50%);
+      transform: translateX(-50%);
+      bottom: 0;
+      opacity: 1;
+      border-top: 4px solid $feldblick-gruen;
+      -webkit-transition: all 0.3s ease-in-out 0.3s;
+      -moz-transition: all 0.3s ease-in-out 0.3s;
+      transition: all 0.3s ease-in-out 0.3s;
+    }
+  }
+
   // Öffnungzeiten
   .oeffnungzeiten {
-    .h-small {
-      font-size: 20px;
-    }
-    h1 {
-      display: block;
-      padding: 0 0 29px;
-      margin: 0 auto 29px;
-      position: relative;
-      &:before {
-        content: " ";
-        position: absolute;
-        display: block;
-        width: 56px;
-        left: 50%;
-        -webkit-transform: translateX(-50%);
-        -moz-transform: translateX(-50%);
-        transform: translateX(-50%);
-        bottom: 0;
-        opacity: 1;
-        border-top: 4px solid $feldblick-gruen;
-        -webkit-transition: all 0.3s ease-in-out 0.3s;
-        -moz-transition: all 0.3s ease-in-out 0.3s;
-        transition: all 0.3s ease-in-out 0.3s;
-      }
-    }
   }
 }
 
@@ -278,19 +286,34 @@ img {
   border-radius: 0;
   border: 0;
 }
+.wpcf7-form textarea {
+  height: 200px;
+}
 .wpcf7-form p {
   margin: 0 0 28px;
 }
 .wpcf7-text:focus,
 .wpcf7-textarea:focus {
-  outline: 1px solid rgba(84, 222, 197, 0.9);
+  outline: 1px solid $feldblick-gruen;
   outline-offset: 0;
+}
+
+.wpcf7-not-valid {
+  outline: 1px solid red;
 }
 
 .wpcf7-submit {
   display: table;
   margin: 0 auto;
   border-radius: 0;
+}
+
+/* First we hide the default CF7 loader */
+.wpcf7-spinner {
+  display: none;
+}
+.wpcf7-spinner::before {
+  display: none;
 }
 
 // Aktuelles
@@ -301,6 +324,7 @@ img {
 
 .card {
   background: transparent;
+  cursor: pointer;
 }
 
 .card-body {

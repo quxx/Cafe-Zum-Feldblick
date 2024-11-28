@@ -87,14 +87,26 @@ $page_id = get_option('page_for_posts');
 	</div>
 </section>
 <section class="container-fluid pe-0 ps-0 ms-0 me-0 block block-padding">
-	Aktuelles
-	<div class="container">
-		<div class="card-deck row gx-5">
+	<div class="text-center">
+		<h1 class="text-uppercase">Aktuelles</h1>
+		<p class="text-center ps-5 pe-5">
+			Aktuelles zu Events und Veranstaltungen
+		</p>
+	</div>
+	<div class="container px-4 pt-3">
+		<div class="row row-cols">
 			<?php
 			query_posts('posts_per_page=4');
+			$i = 0;
 			while (have_posts()) : the_post(); ?>
-				<div class="card col-3 border-0">
-					<img class="card-img-top card-img" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="Card image cap">
+				<div class="card col-12 col-sm-6 col-lg-4 col-xl-3 border-0 mb-5<?php if ($i >= 2) echo ' d-none' ?><?php if ($i == 2) echo ' d-lg-flex' ?><?php if ($i == 3) echo ' d-xl-flex' ?>">
+					<?php
+					if (has_post_thumbnail()) {
+						echo '<img class="card-img-top card-img" src="' . get_the_post_thumbnail_url() . '" alt="Card image cap">';
+					} else {
+						echo '<img class="card-img-top card-img" src="' . get_template_directory_uri() . '/assets/img/fahrradcafe-schild-2.jpeg" alt="Card image cap">';
+					}
+					?>
 					<div class="card-body">
 						<h5 class="card-title"><?php echo get_the_title(); ?></h5>
 						<p class="card-text"><?php echo get_the_excerpt(); ?></p>
@@ -103,8 +115,13 @@ $page_id = get_option('page_for_posts');
 						<small class="text-muted"><?php echo get_the_date() ?></small>
 					</div>
 				</div>
-			<?php endwhile;
+			<?php
+				$i++;
+			endwhile;
 			wp_reset_query(); ?>
+		</div>
+		<div class="row justify-content-center">
+			<button class="btn btn-outline-primary btn-block col-4">Mehr anzeigen</button>
 		</div>
 	</div>
 </section>
@@ -226,9 +243,15 @@ $page_id = get_option('page_for_posts');
 	</div>
 </section>
 <section class="container-fluid block block-padding kontakt">
-	<div class="container">
+	<div class="text-center">
+		<h1 class="text-uppercase">Kontakt</h1>
+		<p class="text-center ps-5 pe-5">
+			Wir freuen uns über Eure Nachricht.
+		</p>
+	</div>
+	<div class="container pt-3">
 		<div class="row justify-content-center">
-			<div class="col-8">
+			<div class="col-12 col-md-10">
 				<?php
 				echo do_shortcode(
 					'[contact-form-7 title="Kontakt"]'

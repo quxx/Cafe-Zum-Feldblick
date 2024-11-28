@@ -589,21 +589,35 @@ function mod_contact7_form_content($template, $prop)
 	if ('form' == $prop) {
 		return implode('', array(
 			'<div class="container">
-				<div class="row">
-					<div class="col-6">
-						[text* text-32 autocomplete:name maxlength:200 placeholder "Name"]
-					</div>
-					<div class="col-6">
-				[email* email-921 autocomplete:email maxlength:200 placeholder "E-Mail"]
-					</div>
-					<div class="col-12">
-				[textarea* textarea-43 placeholder] Ihre Anfrage [/textarea*]
-					</div>
+	<div class="row">
+		<div class="col-12 col-lg-6">
+			<div class="row">
+				<div class="col-12">
+					[text* text-32 autocomplete:name maxlength:200 placeholder "Name*"]
 				</div>
-				<div class="row justify-content-center">
-				[submit class:col-6 class:btn class:btn-outline-primary class:btn-block "Abschicken"]
+				<div class="col-12">
+					[email* email-921 autocomplete:email maxlength:200 placeholder "E-Mail*"]
 				</div>
-			</div>'
+				<div class="col-12">
+					[tel tel-390 autocomplete:tel maxlength:30 placeholder "Telefonnummer"]
+				</div>
+			</div>
+		</div>
+		<div class="col-12 col-lg-6">
+			<div class="row">
+				<div class="col-12">
+					[textarea* textarea-43 placeholder] Deine Anfrage* [/textarea*]
+				</div>
+			</div>
+		</div>
+	</div>
+<div class="row">
+[response]
+</div>
+	<div class="row justify-content-center">
+		[submit class:col-6 class:btn class:btn-outline-primary class:btn-block "Abschicken"]
+	</div>
+</div>'
 		));
 	} else {
 		return $template;
@@ -656,3 +670,9 @@ function custom_speise_column($column, $post_id)
 			break;
 	}
 }
+
+function my_excerpt_length($length)
+{
+	return 30;
+}
+add_filter('excerpt_length', 'my_excerpt_length');

@@ -86,12 +86,29 @@ $page_id = get_option('page_for_posts');
 		</div>
 	</div>
 </section>
-<div class="bg-white">
+<section class="container-fluid pe-0 ps-0 ms-0 me-0 block block-padding">
 	Aktuelles
-	<?php
-	the_content();
-	?>
-</div>
+	<div class="container">
+		<div class="card-deck row gx-5">
+			<?php
+			query_posts('posts_per_page=4');
+			while (have_posts()) : the_post(); ?>
+				<div class="card col-3 border-0">
+					<img class="card-img-top card-img" src="<?php if (has_post_thumbnail()) echo get_the_post_thumbnail_url();
+																									else echo get_template_directory_uri() + "/assets/img/schild.jpeg" ?>" alt="Card image cap">
+					<div class="card-body">
+						<h5 class="card-title"><?php echo get_the_title(); ?></h5>
+						<p class="card-text"><?php echo get_the_excerpt(); ?></p>
+					</div>
+					<div class="card-footer">
+						<small class="text-muted"><?php echo get_the_date() ?></small>
+					</div>
+				</div>
+			<?php endwhile;
+			wp_reset_query(); ?>
+		</div>
+	</div>
+</section>
 <div class="bg-white">
 	Bilder
 </div>

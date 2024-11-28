@@ -625,3 +625,34 @@ add_filter(
 	'wpcf7_contact_form_default_pack',
 	'mod_contact7_form_title'
 );
+
+// Add the custom columns to the book post type:
+add_filter('manage_speise_posts_columns', 'set_custom_edit_speise_columns');
+function set_custom_edit_speise_columns($columns)
+{
+	unset($columns['author']);
+	$columns['beschreibung'] = __('Beschreibung', 'your_text_domain');
+	$columns['preis'] = __('Preis', 'your_text_domain');
+
+	return $columns;
+}
+
+// Add the data to the custom columns for the book post type:
+add_action('manage_speise_posts_custom_column', 'custom_speise_column', 10, 2);
+function custom_speise_column($column, $post_id)
+{
+	switch ($column) {
+
+		case 'beschreibung':
+			$terms = get_the_term_list($post_id, 'beschreibung', '', ',', '');
+			if (is_string($terms))
+				echo $terms;
+			else
+				_e('Unable to get author(s)', 'your_text_domain');
+			break;
+
+		case 'preis':
+			echo get_post_meta($post_id, 'preis', true);
+			break;
+	}
+}

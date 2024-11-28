@@ -92,15 +92,35 @@ $page_id = get_option('page_for_posts');
 	the_content();
 	?>
 </div>
-<div class="bg-white">
-	Bilder
-</div>
+<section class="container-fluid pe-0 ps-0 ms-0 me-0 block">
+	<div class="row pe-0 ps-0 me-0">
+		<div class=" col-lg-4 col-md-4 col-sm-4 col-xs-12 imagetiles pe-0 ps-0">
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/fahrradcafe-getraenk.jpeg" height="auto" alt="Das Fahrradcafe von vorne">
+		</div>
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 imagetiles pe-0 ps-0">
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/fahrradcafe-tor.jpg" height="auto" alt="Fahrradcafe Holzschild">
+		</div>
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 imagetiles pe-0 ps-0">
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/fahrradcafe-getraenk2.jpeg" height="auto" alt="Gartenansicht vom Fahrradcafe">
+		</div>
+	</div>
+</section>
 <div class="bg-white">
 	Speisekarte
 </div>
-<div class="bg-white">
-	Bilder
-</div>
+<section class="container-fluid pe-0 ps-0 ms-0 me-0 block">
+	<div class="row pe-0 ps-0 me-0">
+		<div class=" col-lg-4 col-md-4 col-sm-4 col-xs-12 imagetiles pe-0 ps-0">
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/fahrradcafe-fahrrad.jpg" height="auto" alt="Das Fahrradcafe von vorne">
+		</div>
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 imagetiles pe-0 ps-0">
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/fahrradcafe-katze.jpg" height="auto" alt="Fahrradcafe Holzschild">
+		</div>
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 imagetiles pe-0 ps-0">
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/fahrradcafe-ausblick.jpg" height="auto" alt="Gartenansicht vom Fahrradcafe">
+		</div>
+	</div>
+</section>
 <section class="container-fluid block block-padding kontakt">
 	<div class="container">
 		<div class="row justify-content-center">

@@ -582,3 +582,46 @@ function cafe_zum_feldblick_scripts_loader()
 	}
 }
 add_action('wp_enqueue_scripts', 'cafe_zum_feldblick_scripts_loader');
+
+
+function mod_contact7_form_content($template, $prop)
+{
+	if ('form' == $prop) {
+		return implode('', array(
+			'<div class="container">
+				<div class="row">
+					<div class="col-6">
+						[text* text-32 autocomplete:name maxlength:200 placeholder "Name"]
+					</div>
+					<div class="col-6">
+				[email* email-921 autocomplete:email maxlength:200 placeholder "E-Mail"]
+					</div>
+					<div class="col-12">
+				[textarea* textarea-43 placeholder] Ihre Anfrage [/textarea*]
+					</div>
+				</div>
+				<div class="row justify-content-center">
+				[submit class:col-6 class:btn class:btn-outline-primary class:btn-block "Abschicken"]
+				</div>
+			</div>'
+		));
+	} else {
+		return $template;
+	}
+}
+add_filter(
+	'wpcf7_default_template',
+	'mod_contact7_form_content',
+	10,
+	2
+);
+
+function mod_contact7_form_title($template)
+{
+	$template->set_title('Kontakt');
+	return $template;
+}
+add_filter(
+	'wpcf7_contact_form_default_pack',
+	'mod_contact7_form_title'
+);

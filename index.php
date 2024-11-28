@@ -107,7 +107,7 @@ $page_id = get_option('page_for_posts');
 			<div class="col-8">
 				<?php
 				echo do_shortcode(
-					'[contact-form-7 id="2c99f4d" title="Kontakt"]'
+					'[contact-form-7 title="Kontakt"]'
 				);
 				?>
 			</div>

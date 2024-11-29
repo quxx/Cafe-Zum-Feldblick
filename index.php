@@ -138,9 +138,97 @@ $page_id = get_option('page_for_posts');
 		</div>
 	</div>
 </section>
-<div class="bg-white">
-	Speisekarte
-</div>
+<section class="container-fluid block block-padding ps-5 pe-5">
+	<div editable="rich" class="text-center oeffnungzeiten">
+		<p class="h-small text-uppercase">Auszug aus unserer</p>
+		<h1 class="text-uppercase">Speisekarte</h1>
+		<p class="text-center ps-5 pe-5 mb-5">
+		Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor 
+		<br>invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et 
+		<br>accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+		</p>
+		
+		<div class="row pe-0 ps-0 me-0">
+
+			<?php
+				// Hol dir das Pods-Objekt für den Custom Post Type "speise"
+				$pods = pods('speise');
+
+				if ($pods && $pods->find()) {
+					// Speise-Daten aus Pods abrufen
+					while ($pods->fetch()) {
+						$auszug = $pods->display('in_auszug_aus_der_speisekarte_zeigen');
+						if ($auszug == 'Ja') {
+							$bezeichnung = $pods->display('bezeichnung');
+							$preis = $pods->display('preis');
+							$beschreibung = $pods->display('beschreibung');
+							if (!empty($bezeichnung)) {
+								echo '<div class=" col-lg-6 col-md-6 col-sm-12 col-xs-12">
+									<div class="mkd-pli-content-holder d-flex flex-column align-items-start">
+									<div class="mkd-pli-title-holder d-flex justify-content-between align-items-end w-100">';
+								echo '<h5 class="mkd-pli-title entry-title m-0">' . esc_html( $bezeichnung ) . '</h5>';
+								echo '<div class="mkd-pli-dots" style="border-color: rgba(71,71,71,0.2);border-style: dashed"></div>';
+								echo '<h5 class="mkd-pli-price m-0" style="color: #ae9974">' . esc_html( $preis ) . '</h5>';
+								echo '</div>
+									<div class="mkd-pli-bottom-content">
+									<div class="mkd-pli-desc clearfix" style="color: #808285">';
+								echo '<p>' . esc_html( $beschreibung ) . '</p>';
+								echo '</div>
+									</div>
+									</div>
+									</div>';
+
+							} else {
+								// Fallback-Text für leere Ergebnisse
+								echo '<p class="lead">Keine Öffnungszeiten verfügbar.</p>';
+							}
+						}
+					}
+
+					// Gruppierte Öffnungszeiten anzeigen
+				} else {
+					// Fehler-Handling, wenn Pods-Instanz nicht verfügbar ist
+					echo '<p class="lead">Fehler: Öffnungszeiten konnten nicht geladen werden.</p>';
+				}
+				
+			?>
+		</div>
+		<!-- <div class="row pe-0 ps-0 me-0">
+			<div class=" col-lg-6 col-md-6 col-sm-12 col-xs-12">
+				<div class="mkd-pli-content-holder d-flex flex-column align-items-start">
+					<div class="mkd-pli-title-holder d-flex justify-content-between align-items-end w-100">
+						<h5 itemprop="name" class="mkd-pli-title entry-title m-0" style="color: #1f1f1f">RUCOLA SALAT</h5>
+						<div class="mkd-pli-dots" style="border-color: rgba(71,71,71,0.2);border-style: dashed"></div>
+						
+							<h5 class="mkd-pli-price m-0" style="color: #ae9974">9.9</h5>
+						
+					</div>
+					<div class="mkd-pli-bottom-content">
+						<div class="mkd-pli-desc clearfix" style="color: #808285">
+							<p>Mit getrockneten Tomaten und Parmesan</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class=" col-lg-6 col-md-6 col-sm-12 col-xs-12">
+				<div class="mkd-pli-content-holder d-flex flex-column align-items-start">
+					<div class="mkd-pli-title-holder d-flex justify-content-between align-items-end w-100">
+						<h5 itemprop="name" class="mkd-pli-title entry-title m-0" style="color: #1f1f1f">RUCOLA SALAT</h5>
+						<div class="mkd-pli-dots" style="border-color: rgba(71,71,71,0.2);border-style: dashed"></div>
+						
+							<h5 class="mkd-pli-price m-0" style="color: #ae9974">9.9</h5>
+						
+					</div>
+					<div class="mkd-pli-bottom-content">
+						<div class="mkd-pli-desc clearfix" style="color: #808285">
+							<p>Mit getrockneten Tomaten und Parmesan</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> -->
+	</div>
+</section>
 <section class="container-fluid pe-0 ps-0 ms-0 me-0 block">
 	<div class="row pe-0 ps-0 me-0">
 		<div class=" col-lg-4 col-md-4 col-sm-4 col-xs-12 imagetiles pe-0 ps-0">

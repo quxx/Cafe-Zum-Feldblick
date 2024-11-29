@@ -596,8 +596,19 @@ img {
 //Header Image
 
 .header-image {
-  background-image: url("../assets/img/fahrradcafe-1.jpeg");
+  background-image: url("../assets/img/fahrradcafe-fahrrad-2.JPG");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  height: 200px;
+}
+
+.navbar-absolute {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  height: 60px;
+  z-index: 1030;
 }

@@ -6,13 +6,6 @@ get_header();
 ?>
 
 <div lc-helper="background" class="container-fluid py-5 d-flex justify-content-center header-image">
-  <div class="p-5 mb-4 lc-block col-12 text-center ">
-    <div class="lc-block">
-      <div editable="rich">
-        <h1 class="fw-normal display-3 pb-5 header-light">Impressum</h1>
-      </div>
-    </div>
-  </div>
 </div>
 <div class="container-fluid block block-padding">
   <div editable="rich">

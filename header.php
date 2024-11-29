@@ -19,7 +19,7 @@
 
   <!-- Navbar  -->
 
-  <nav class="navbar navbar-expand-lg fixed-top nav-color-white">
+  <nav class="navbar navbar-expand-lg navbar-absolute nav-color-white">
     <div class="container-fluid flex">
       <a id="nav-brand" class="navbar-brand hide" href="#">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo_original.svg" width="200" height="50" class="d-inline-block align-center" alt="">

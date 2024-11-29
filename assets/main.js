@@ -31,12 +31,12 @@ import * as bootstrap from "bootstrap";
 var nav = document.querySelector("nav");
 
 window.addEventListener("scroll", function () {
-  if (window.pageYOffset > 100) {
-    nav.classList.add("bg-light", "nav-color-black");
-    nav.classList.remove("nav-color-white");
+  if (window.pageYOffset > window.innerHeight - 60) {
+    nav.classList.add("fixed-top");
+    nav.classList.remove("navbar-absolute");
   } else {
-    nav.classList.remove("bg-light", "nav-color-black");
-    nav.classList.add("nav-color-white");
+    nav.classList.remove("fixed-top");
+    nav.classList.add("navbar-absolute");
   }
 });
 

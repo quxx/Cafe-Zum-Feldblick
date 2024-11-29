@@ -201,6 +201,14 @@ img {
 
 /* Header */
 
+.header-light {
+  color: $background-color-light;
+}
+
+.header-dark {
+  color: var(--bs-body-color);
+}
+
 .nav-color-white {
   --bs-navbar-color: white;
 }
@@ -253,6 +261,14 @@ img {
       -webkit-transition: all 0.3s ease-in-out 0.3s;
       -moz-transition: all 0.3s ease-in-out 0.3s;
       transition: all 0.3s ease-in-out 0.3s;
+    }
+    &.center {
+      &:before {
+        left: 0%;
+        -webkit-transform: translateX(0%);
+        -moz-transform: translateX(0%);
+        transform: translateX(0%);
+      }
     }
   }
 
@@ -517,4 +533,18 @@ img {
   #sidebar {
     margin-top: 60px;
   }
+}
+
+// Impressum Page
+.impressum {
+  padding: 0 8rem;
+}
+
+//Header Image
+
+.header-image {
+  background-image: url("../assets/img/fahrradcafe-1.jpeg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }

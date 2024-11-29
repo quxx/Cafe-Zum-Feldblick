@@ -55,7 +55,7 @@ $green: #198754;
 $teal: #20c997;
 $cyan: #0dcaf0;
 
-$background-color-light: #f2f2f2;
+$background-color-light: #f4f3f2;
 $feldblick-gruen: #0a462b;
 $feldblick-gruen_highlight: #127b4b;
 $feldblick-braun: #462922;
@@ -221,6 +221,29 @@ img {
 /* Main */
 #main {
   margin-top: 0px !important;
+}
+
+// optischer Zettelriss bei Bildern
+.riss-container {
+  position: relative;
+
+  .min-vh-100 {
+    margin-bottom: 15px;
+  }
+}
+.riss-svg {
+  mask-image: url(../assets/img/riss.svg);
+  height: 15px;
+  width: 100%;
+  background-color: $background-color-light;
+  position: absolute;
+  top: -1px;
+
+  &.bottom {
+    transform: rotate(180deg);
+    top: unset;
+    bottom: -1px;
+  }
 }
 
 .block {

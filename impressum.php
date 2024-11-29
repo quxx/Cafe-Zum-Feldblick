@@ -1,5 +1,5 @@
 <?php
-/* Template Name: impressum */
+/* Template Name: Impressum */
 
 get_header();
 

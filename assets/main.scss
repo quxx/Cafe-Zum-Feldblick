@@ -135,6 +135,18 @@ $theme-colors: map-merge(
  * General
  */
 
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  color: var(--bs-body-color);
+
+  &:hover {
+    color: $feldblick-gruen_highlight;
+  }
+}
+
 .hard {
   p {
     color: var(--bs-body-color) !important;
@@ -342,6 +354,11 @@ img {
 .card {
   background: transparent;
   cursor: pointer;
+  height: 100%;
+
+  &:hover {
+    box-shadow: 5px 1px 16px 1px rgba(0, 0, 0, 0.05);
+  }
 }
 
 .card-body {
@@ -359,6 +376,10 @@ img {
 
 #footer {
   background-color: #fff;
+
+  .icon {
+    font-size: 20px;
+  }
 
   p {
     margin-top: 10px;

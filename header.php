@@ -7,6 +7,7 @@
 
   <?php wp_head(); ?>
   <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/assets/img/favIcon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
 
@@ -29,16 +30,16 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="#">Home</a>
+            <a class="nav-link" href="<?php echo site_url(''); ?>">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Aktuelles</a>
+            <a class="nav-link" href="<?php echo site_url('/aktuelles'); ?>">Aktuelles</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Speisekarte</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Kontakt</a>
+            <a class="nav-link" href="#kontakt">Kontakt</a>
           </li>
         </ul>
       </div>

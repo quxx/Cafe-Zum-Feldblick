@@ -16,7 +16,7 @@ $page_id = get_option('page_for_posts');
 			<!-- adjust object-position to tweak cropping on mobile -->
 			<source src="<?php echo get_template_directory_uri(); ?>/assets/img/header-video.mp4" type="video/mp4">
 		</video>
-		<div style="z-index:2; margin-bottom: 7%" class="text-light col-12 ps-5 pe-5 brand">
+		<div style="z-index:2;" class="text-light col-12 ps-5 pe-5 brand">
 			<div class="lc-block mb-4">
 				<img src="<?php echo get_template_directory_uri(); ?>/assets/img/Logo_original_mit_rand.svg" alt="logo" />
 			</div>

@@ -260,7 +260,6 @@ img {
   position: absolute;
   left: 0;
   right: 0;
-  height: 50px;
   z-index: 1030;
   &:not(.isFront) {
     top: 200px;
@@ -273,6 +272,7 @@ img {
 .navbar {
   background-color: $background-color-light;
   padding: 0.5rem 0;
+  height: 50px;
   &.fixed-top {
     box-shadow: 5px 1px 16px 1px rgba(0, 0, 0, 0.05);
   }

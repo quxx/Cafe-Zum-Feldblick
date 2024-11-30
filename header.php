@@ -19,7 +19,7 @@
 
   <!-- Navbar  -->
 
-  <nav class="navbar navbar-expand-sm navbar-absolute">
+  <nav class="navbar navbar-expand-sm navbar-absolute <?php if (is_front_page()) echo 'isFront' ?>">
     <div class="container-fluid flex">
       <!-- <a id="nav-brand" class="navbar-brand" href="#">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo_original.svg" width="200" height="50" class="d-inline-block align-center" alt="">

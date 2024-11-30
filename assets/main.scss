@@ -258,11 +258,16 @@ img {
 
 .navbar-absolute {
   position: absolute;
-  bottom: 0;
   left: 0;
   right: 0;
   height: 50px;
   z-index: 1030;
+  &:not(.isFront) {
+    top: 200px;
+  }
+  &.isFront {
+    bottom: 0;
+  }
 }
 
 .navbar {

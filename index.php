@@ -10,7 +10,7 @@ get_header();
 
 $page_id = get_option('page_for_posts');
 ?>
-<section class="position-relative overflow-hidden">
+<section id="home" class="position-relative overflow-hidden">
 	<div class="d-flex min-vh-100" lc-helper="video-bg">
 		<video style="object-fit: cover; object-position: 50% 50%;" class="w-100 min-vh-100 parallax-video" autoplay preload muted loop playsinline>
 			<!-- adjust object-position to tweak cropping on mobile -->

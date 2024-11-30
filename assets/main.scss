@@ -229,9 +229,66 @@ img {
 }
 
 .navbar-nav {
-  color: white;
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 16px;
+
+  .nav-item {
+    padding: 0 1rem;
+
+    .nav-link {
+      &:hover {
+        color: $feldblick-gruen_highlight;
+      }
+    }
+  }
+}
+
+.navbar-absolute {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  z-index: 1030;
+}
+
+.navbar {
+  background-color: $background-color-light;
+  padding: 0.5rem 0;
+  &.fixed-top {
+    box-shadow: 5px 1px 16px 1px rgba(0, 0, 0, 0.05);
+  }
+}
+
+.brand {
+  align-self: center;
+  .lc-block {
+    text-align: center;
+    img {
+      width: 300px;
+      height: auto;
+    }
+  }
+}
+
+@media (min-width: breakpoint-min(md)) {
+  .brand {
+    .lc-block {
+      text-align: left;
+    }
+  }
+}
+
+@media (min-width: breakpoint-min(sm)) {
+  .brand {
+    align-self: end;
+    .lc-block {
+      padding: 0 3rem;
+      img {
+        width: 300px;
+        height: auto;
+      }
+    }
+  }
 }
 
 .hide {
@@ -257,7 +314,7 @@ img {
   width: 100%;
   background-color: $background-color-light;
   position: absolute;
-  top: 0px;
+  top: -1px;
 
   &.bottom {
     transform: rotate(180deg);
@@ -601,14 +658,4 @@ img {
   background-size: cover;
   background-repeat: no-repeat;
   height: 200px;
-}
-
-.navbar-absolute {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: white;
-  height: 60px;
-  z-index: 1030;
 }

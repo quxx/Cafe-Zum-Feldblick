@@ -19,15 +19,15 @@
 
   <!-- Navbar  -->
 
-  <nav class="navbar navbar-expand-lg navbar-absolute nav-color-white">
+  <nav class="navbar navbar-expand-sm navbar-absolute">
     <div class="container-fluid flex">
-      <a id="nav-brand" class="navbar-brand hide" href="#">
+      <!-- <a id="nav-brand" class="navbar-brand" href="#">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo_original.svg" width="200" height="50" class="d-inline-block align-center" alt="">
-      </a>
+      </a> -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link" href="<?php echo site_url(''); ?>">Home</a>

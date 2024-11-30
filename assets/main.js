@@ -31,7 +31,7 @@ import * as bootstrap from "bootstrap";
 var nav = document.querySelector("nav");
 
 window.addEventListener("scroll", function () {
-  if (window.pageYOffset > window.innerHeight - 60) {
+  if (window.pageYOffset > window.innerHeight - 50) {
     nav.classList.add("fixed-top");
     nav.classList.remove("navbar-absolute");
   } else {
@@ -40,15 +40,15 @@ window.addEventListener("scroll", function () {
   }
 });
 
-var navbrand = document.getElementById("nav-brand");
+// var navbrand = document.getElementById("nav-brand");
 
-window.addEventListener("scroll", function () {
-  if (window.pageYOffset > 100) {
-    navbrand.classList.remove("hide");
-  } else {
-    navbrand.classList.add("hide");
-  }
-});
+// window.addEventListener("scroll", function () {
+//   if (window.pageYOffset > 100) {
+//     navbrand.classList.remove("hide");
+//   } else {
+//     navbrand.classList.add("hide");
+//   }
+// });
 
 // Get the button
 const scrollToTopBtn = document.getElementById("scrollToTopBtn");

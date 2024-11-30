@@ -2,11 +2,8 @@
 /* Template Name: Impressum */
 
 get_header();
-
+include_once("page-header.php");
 ?>
-
-<div lc-helper="background" class="container-fluid py-5 d-flex justify-content-center header-image">
-</div>
 <div class="container-fluid block block-padding">
   <div editable="rich">
     <div class=" row impressum">

@@ -3,10 +3,8 @@
 
 get_header();
 
+include_once("page-header.php");
 ?>
-
-<div lc-helper="background" class="container-fluid py-5 d-flex justify-content-center header-image">
-</div>
 <section class="container-fluid pe-0 ps-0 ms-0 me-0 block block-padding">
   <div class="text-center">
     <h1 class="text-uppercase">Aktuelles</h1>

@@ -136,6 +136,20 @@ $theme-colors: map-merge(
  */
 
 html {
+  //Scrollbar
+  // &::-webkit-scrollbar-track {
+  //   background-color: $background-color-light;
+  // }
+
+  // &::-webkit-scrollbar {
+  //   width: 6px;
+  //   background-color: $background-color-light;
+  // }
+
+  // &::-webkit-scrollbar-thumb {
+  //   background-color: $primary;
+  // }
+
   scroll-behavior: smooth;
 }
 
@@ -260,6 +274,7 @@ img {
 }
 
 .brand {
+  margin-bottom: 4rem;
   align-self: center;
   .lc-block {
     text-align: center;
@@ -284,7 +299,7 @@ img {
     .lc-block {
       padding: 0 3rem;
       img {
-        width: 300px;
+        width: 400px;
         height: auto;
       }
     }

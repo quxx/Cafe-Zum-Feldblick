@@ -676,3 +676,33 @@ function my_excerpt_length($length)
 	return 30;
 }
 add_filter('excerpt_length', 'my_excerpt_length');
+
+function create_page($title_of_the_page, $content, $theme, $parent_id = NULL)
+{
+	$objPage = get_page_by_title($title_of_the_page, 'OBJECT', 'page');
+	if (! empty($objPage)) {
+		// echo "Page already exists:" . $title_of_the_page . "<br/>";
+		return $objPage->ID;
+	}
+
+	$page_id = wp_insert_post(
+		array(
+			'comment_status' => 'close',
+			'ping_status'    => 'close',
+			'post_author'    => 1,
+			'post_title'     => ucwords($title_of_the_page),
+			'post_name'      => strtolower(str_replace(' ', '-', trim($title_of_the_page))),
+			'post_status'    => 'publish',
+			'post_content'   => $content,
+			'post_type'      => 'page',
+			'post_parent'    =>  $parent_id, //'id_of_the_parent_page_if_it_available'
+			'page_template'  => $theme
+		)
+	);
+	// echo "Created page_id=" . $page_id . " for page '" . $title_of_the_page . "'<br/>";
+	return $page_id;
+}
+
+create_page('Impressum', '', 'impressum.php');
+create_page('Aktuelles', '', 'posts.php');
+create_page('Kontakt', '', 'kontakt.php');

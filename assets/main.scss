@@ -288,6 +288,16 @@ img {
       height: auto;
     }
   }
+  &.small {
+    margin-bottom: -1rem;
+    .lc-block {
+      padding-left: 13px;
+      img {
+        width: 200px;
+        height: auto;
+      }
+    }
+  }
 }
 
 @media (min-width: breakpoint-min(md)) {
@@ -306,6 +316,14 @@ img {
       img {
         width: 400px;
         height: auto;
+      }
+    }
+    &.small {
+      .lc-block {
+        img {
+          width: 250px;
+          height: auto;
+        }
       }
     }
   }
@@ -677,5 +695,6 @@ img {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  background-position-y: top;
   height: 200px;
 }

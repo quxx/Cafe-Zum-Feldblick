@@ -76,7 +76,7 @@ $page_id = get_option('page_for_posts');
 	<div class="riss-svg"></div>
 	<div class="row pe-0 ps-0 me-0">
 		<div class=" col-lg-4 col-md-4 col-sm-4 col-xs-12 imagetiles pe-0 ps-0">
-			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/fahrradcafe-1.jpeg" height="auto" alt="Das Fahrradcafe von vorne">
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/fahrradcafe-1.jpg" height="auto" alt="Das Fahrradcafe von vorne">
 		</div>
 		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 imagetiles pe-0 ps-0">
 			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/fahrradcafe-schild.jpg" height="auto" alt="Fahrradcafe Holzschild">
@@ -106,7 +106,7 @@ $page_id = get_option('page_for_posts');
 						if (has_post_thumbnail()) {
 							echo '<img class="card-img-top card-img" src="' . get_the_post_thumbnail_url() . '" alt="Card image cap">';
 						} else {
-							echo '<img class="card-img-top card-img" src="' . get_template_directory_uri() . '/assets/img/fahrradcafe-schild-2.jpeg" alt="Card image cap">';
+							echo '<img class="card-img-top card-img" src="' . get_template_directory_uri() . '/assets/img/fahrradcafe-schild-2.jpg" alt="Card image cap">';
 						}
 						?>
 						<div class="card-body">
@@ -132,13 +132,13 @@ $page_id = get_option('page_for_posts');
 	<div class="riss-svg"></div>
 	<div class="row pe-0 ps-0 me-0">
 		<div class=" col-lg-4 col-md-4 col-sm-4 col-xs-12 imagetiles pe-0 ps-0">
-			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/fahrradcafe-getraenk.jpeg" height="auto" alt="Das Fahrradcafe von vorne">
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/fahrradcafe-getraenk.jpg" height="auto" alt="Das Fahrradcafe von vorne">
 		</div>
 		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 imagetiles pe-0 ps-0">
 			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/fahrradcafe-tor.jpg" height="auto" alt="Fahrradcafe Holzschild">
 		</div>
 		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 imagetiles pe-0 ps-0">
-			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/fahrradcafe-getraenk2.jpeg" height="auto" alt="Gartenansicht vom Fahrradcafe">
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/fahrradcafe-getraenk2.jpg" height="auto" alt="Gartenansicht vom Fahrradcafe">
 		</div>
 	</div>
 	<div class="riss-svg bottom"></div>

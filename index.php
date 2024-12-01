@@ -10,7 +10,7 @@ get_header();
 
 $page_id = get_option('page_for_posts');
 ?>
-<section class="position-relative overflow-hidden">
+<section id="home" class="position-relative overflow-hidden">
 	<div class="d-flex min-vh-100" lc-helper="video-bg">
 		<video style="object-fit: cover; object-position: 50% 50%;" class="w-100 min-vh-100 parallax-video" autoplay preload muted loop playsinline>
 			<!-- adjust object-position to tweak cropping on mobile -->
@@ -184,15 +184,13 @@ $page_id = get_option('page_for_posts');
 									</div>';
 						} else {
 							// Fallback-Text für leere Ergebnisse
-							echo '<p class="lead">Keine Öffnungszeiten verfügbar.</p>';
+							echo '<p class="lead">Keine Speisekarte verfügbar.</p>';
 						}
 					}
 				}
-
-				// Gruppierte Öffnungszeiten anzeigen
 			} else {
 				// Fehler-Handling, wenn Pods-Instanz nicht verfügbar ist
-				echo '<p class="lead">Fehler: Öffnungszeiten konnten nicht geladen werden.</p>';
+				echo '<p class="lead">Fehler: Speisekarte konnte nicht geladen werden.</p>';
 			}
 
 			?>
@@ -258,17 +256,10 @@ $page_id = get_option('page_for_posts');
 			Wir freuen uns über Eure Nachricht.
 		</p>
 	</div>
-	<div class="container pt-3">
-		<div class="row justify-content-center">
-			<div class="col-12 col-md-10">
-				<?php
-				echo do_shortcode(
-					'[contact-form-7 title="Kontakt"]'
-				);
-				?>
-			</div>
-		</div>
+	<div class="row justify-content-center">
+		<a href="<?php echo site_url('/kontakt'); ?>" class="btn btn-outline-primary btn-block col-4">Schreib uns</a>
 	</div>
+
 </section>
 <?php
 get_footer();

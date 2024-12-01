@@ -11,12 +11,12 @@ include_once("page-header.php");
         <h1 class="text-uppercase center">Impressum</h1>
         <h2>Angaben gemäß § 5 TMG</h2>
         <p>
-          Andrea Richter<br>
-          Café zum Feldblick<br>
+          Anke Morelli<br>
+          Fahrradcafé zum Feldblick<br>
           Säritzer Hauptstraße 10<br>
           03205 Calau<br><br>
 
-          Inhaltlich Verantwortlicher gemäß § 18 Abs. 2 MStV: Andrea Richter
+          Inhaltlich Verantwortlicher gemäß § 18 Abs. 2 MStV: Anke Morelli
         </p>
         <h2>Kontakt</h2>
         <p>

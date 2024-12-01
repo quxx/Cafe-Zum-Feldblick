@@ -13,6 +13,17 @@ include_once("page-header.php");
       Kontaktiere Uns
     </p>
   </div>
+  <div class="container pt-3">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10">
+        <?php
+        echo do_shortcode(
+          '[contact-form-7 title="Kontakt"]'
+        );
+        ?>
+      </div>
+    </div>
+  </div>
 
 </section>
 

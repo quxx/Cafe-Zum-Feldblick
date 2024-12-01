@@ -29,9 +29,14 @@ import * as bootstrap from "bootstrap";
 // Sticky Navbar
 
 var nav = document.querySelector("nav");
+var isHome = document.getElementById("home");
 
 window.addEventListener("scroll", function () {
-  if (window.pageYOffset > window.innerHeight - 50) {
+  let height = 200;
+  if (isHome) {
+    height = window.innerHeight - 50;
+  }
+  if (window.scrollY > height) {
     nav.classList.add("fixed-top");
     nav.classList.remove("navbar-absolute");
   } else {

@@ -258,16 +258,21 @@ img {
 
 .navbar-absolute {
   position: absolute;
-  bottom: 0;
   left: 0;
   right: 0;
-  height: 50px;
   z-index: 1030;
+  &:not(.isFront) {
+    top: 200px;
+  }
+  &.isFront {
+    bottom: 0;
+  }
 }
 
 .navbar {
   background-color: $background-color-light;
   padding: 0.5rem 0;
+  height: 50px;
   &.fixed-top {
     box-shadow: 5px 1px 16px 1px rgba(0, 0, 0, 0.05);
   }
@@ -281,6 +286,16 @@ img {
     img {
       width: 300px;
       height: auto;
+    }
+  }
+  &.small {
+    margin-bottom: -1rem;
+    .lc-block {
+      padding-left: 13px;
+      img {
+        width: 200px;
+        height: auto;
+      }
     }
   }
 }
@@ -301,6 +316,14 @@ img {
       img {
         width: 400px;
         height: auto;
+      }
+    }
+    &.small {
+      .lc-block {
+        img {
+          width: 250px;
+          height: auto;
+        }
       }
     }
   }
@@ -672,5 +695,6 @@ img {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  background-position-y: top;
   height: 200px;
 }

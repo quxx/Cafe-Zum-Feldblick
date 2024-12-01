@@ -30,7 +30,7 @@
       <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo site_url(''); ?>">Home</a>
+            <a class="nav-link" href="<?php echo site_url(''); ?>">Start</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="<?php echo site_url('/aktuelles'); ?>">Aktuelles</a>

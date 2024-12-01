@@ -321,7 +321,7 @@ img {
     &.small {
       .lc-block {
         img {
-          width: 250px;
+          width: 270px;
           height: auto;
         }
       }
@@ -376,6 +376,7 @@ img {
     padding: 0 0 29px;
     margin: 0 auto 29px;
     position: relative;
+    color: $primary;
     &:before {
       content: " ";
       position: absolute;

@@ -23,7 +23,7 @@ include_once("page-header.php");
             if (has_post_thumbnail()) {
               echo '<img class="card-img-top card-img" src="' . get_the_post_thumbnail_url() . '" alt="Card image cap">';
             } else {
-              echo '<img class="card-img-top card-img" src="' . get_template_directory_uri() . '/assets/img/fahrradcafe-schild-2.jpeg" alt="Card image cap">';
+              echo '<img class="card-img-top card-img" src="' . get_template_directory_uri() . '/assets/img/fahrradcafe-schild-2.jpg" alt="Card image cap">';
             }
             ?>
             <div class="card-body">

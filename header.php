@@ -33,6 +33,9 @@
             <a class="nav-link" href="<?php echo site_url(''); ?>">Start</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="<?php echo site_url('/ueber-uns'); ?>">Über uns</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="<?php echo site_url('/aktuelles'); ?>">Aktuelles</a>
           </li>
           <li class="nav-item">

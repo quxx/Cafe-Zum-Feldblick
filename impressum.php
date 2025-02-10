@@ -4,7 +4,7 @@
 get_header();
 include_once("page-header.php");
 ?>
-<div class="container-fluid block block-padding">
+<div class="container-fluid block block-padding page-height">
   <div editable="rich">
     <div class=" row impressum">
       <div class="col-12 col-md-6">

@@ -253,7 +253,9 @@ $page_id = get_option('page_for_posts');
 	<div class="text-center">
 		<h1 class="text-uppercase">Kontakt</h1>
 		<p class="text-center ps-5 pe-5">
-			Wir freuen uns über Eure Nachricht.
+			Ihr plant einen Besuch mit einer größeren Gruppe oder habt eine spezielle Anfrage? <br>
+			Ihr möchtet eine Feier, einen Brunch oder ein anderes Event bei uns organisieren? <br>
+			Wir freuen uns auf eure Nachricht!
 		</p>
 	</div>
 	<div class="row justify-content-center">

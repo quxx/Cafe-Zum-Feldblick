@@ -57,6 +57,7 @@ $cyan: #0dcaf0;
 
 $background-color-light: #f4f3f2;
 $feldblick-gruen: #0a462b;
+$feldblick-orange: #ff7300;
 $feldblick-gruen_highlight: #127b4b;
 $feldblick-braun: #462922;
 
@@ -136,8 +137,7 @@ $theme-colors: map-merge(
  */
 
 html {
-  //Scrollbar
-  // &::-webkit-scrollbar-track {
+  // Scrollbar &::-webkit-scrollbar-track {
   //   background-color: $background-color-light;
   // }
 
@@ -401,6 +401,10 @@ img {
         transform: translateX(0%);
       }
     }
+  }
+
+  .btn {
+    margin-top: 1rem;
   }
 
   // Öffnungzeiten

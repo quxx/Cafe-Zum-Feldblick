@@ -10,8 +10,13 @@ include_once("page-header.php");
   <div class="text-center">
     <h1 class="text-uppercase">Kontakt</h1>
     <p class="text-center ps-5 pe-5">
-      Kontaktiere Uns
+      Wir freuen uns über Eure Nachricht. Gerne könnt Ihr uns auch direkt anrufen.
     </p>
+    <div class="d-flex justify-content-center">
+      <p class="ps-3 pe-3"><i class="fa-solid fa-phone"></i> 0162 4578244</p>
+      <p class="ps-3 pe-3"><i class="fa-solid fa-location-dot"></i> Säritzer Hauptstraße 10, 03205 Calau</p>
+      <p class="ps-3 pe-3"><i class="fa-solid fa-envelope"></i> admin@admin.com</p>
+    </div>
   </div>
   <div class="container pt-3">
     <div class="row justify-content-center">

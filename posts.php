@@ -18,7 +18,7 @@ include_once("page-header.php");
       query_posts('');
       while (have_posts()) : the_post(); ?>
         <div class="col-12 col-sm-6 col-lg-4 col-xl-3 mb-5">
-          <div class="card border-0 ">
+          <article class="card border-0 " id="post-<?php the_ID(); ?>" <?php post_class('grid-item'); ?> onclick="document.location='<?php the_permalink(); ?>'">
             <?php
             if (has_post_thumbnail()) {
               echo '<img class="card-img-top card-img" src="' . get_the_post_thumbnail_url() . '" alt="Card image cap">';
@@ -33,7 +33,7 @@ include_once("page-header.php");
             <div class="card-footer">
               <small class="text-muted"><?php echo get_the_date() ?></small>
             </div>
-          </div>
+          </article>
         </div>
       <?php
       endwhile;

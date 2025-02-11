@@ -706,3 +706,4 @@ function create_page($title_of_the_page, $content, $theme, $parent_id = NULL)
 create_page('Impressum', '', 'impressum.php');
 create_page('Aktuelles', '', 'posts.php');
 create_page('Kontakt', '', 'kontakt.php');
+create_page('Über uns', '', 'ueber-uns.php');

@@ -1,5 +1,15 @@
 <?php
 
+add_action('wp_head', 'wpb_add_googleanalytics');
+function wpb_add_googleanalytics()
+{ ?>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+	<?php }
+
+
 /**
  * Include Theme Customizer.
  *
@@ -230,7 +240,7 @@ if (! function_exists('cafe_zum_feldblick_content_nav')) {
 		global $wp_query;
 
 		if ($wp_query->max_num_pages > 1) {
-?>
+	?>
 			<div id="<?php echo esc_attr($nav_id); ?>" class="d-flex mb-4 justify-content-between">
 				<div><?php next_posts_link('<span aria-hidden="true">&larr;</span> ' . esc_html__('Older posts', 'cafe-zum-feldblick')); ?></div>
 				<div><?php previous_posts_link(esc_html__('Newer posts', 'cafe-zum-feldblick') . ' <span aria-hidden="true">&rarr;</span>'); ?></div>

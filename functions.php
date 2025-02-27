@@ -193,7 +193,7 @@ add_filter('comments_open', 'cafe_zum_feldblick_filter_media_comment_status', 10
  */
 function cafe_zum_feldblick_custom_edit_post_link($link)
 {
-	return str_replace('class="post-edit-link"', 'class="post-edit-link badge bg-secondary"', $link);
+	return str_replace('class="post-edit-link"', 'class="post-edit-link badge bg-primary"', $link);
 }
 add_filter('edit_post_link', 'cafe_zum_feldblick_custom_edit_post_link');
 // Remove p tags from category description
@@ -208,7 +208,7 @@ remove_filter('the_content', 'wpautop');
  */
 function cafe_zum_feldblick_custom_edit_comment_link($link)
 {
-	return str_replace('class="comment-edit-link"', 'class="comment-edit-link badge bg-secondary"', $link);
+	return str_replace('class="comment-edit-link"', 'class="comment-edit-link badge bg-primary"', $link);
 }
 add_filter('edit_comment_link', 'cafe_zum_feldblick_custom_edit_comment_link');
 
@@ -406,24 +406,26 @@ if (! function_exists('cafe_zum_feldblick_comment')) {
 						edit_comment_link(esc_html__('Edit', 'cafe-zum-feldblick'), '<span class="edit-link">', '</span>');
 						?>
 					</p>
-				<?php
+				</li>
+			<?php
 				break;
 			default:
-				?>
+			?>
 				<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-					<article id="comment-<?php comment_ID(); ?>" class="comment">
-						<footer class="comment-meta">
-							<div class="comment-author vcard">
+					<article id="comment-<?php comment_ID(); ?>" class="comment mb-3">
+
+						<div class="comment-meta">
+							<div class="comment-author vcard THOMAS">
 								<?php
-								$avatar_size = ('0' !== $comment->comment_parent ? 68 : 136);
+								$avatar_size = ('36' !== $comment->comment_parent ? 36 : 36);
 								echo get_avatar($comment, $avatar_size);
 
 								/* Translators: 1: Comment author, 2: Date and time */
 								printf(
 									wp_kses_post(__('%1$s, %2$s', 'cafe-zum-feldblick')),
-									sprintf('<span class="fn">%s</span>', get_comment_author_link()),
+									sprintf('<span class="fn ps-1">%s</span>', get_comment_author_link()),
 									sprintf(
-										'<a href="%1$s"><time datetime="%2$s">%3$s</time></a>',
+										'<time datetime="%2$s">%3$s</time>',
 										esc_url(get_comment_link($comment->comment_ID)),
 										get_comment_time('c'),
 										/* Translators: 1: Date, 2: Time */
@@ -431,7 +433,7 @@ if (! function_exists('cafe_zum_feldblick_comment')) {
 									)
 								);
 
-								edit_comment_link(esc_html__('Edit', 'cafe-zum-feldblick'), '<span class="edit-link">', '</span>');
+								edit_comment_link(esc_html__('Edit', 'cafe-zum-feldblick'), '<span class="edit-link ps-2">', '</span>');
 								?>
 							</div><!-- .comment-author .vcard -->
 
@@ -441,9 +443,9 @@ if (! function_exists('cafe_zum_feldblick_comment')) {
 								</em>
 								<br />
 							<?php } ?>
-						</footer>
+						</div>
+						<div class="comment-content mt-3"><?php comment_text(); ?></div>
 
-						<div class="comment-content"><?php comment_text(); ?></div>
 
 						<div class="reply">
 							<?php
@@ -451,7 +453,7 @@ if (! function_exists('cafe_zum_feldblick_comment')) {
 								array_merge(
 									$args,
 									array(
-										'reply_text' => esc_html__('Reply', 'cafe-zum-feldblick') . ' <span>&darr;</span>',
+										'reply_text' => esc_html__('Reply', 'cafe-zum-feldblick') . '',
 										'depth'      => $depth,
 										'max_depth'  => $args['max_depth'],
 									)
@@ -460,7 +462,8 @@ if (! function_exists('cafe_zum_feldblick_comment')) {
 							?>
 						</div><!-- /.reply -->
 					</article><!-- /#comment-## -->
-	<?php
+				</li>
+<?php
 				break;
 		endswitch;
 	}
@@ -493,14 +496,12 @@ if (! function_exists('cafe_zum_feldblick_comment')) {
 		$aria_req = ($req ? " aria-required='true' required" : '');
 		$consent  = (empty($commenter['comment_author_email']) ? '' : ' checked="checked"');
 		$fields   = array(
-			'author'  => '<div class="form-floating mb-3">
-							<input type="text" id="author" name="author" class="form-control" value="' . esc_attr($commenter['comment_author']) . '" placeholder="' . esc_html__('Name', 'cafe-zum-feldblick') . ($req ? '*' : '') . '"' . $aria_req . ' />
-							<label for="author">' . esc_html__('Name', 'cafe-zum-feldblick') . ($req ? '*' : '') . '</label>
-						</div>',
-			'email'   => '<div class="form-floating mb-3">
-							<input type="email" id="email" name="email" class="form-control" value="' . esc_attr($commenter['comment_author_email']) . '" placeholder="' . esc_html__('Email', 'cafe-zum-feldblick') . ($req ? '*' : '') . '"' . $aria_req . ' />
-							<label for="email">' . esc_html__('Email', 'cafe-zum-feldblick') . ($req ? '*' : '') . '</label>
-						</div>',
+			'author'  => '<div class="col-12 mb-3">
+											<input type="text" id="author" name="author" class="input" value="' . esc_attr($commenter['comment_author']) . '" placeholder="' . esc_html__('Name', 'cafe-zum-feldblick') . ($req ? '*' : '') . '"' . $aria_req . ' />
+										</div>',
+			'email'   => '<div class="col-12 mb-3">
+											<input type="email" id="email" name="email" class="input" value="' . esc_attr($commenter['comment_author_email']) . '" placeholder="' . esc_html__('Email', 'cafe-zum-feldblick') . ($req ? '*' : '') . '"' . $aria_req . ' />
+										</div>',
 			'url'     => '',
 			'cookies' => '<p class="form-check mb-3 comment-form-cookies-consent">
 							<input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" class="form-check-input" type="checkbox" value="yes"' . $consent . ' />
@@ -510,10 +511,9 @@ if (! function_exists('cafe_zum_feldblick_comment')) {
 
 		$defaults = array(
 			'fields'               => apply_filters('comment_form_default_fields', $fields),
-			'comment_field'        => '<div class="form-floating mb-3">
-											<textarea id="comment" name="comment" class="form-control" aria-required="true" required placeholder="' . esc_attr__('Comment', 'cafe-zum-feldblick') . ($req ? '*' : '') . '"></textarea>
-											<label for="comment">' . esc_html__('Comment', 'cafe-zum-feldblick') . '</label>
-										</div>',
+			'comment_field'        => '<div class="mb-3 col-12">
+																	<textarea id="comment" name="comment" class="input" aria-required="true" required placeholder="' . esc_attr__('Comment', 'cafe-zum-feldblick') . ($req ? '*' : '') . '"></textarea>
+																</div>',
 			/** This filter is documented in wp-includes/link-template.php */
 			'must_log_in'          => '<p class="must-log-in">' . sprintf(wp_kses_post(__('You must be <a href="%s">logged in</a> to post a comment.', 'cafe-zum-feldblick')), wp_login_url(esc_url(get_the_permalink(get_the_ID())))) . '</p>',
 			/** This filter is documented in wp-includes/link-template.php */
@@ -522,13 +522,16 @@ if (! function_exists('cafe_zum_feldblick_comment')) {
 			'comment_notes_after'  => '',
 			'id_form'              => 'commentform',
 			'id_submit'            => 'submit',
-			'class_submit'         => 'btn btn-primary',
+			'class_submit'         => 'col-6 btn btn-outline-primary btn-block',
 			'name_submit'          => 'submit',
 			'title_reply'          => '',
 			'title_reply_to'       => esc_html__('Leave a Reply to %s', 'cafe-zum-feldblick'),
-			'cancel_reply_link'    => esc_html__('Cancel reply', 'cafe-zum-feldblick'),
+			'cancel_reply_link'    => '<span class="float-end fs-5"> ' . esc_html__('Cancel reply', 'cafe-zum-feldblick') . '</span>',
 			'label_submit'         => esc_html__('Post Comment', 'cafe-zum-feldblick'),
-			'submit_button'        => '<input type="submit" id="%2$s" name="%1$s" class="%3$s" value="%4$s" />',
+			'submit_button'        => '<div class="row justify-content-center">
+																	<input class="%3$s" type="submit" id="%2$s" name="%1$s" value="%4$s">
+																	</p>
+																</div>',
 			'submit_field'         => '<div class="form-submit">%1$s %2$s</div>',
 			'format'               => 'html5',
 		);

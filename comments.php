@@ -21,7 +21,7 @@ if (post_password_required()) {
 
 <div id="comments" class="comments-area riss-container">
   <div class="riss-svg"></div>
-  <div class="container pt-3">
+  <div class="container pt-5">
     <div class="row justify-content-center">
 
       <?php if (have_comments()) : ?>

@@ -9,6 +9,10 @@ if (have_posts()) {
 ?>
     <section class="container-fluid block block-padding page-height">
       <div class="container">
+        <a class="icon-link icon-link-hover mb-2" style="--bs-icon-link-transform: translate3d(0, -.125rem, 0);" href="<?php echo site_url('/aktuelles'); ?>">
+          <i class="fa-solid fa-arrow-left"></i>
+          Zurück
+        </a>
         <div class="row pt-2">
           <div class="col-12">
             <small class="text-muted"><?php echo get_the_date() ?></small>

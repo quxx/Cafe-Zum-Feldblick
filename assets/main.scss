@@ -858,6 +858,7 @@ img {
 
 #spenden {
   margin: 6rem 0;
+  padding-left: 0;
 }
 
 #stellenangebot {
@@ -897,5 +898,50 @@ img {
   }
   &.second {
     transform: scale(0.8, 0.8) rotate(-7deg);
+  }
+}
+
+.gfm-embed {
+  padding: 0;
+}
+
+.navbar-collapse {
+  transition: all 0.4s;
+}
+
+@media (min-width: 576px) {
+  .navbar-expand-sm .navbar-collapse {
+    .fullscreen-toggler {
+      display: none;
+    }
+    .navigation__background {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar-expand-sm .navbar-collapse {
+    .navbar-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      justify-content: center;
+      text-align: center;
+      font-size: 28px;
+    }
+
+    .fullscreen-toggler {
+      display: block;
+      border: none;
+      position: fixed;
+      top: 25px;
+      right: 25px;
+      z-index: 9999;
+      transition: none;
+      font-size: 35px;
+    }
   }
 }

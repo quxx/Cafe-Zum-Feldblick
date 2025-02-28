@@ -3,7 +3,7 @@
 get_header();
 include_once("page-header.php");
 ?>
-<section id="about-us" class="container-fluid pe-0 ps-0 ms-0 me-0 block page-height">
+<section id="about-us" class="container-fluid pe-0 ps-0 ms-0 me-0 block">
   <div class="text-center">
     <h1 class="text-uppercase">Über uns</h1>
   </div>
@@ -36,21 +36,23 @@ include_once("page-header.php");
   <div class="riss-svg"></div>
 </section>
 <section id="spenden" class="container-fluid pe-0 ms-0 me-0 block white ">
-  <div class="row gx-5 row1">
-    <div class="text-center">
-      <h1 class="text-uppercase h-small">Du möchtest uns unterstützen?</h1>
+  <div class="container px-4 pt-3">
+    <div class="row">
+      <div class="text-center">
+        <h1 class="text-uppercase h-small">Du möchtest uns unterstützen?</h1>
+      </div>
+      <script defer src="<?php echo get_template_directory_uri(); ?>/assets/gofundme.js"></script>
+      <div class="gfm-embed" data-url="https://www.gofundme.com/f/neueroffnung-fahrradcafe-zum-feldblick/widget/large?sharesheet=fundraiserstory&attribution_id=sl:66956685-2e1c-490c-8a8e-61ad8962480f"></div>
     </div>
-    <script defer src="<?php echo get_template_directory_uri(); ?>/assets/gofundme.js"></script>
-    <div class="gfm-embed" data-url="https://www.gofundme.com/f/neueroffnung-fahrradcafe-zum-feldblick/widget/large?sharesheet=fundraiserstory&attribution_id=sl:66956685-2e1c-490c-8a8e-61ad8962480f"></div>
   </div>
 </section>
 <section id="stellenangebot" class="container-fluid pe-0 ps-0 ms-0 me-0 block">
   <div class="riss-svg top"></div>
-  <div class="row content">
-    <div class="text-center">
-      <h1 class="text-uppercase h-small">Du möchtest mit uns arbeiten?</h1>
-    </div>
-    <div class="container px-4 pt-3">
+  <div class="container px-4 pt-3">
+    <div class="row content">
+      <div class="text-center">
+        <h1 class="text-uppercase h-small">Du möchtest mit uns arbeiten?</h1>
+      </div>
       <div class="row">
         <div class="col-12">
           <p class="fs-3 text-center">Wir haben folgende Stellenangebote:</p>

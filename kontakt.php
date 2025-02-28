@@ -15,10 +15,10 @@ include_once("page-header.php");
     <p class="text-center ps-5 pe-5">
       Reservierungen bitte nur telefonisch!
     </p>
-    <div class="d-flex justify-content-center">
-      <p class="ps-3 pe-3"><i class="fa-solid fa-phone"></i> 0162 4578244</p>
-      <p class="ps-3 pe-3"><i class="fa-solid fa-location-dot"></i> Säritzer Hauptstraße 10, 03205 Calau</p>
-      <p class="ps-3 pe-3"><i class="fa-solid fa-envelope"></i> admin@admin.com</p>
+    <div class="row justify-content-center">
+      <p class="ps-3 pe-3 col-12 col-md-4 col-lg-3 col-xl-2"><i class="fa-solid fa-phone"></i> 0162 4578244</p>
+      <p class="ps-3 pe-3 col-12 col-md-4 col-lg-3 col-xl-2"><i class="fa-solid fa-location-dot"></i> Säritzer Hauptstraße 10, 03205 Calau</p>
+      <p class="ps-3 pe-3 col-12 col-md-4 col-lg-3 col-xl-2"><i class="fa-solid fa-envelope"></i> admin@admin.com</p>
     </div>
   </div>
   <div class="container pt-3">

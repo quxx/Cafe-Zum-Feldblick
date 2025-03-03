@@ -5,7 +5,7 @@ get_header();
 
 include_once("page-header.php");
 ?>
-<div class="page-height not-found">
+<div class="page-height not-found text-center">
   <h1>Seite nicht gefunden</h1>
   <div class="main">
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="470" height="290" viewBox="0 0 470 290">
@@ -51,6 +51,10 @@ include_once("page-header.php");
       </g>
     </svg>
   </div>
+  <a class="icon-link icon-link-hover mb-2 mt-2" style="--bs-icon-link-transform: translate3d(0, -.125rem, 0);" href="<?php echo site_url('/'); ?>">
+    <i class="fa-solid fa-arrow-left"></i>
+    Zurück zur Startseite
+  </a>
 </div>
 <?php
 get_footer();

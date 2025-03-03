@@ -22,7 +22,6 @@ $page_id = get_option('page_for_posts');
 			</div>
 		</div>
 	</div>
-	<div class="riss-svg bottom"></div>
 </section>
 <section class="container-fluid block block-padding ps-5 pe-5">
 	<div editable="rich" class="text-center oeffnungzeiten">

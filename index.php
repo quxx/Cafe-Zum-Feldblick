@@ -16,17 +16,17 @@ $page_id = get_option('page_for_posts');
 			<!-- adjust object-position to tweak cropping on mobile -->
 			<source src="<?php echo get_template_directory_uri(); ?>/assets/img/header-video.mp4" type="video/mp4">
 		</video>
-		<div style="z-index:2;" class="text-light col-12 ps-5 pe-5 brand">
-			<div class="lc-block mb-4">
-				<img src="<?php echo get_template_directory_uri(); ?>/assets/img/Logo_original_mit_rand.svg" alt="logo" />
-			</div>
-		</div>
 	</div>
 </section>
 <section class="container-fluid block block-padding ps-5 pe-5">
 	<div editable="rich" class="text-center oeffnungzeiten">
-		<p class="h-small text-uppercase">Herzlich Wilkommen im</p>
-		<h1 class="text-uppercase">Fahrradcafé zum Feldblick</h1>
+		<p class="h-small text-uppercase">Herzlich Willkommen im</p>
+		<!-- <h1 class="text-uppercase">Fahrradcafé zum Feldblick</h1> -->
+		<div style="z-index:2;" class="text-light col-12 brand">
+			<div class="lc-block mb-4">
+				<img src="<?php echo get_template_directory_uri(); ?>/assets/img/Logo_original_mit_rand.svg" alt="logo" />
+			</div>
+		</div>
 		<p class="text-center ps-5 pe-5">
 			Genießen Sie bei uns eine Pause vom Alltag und lassen Sie sich von der Ruhe und Schönheit der Natur verzaubern. Ob auf einer Fahrradtour oder einfach auf der Suche nach einem besonderen Ort – hier finden Sie genau das Richtige.
 			<br>Wir verwöhnen Sie mit hausgemachtem Kuchen, frischem Kaffee, kleinen Speisen, Bier und Wein.

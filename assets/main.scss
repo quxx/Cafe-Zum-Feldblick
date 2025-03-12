@@ -302,14 +302,6 @@ img {
   }
 }
 
-@media (min-width: breakpoint-min(md)) {
-  .brand {
-    .lc-block {
-      text-align: left;
-    }
-  }
-}
-
 @media (min-width: breakpoint-min(sm)) {
   .brand {
     align-self: end;

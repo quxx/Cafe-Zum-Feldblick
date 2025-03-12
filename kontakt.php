@@ -15,10 +15,12 @@ include_once("page-header.php");
     <p class="text-center ps-5 pe-5">
       Reservierungen bitte nur telefonisch!
     </p>
-    <div class="row justify-content-center">
-      <p class="ps-3 pe-3 col-12 col-md-4 col-lg-3 col-xl-2"><i class="fa-solid fa-phone"></i> 0162 4578244</p>
-      <p class="ps-3 pe-3 col-12 col-md-4 col-lg-3 col-xl-2"><i class="fa-solid fa-location-dot"></i> Säritzer Hauptstraße 10, 03205 Calau</p>
-      <p class="ps-3 pe-3 col-12 col-md-4 col-lg-3 col-xl-2"><i class="fa-solid fa-envelope"></i> admin@admin.com</p>
+    <div class="container">
+      <div class="row justify-content-center">
+        <p class="ps-3 pe-3 col-12 col-md-4 col-lg-3"><i class="fa-solid fa-phone"></i><a href="tel:+491624578244"> 0162 4578244</a></p>
+        <p class="ps-3 pe-3 col-12 col-md-4 col-lg-3"><i class="fa-solid fa-location-dot"></i><a target="_blank" rel="noopener noreferrer" href='https://www.google.com/maps/search/?api=1&query=Fahrradcafé+"Zum+Feldblick"'> Säritzer Hauptstraße 10, 03205 Calau</a></p>
+        <p class=" ps-3 pe-3 col-12 col-md-4 col-lg-3"><i class="fa-solid fa-envelope"></i><a href="mailto:info@fahrradcafe-zumfeldblick.de"> info@fahrradcafe-zumfeldblick.de</a></p>
+      </div>
     </div>
   </div>
   <div class="container pt-3">

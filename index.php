@@ -27,7 +27,7 @@ $page_id = get_option('page_for_posts');
 				<img src="<?php echo get_template_directory_uri(); ?>/assets/img/Logo_original_mit_rand.svg" alt="logo" />
 			</div>
 		</div>
-		<p class="text-center ps-5 pe-5">
+		<p class="text-center ps-md-5 pe-md-5">
 			Genießen Sie bei uns eine Pause vom Alltag und lassen Sie sich von der Ruhe und Schönheit der Natur verzaubern. Ob auf einer Fahrradtour oder einfach auf der Suche nach einem besonderen Ort – hier finden Sie genau das Richtige.
 			<br>Wir verwöhnen Sie mit hausgemachtem Kuchen, frischem Kaffee, kleinen Speisen, Bier und Wein.
 			<br>Erleben Sie einen gemütlichen Ort in der Natur – perfekt für Genuss, Entspannung und schöne Gespräche.
@@ -99,7 +99,7 @@ $page_id = get_option('page_for_posts');
 			query_posts('posts_per_page=4');
 			$i = 0;
 			while (have_posts()) : the_post(); ?>
-				<div class="col-12 col-sm-6 col-lg-4 col-xl-3 mb-5<?php if ($i >= 2) echo ' d-none' ?><?php if ($i == 2) echo ' d-lg-flex' ?><?php if ($i == 3) echo ' d-xl-flex' ?>">
+				<div class="col-12 col-sm-6 col-lg-4 col-xl-3 mb-5<?php if ($i >= 2) echo ' d-none' ?><?php if ($i == 2) echo ' d-lg-flex' ?><?php if ($i == 3) echo ' d-xl-flex' ?>" onclick="document.location='<?php the_permalink(); ?>'">
 					<div class="card border-0">
 						<?php
 						if (has_post_thumbnail()) {
@@ -146,7 +146,7 @@ $page_id = get_option('page_for_posts');
 	<div editable="rich" class="text-center oeffnungzeiten">
 		<p class="h-small text-uppercase">Auszug aus unserer</p>
 		<h1 class="text-uppercase">Speisekarte</h1>
-		<p class="text-center ps-5 pe-5 mb-5">
+		<p class="text-center ps-md-5 pe-md-5 mb-5">
 			Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
 			<br>invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
 			<br>accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
@@ -248,10 +248,10 @@ $page_id = get_option('page_for_posts');
 	</div>
 	<div class="riss-svg bottom"></div>
 </section>
-<section class="container-fluid block block-padding kontakt" id="kontakt">
+<section class="container-fluid block block-padding ps-5 pe-5 kontakt" id="kontakt">
 	<div class="text-center">
 		<h1 class="text-uppercase">Kontakt</h1>
-		<p class="text-center ps-5 pe-5">
+		<p class="text-center ps-md-5 pe-md-5">
 			Ihr plant einen Besuch mit einer größeren Gruppe oder habt eine spezielle Anfrage? <br>
 			Ihr möchtet eine Feier, einen Brunch oder ein anderes Event bei uns organisieren? <br>
 			Wir freuen uns auf eure Nachricht!

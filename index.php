@@ -28,10 +28,10 @@ $page_id = get_option('page_for_posts');
 			</div>
 		</div>
 		<p class="text-center ps-md-5 pe-md-5">
-			Genießen Sie bei uns eine Pause vom Alltag und lassen Sie sich von der Ruhe und Schönheit der Natur verzaubern. Ob auf einer Fahrradtour oder einfach auf der Suche nach einem besonderen Ort – hier finden Sie genau das Richtige.
-			<br>Wir verwöhnen Sie mit hausgemachtem Kuchen, frischem Kaffee, kleinen Speisen, Bier und Wein.
-			<br>Erleben Sie einen gemütlichen Ort in der Natur – perfekt für Genuss, Entspannung und schöne Gespräche.
-			<br><br>Wir freuen uns auf Ihren Besuch!
+			Genieße bei uns eine Pause vom Alltag und lass dich von der Ruhe und Schönheit der Natur verzaubern. Ob auf einer Fahrradtour oder einfach auf der Suche nach einem besonderen Ort – hier findest du genau das Richtige.
+			<br>Wir verwöhnen dich mit hausgemachtem Kuchen, frischem Kaffee, kleinen Speisen, Bier und Wein.
+			<br>Erlebe einen gemütlichen Ort in der Natur – perfekt für Genuss, Entspannung und schöne Gespräche.
+			<br><br>Wir freuen uns auf deinen Besuch!
 		</p>
 		<br>
 		<p class="text-uppercase h-small">

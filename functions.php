@@ -4,7 +4,18 @@ add_action('wp_head', 'wpb_add_googleanalytics');
 function wpb_add_googleanalytics()
 { ?>
 
-	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-KYQJSRXEX4"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'G-KYQJSRXEX4');
+	</script>
 
 
 	<?php }

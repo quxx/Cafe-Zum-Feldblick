@@ -846,7 +846,7 @@ img {
 #about-us {
   padding-top: 5rem;
   .row2 {
-    margin-top: 3rem;
+    padding-bottom: 2rem;
   }
 }
 
@@ -875,9 +875,8 @@ img {
     height: auto;
   }
   .caption {
-    font-family: "Caveat", cursive !important;
-    font-weight: 600;
-    font-size: 1.8rem;
+    font-family: "Courier New", cursive !important;
+    font-size: 1.5rem;
     text-align: center;
     line-height: 3em;
     color: $gray-600;

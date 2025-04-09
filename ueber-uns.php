@@ -17,18 +17,18 @@ include_once("page-header.php");
         </div>
       </div>
       <div class="col-12 col-md-6 align-content-center">
-        <p>Wir sind Andrea und Anke und hatten einst eine Schnapsidee: die Eröffnung eines Fahrradcafés. 😉 Aus Gaukelei und Scherz wurde nun im Mai 2024 Ernst – und eine Leidenschaft mit Herz.<br /> <br />Unsere Vision ist ein kleines, gemütliches Café, das einen Zwischenstopp für alle ermöglicht – egal ob Fahrradfahrer, Wanderer, Spaziergänger oder einfach für die Menschen in der Umgebung. Wir lieben den Umgang mit Menschen und haben große Freude am Bedienen. Der Austausch und das Philosophieren mit unseren Gästen liegen uns sehr am Herzen.</p>
+        <p>Wir sind Andrea und Anke und hatten einst eine Schnapsidee: die Eröffnung eines Fahrradcafés. 😊 Aus Gaukelei und Scherz wurde nun im Mai 2024 Ernst – und eine Leidenschaft mit Herz.<br /> <br />Unsere Vision ist ein kleines, gemütliches Café, das einen Zwischenstopp für alle ermöglicht – egal ob Fahrradfahrer, Wanderer, Spaziergänger oder einfach für die Menschen in der Umgebung. Wir lieben den Umgang mit Menschen und haben große Freude am Bedienen. Der Austausch und das Philosophieren mit unseren Gästen liegen uns sehr am Herzen.</p>
       </div>
     </div>
     <div class="row gx-3 row2">
       <div class="col-12 col-md-6 order-2 order-md-1 align-content-center">
         <p>Mit viel Liebe zum Detail, Disziplin, Hingabe und fleißigen Handwerkern haben wir unsere gesamte Schaffenskraft und Energie in die alte Scheune auf unserem Grundstück gesteckt, um einen gemütlichen Platz in der Natur zu schaffen, die so wundervoll für uns Menschen ist. <br />Ein absolut magischer Ort, der zur Entschleunigung einlädt, den Verstand ruhen lässt, die Sinne entfaltet und den Geist frei macht.
-          Selbstverständlich gibt es bei uns hausgemachte, frische Waffeln und Kuchen, leckeren Kaffee sowie kleine Speisen, original DDR-Softeis und kühle Getränke, die in den Sommermonaten auf euch warten. 😉</p>
+          Selbstverständlich gibt es bei uns hausgemachte, frische Waffeln und Kuchen, leckeren Kaffee sowie kleine Speisen, original DDR-Softeis und kühle Getränke, die in den Sommermonaten auf euch warten. 😊</p>
       </div>
       <div class="col-12 col-md-6 order-1 order-md-2 align-content-center">
         <div class="polaroid-item second">
           <div class="polaroid"><img src=" <?php echo get_template_directory_uri(); ?>/assets/img/fahrradcafe-1.jpg" class="img-fluid" alt="Das Fahrradcafe">
-            <div class="caption">Das fertige Fahrrad Café</div>
+            <div class="caption">Est. 2024</div>
           </div>
         </div>
       </div>

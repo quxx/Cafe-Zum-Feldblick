@@ -195,7 +195,7 @@ $page_id = get_option('page_for_posts');
 			?>
 		</div>
 		<div class="row justify-content-center">
-			<a href="" class="btn btn-outline-primary btn-block col-lg-4 col-md-4 col-sm-6 col-xs-6">Zur Speisekarte</a>
+			<a href="<?php echo site_url('/speisekarte'); ?>" class="btn btn-outline-primary btn-block col-lg-4 col-md-4 col-sm-6 col-xs-6">Zur Speisekarte</a>
 		</div>
 		<!-- <div class="row pe-0 ps-0 me-0">
 			<div class=" col-lg-6 col-md-6 col-sm-12 col-xs-12">

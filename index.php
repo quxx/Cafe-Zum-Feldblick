@@ -18,7 +18,7 @@ $page_id = get_option('page_for_posts');
 		</video>
 	</div>
 </section>
-<section class="container-fluid block block-padding ps-5 pe-5">
+<section class="container-fluid block block-padding ps-5 pe-5 wiese">
 	<div editable="rich" class="text-center oeffnungzeiten">
 		<p class="h-small text-uppercase">Herzlich Willkommen im</p>
 		<!-- <h1 class="text-uppercase">Fahrradcafé zum Feldblick</h1> -->
@@ -27,7 +27,7 @@ $page_id = get_option('page_for_posts');
 				<img src="<?php echo get_template_directory_uri(); ?>/assets/img/Logo_original_mit_rand.svg" alt="logo" />
 			</div>
 		</div>
-		<p class="text-center ps-md-5 pe-md-5">
+		<p class="text-center vorstellung">
 			Genieße bei uns eine Pause vom Alltag und lass dich von der Ruhe und Schönheit der Natur verzaubern. Ob auf einer Fahrradtour oder einfach auf der Suche nach einem besonderen Ort – hier findest du genau das Richtige.
 			<br>Wir verwöhnen dich mit hausgemachtem Kuchen, frischem Kaffee, kleinen Speisen, Bier und Wein.
 			<br>Erlebe einen gemütlichen Ort in der Natur – perfekt für Genuss, Entspannung und schöne Gespräche.

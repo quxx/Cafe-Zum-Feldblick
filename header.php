@@ -42,7 +42,7 @@
             <a class="nav-link" href="<?php echo site_url('/aktuelles'); ?>">Aktuelles</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Speisekarte</a>
+            <a class="nav-link" href="<?php echo site_url('/speisekarte'); ?>">Speisekarte</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="<?php echo site_url('/kontakt'); ?>">Kontakt</a>

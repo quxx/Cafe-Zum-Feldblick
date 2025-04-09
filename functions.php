@@ -732,3 +732,4 @@ create_page('Aktuelles', '', 'posts.php');
 create_page('Kontakt', '', 'kontakt.php');
 create_page('Über uns', '', 'ueber-uns.php');
 create_page('Datenschutz', '', 'datenschutz.php');
+create_page('Speisekarte', '', 'speisekarte.php');

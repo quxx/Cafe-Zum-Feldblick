@@ -5,9 +5,9 @@ get_header();
 
 include_once("page-header.php");
 ?>
-<section class="container-fluid pe-0 ps-0 ms-0 me-0 block block-padding page-height">
+<section id="aktuelles" class="container-fluid pe-0 ps-0 ms-0 me-0 block block-padding page-height">
   <div class="text-center">
-    <h1 class="text-uppercase">Aktuelles</h1>
+    <h1 class="title text-uppercase">Aktuelles</h1>
     <p class="text-center ps-5 pe-5">
       Aktuelles zu Events und Veranstaltungen
     </p>

@@ -856,10 +856,16 @@ img {
   }
 }
 
+// Über-uns-Seite
 #about-us {
   padding-top: 5rem;
   .row2 {
     padding-bottom: 2rem;
+  }
+
+  .title {
+    font-size: 3.1rem;
+    letter-spacing: .05em;
   }
 }
 
@@ -904,6 +910,79 @@ img {
   }
   &.second {
     transform: scale(0.8, 0.8) rotate(-7deg);
+  }
+}
+
+// Aktuelles-Seite
+#aktuelles {
+  .title {
+    font-size: 3.1rem;
+    letter-spacing: .05em;
+  }
+}
+
+// Speisekarte-Seite
+#speisekarte {
+  padding-top: 5rem;
+  
+  .title {
+    font-size: 3.1rem;
+    letter-spacing: .05em;
+    padding: 0;
+    margin-bottom: 1rem;
+  
+    &::before {
+      display: none;
+    }
+  }
+
+  .subtitle {
+    font-size: 18px;
+  }
+
+  h2 {
+    color: $primary;
+  }
+
+  .row1,
+  .row2 {
+    position: relative;
+    margin-bottom: 4rem;
+
+    &:before {
+      content: " ";
+      position: absolute;
+      display: block;
+      width: 56px;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      -moz-transform: translateX(-50%);
+      transform: translateX(-50%);
+      bottom: 0;
+      opacity: 1;
+      border-top: 4px solid $feldblick-gruen;
+      -webkit-transition: all 0.3s ease-in-out 0.3s;
+      -moz-transition: all 0.3s ease-in-out 0.3s;
+      transition: all 0.3s ease-in-out 0.3s;
+    }
+  }
+
+  .row3 {
+    .eintrag:nth-child(odd){
+      padding-left: 1.5rem;
+    }
+    .eintrag:nth-child(2n){
+      padding-right: 1.5rem;
+    }
+  }
+}
+
+// Kontakt-Seite 
+
+#kontakt {
+  .title {
+    font-size: 3.1rem;
+    letter-spacing: .05em;
   }
 }
 

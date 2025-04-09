@@ -5,7 +5,7 @@ include_once("page-header.php");
 ?>
 <section id="about-us" class="container-fluid pe-0 ps-0 ms-0 me-0 block">
   <div class="text-center">
-    <h1 class="text-uppercase">Über uns</h1>
+    <h1 class="title text-uppercase">Über uns</h1>
   </div>
   <div class="container px-4 pt-3">
     <div class="row gx-3 row1">

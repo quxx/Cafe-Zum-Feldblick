@@ -12,9 +12,14 @@ $page_id = get_option('page_for_posts');
 ?>
 <section id="home" class="position-relative overflow-hidden">
 	<div class="d-flex min-vh-100" lc-helper="video-bg">
-		<video style="object-fit: cover; object-position: 50% 50%;" class="w-100 min-vh-100 parallax-video" autoplay preload="auto" muted loop playsinline>
-			<!-- adjust object-position to tweak cropping on mobile -->
-			<source src="<?php echo get_template_directory_uri(); ?>/assets/img/header-video.mp4" type="video/mp4">
+		<video id="hero-video"
+			style="object-fit: cover; object-position: 50% 50%;"
+			class="w-100 min-vh-100 parallax-video"
+			autoplay
+			preload="auto"
+			muted
+			loop
+			playsinline>
 		</video>
 	</div>
 </section>

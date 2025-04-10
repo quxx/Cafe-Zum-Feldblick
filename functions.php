@@ -708,6 +708,35 @@ function create_page($title_of_the_page, $content, $theme, $parent_id = NULL)
 	return $page_id;
 }
 
+function enqueue_hls_video_script()
+{
+	// HLS.js von CDN einbinden
+	wp_enqueue_script(
+		'hls-js',
+		'https://cdn.jsdelivr.net/npm/hls.js@latest',
+		array(),
+		null,
+		true
+	);
+
+	// Custom Script zum Initialisieren des Videos
+	wp_add_inline_script('hls-js', "
+        document.addEventListener('DOMContentLoaded', function () {
+            var video = document.getElementById('hero-video');
+            var hlsSource = '" . get_template_directory_uri() . "/assets/hls_multi/master.m3u8';
+
+            if (Hls.isSupported()) {
+                var hls = new Hls();
+                hls.loadSource(hlsSource);
+                hls.attachMedia(video);
+            } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                video.src = hlsSource;
+            }
+        });
+    ");
+}
+add_action('wp_enqueue_scripts', 'enqueue_hls_video_script');
+
 create_page('Impressum', '', 'impressum.php');
 create_page('Aktuelles', '', 'posts.php');
 create_page('Kontakt', '', 'kontakt.php');

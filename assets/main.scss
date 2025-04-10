@@ -340,9 +340,11 @@ img {
   background-position: left bottom;
   background-image: url(../assets/img/hintergrund-kraeuter.svg);
 
-  .vorstellung {
-    padding-left: 15rem;
-    padding-right: 15rem;
+  @include media-breakpoint-up(md) {
+    .vorstellung {
+      padding-left: 15rem;
+      padding-right: 15rem;
+    }
   }
 }
 
@@ -874,7 +876,7 @@ img {
 
   .title {
     font-size: 3.1rem;
-    letter-spacing: .05em;
+    letter-spacing: 0.05em;
   }
 }
 
@@ -926,20 +928,20 @@ img {
 #aktuelles {
   .title {
     font-size: 3.1rem;
-    letter-spacing: .05em;
+    letter-spacing: 0.05em;
   }
 }
 
 // Speisekarte-Seite
 #speisekarte {
   padding-top: 5rem;
-  
+
   .title {
     font-size: 3.1rem;
-    letter-spacing: .05em;
+    letter-spacing: 0.05em;
     padding: 0;
     margin-bottom: 1rem;
-  
+
     &::before {
       display: none;
     }
@@ -977,21 +979,21 @@ img {
   }
 
   .row3 {
-    .eintrag:nth-child(odd){
+    .eintrag:nth-child(odd) {
       padding-left: 1.5rem;
     }
-    .eintrag:nth-child(2n){
+    .eintrag:nth-child(2n) {
       padding-right: 1.5rem;
     }
   }
 }
 
-// Kontakt-Seite 
+// Kontakt-Seite
 
 #kontakt {
   .title {
     font-size: 3.1rem;
-    letter-spacing: .05em;
+    letter-spacing: 0.05em;
   }
 }
 

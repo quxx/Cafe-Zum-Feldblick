@@ -8,7 +8,7 @@ include_once("page-header.php");
   <div editable="rich">
     <div class=" row impressum">
       <div class="col-12">
-        <h1>Datenschutzerklärung</h1>
+        <h1 class="text-uppercase center">Datenschutzerklärung</h1>
         <p>Stand: 10. April 2025</p>
         <h2>Inhaltsübersicht</h2>
         <ul class="index">

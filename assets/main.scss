@@ -940,6 +940,64 @@ img {
 #speisekarte {
   padding-top: 5rem;
 
+  #speisen,
+  #getraenke,
+  #spezi {
+    z-index: 1;
+    position: relative;
+  
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      height: 300px;
+      width: 300px;
+      background-repeat: no-repeat;
+      background-position: center;
+      z-index: -1;
+    }
+  }
+
+  #speisen {
+    &::before {
+      background-image: url(../assets/img/hintergrund-waffel.svg);
+      top: -20px;
+      left: -80px;
+    }
+  
+    &::after {
+      background-image: url(../assets/img/hintergrund-petersilie.svg);
+      bottom: -120px;
+      right: -80px;
+    }
+  }
+
+  #getraenke {
+    &::before {
+      background-image: url(../assets/img/hintergrund-kaffeebohne.svg);
+      top: -70px;
+      left: -80px;
+    }
+
+    &::after {
+      height: 380px;
+      width: 380px;
+      background-image: url(../assets/img/hintergrund-wein.svg);
+      bottom: -120px;
+      right: -90px;
+    }
+  }
+
+  #spezi {
+    &::before {
+      height: 350px;
+      width: 350px;
+      background-image: url(../assets/img/hintergrund-region.svg);
+      top: -60px;
+      left: -120px;
+    }
+  }
+  
   .title {
     font-size: 3.1rem;
     letter-spacing: 0.05em;
@@ -959,8 +1017,7 @@ img {
     color: $primary;
   }
 
-  .row1,
-  .row2 {
+  .linie {
     position: relative;
     margin-bottom: 4rem;
 

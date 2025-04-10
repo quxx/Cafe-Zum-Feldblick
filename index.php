@@ -147,51 +147,70 @@ $page_id = get_option('page_for_posts');
 		<p class="h-small text-uppercase">Auszug aus unserer</p>
 		<h1 class="text-uppercase">Speisekarte</h1>
 		<p class="text-center ps-md-5 pe-md-5 mb-5">
-			Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-			<br>invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-			<br>accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+		Bei uns erwartet euch eine köstliche Auswahl an frisch gebackenen Waffeln, hausgemachten Kuchen, 
+		<br>original DDR-Softeis, kleinen Speisen sowie aromatischem Kaffee und erfrischenden 
+		<br>Getränken – wir freuen uns darauf, euch bei uns verwöhnen zu dürfen.
 		</p>
 
 		<div class="row pe-0 ps-0 me-0">
-
 			<?php
-			// Hol dir das Pods-Objekt für den Custom Post Type "speise"
-			$pods = pods('speise');
+			function zeige_speisekarte_auszug($pods_instance, &$counter, $max = 8) {
+				if ($pods_instance && $pods_instance->find()) {
+					while ($pods_instance->fetch() && $counter < $max) {
+						$auszug = $pods_instance->display('in_auszug_aus_der_speisekarte_zeigen');
+						if ($auszug == 'Ja') {
+							$bezeichnung = $pods_instance->display('bezeichnung');
+							$preis1 = $pods_instance->display('preis1');
+							$preis2 = $pods_instance->display('preis2');
+							$beschreibung = $pods_instance->display('beschreibung');
 
-			if ($pods && $pods->find()) {
-				// Speise-Daten aus Pods abrufen
-				while ($pods->fetch()) {
-					$auszug = $pods->display('in_auszug_aus_der_speisekarte_zeigen');
-					if ($auszug == 'Ja') {
-						$bezeichnung = $pods->display('bezeichnung');
-						$preis = $pods->display('preis');
-						$beschreibung = $pods->display('beschreibung');
-						if (!empty($bezeichnung)) {
-							echo '<div class=" col-lg-6 col-md-6 col-sm-12 col-xs-12">
-									<div class="mkd-pli-content-holder d-flex flex-column align-items-start">
-									<div class="mkd-pli-title-holder d-flex justify-content-between align-items-end w-100">';
-							echo '<h5 class="mkd-pli-title entry-title m-0">' . esc_html($bezeichnung) . '</h5>';
-							echo '<div class="mkd-pli-dots" style="border-color: rgba(71,71,71,0.2);border-style: dashed"></div>';
-							echo '<h5 class="mkd-pli-price m-0" style="color: #ae9974">' . esc_html($preis) . '</h5>';
-							echo '</div>
-									<div class="mkd-pli-bottom-content">
-									<div class="mkd-pli-desc clearfix" style="color: #808285">';
-							echo '<p>' . esc_html($beschreibung) . '</p>';
-							echo '</div>
+							if (!empty($bezeichnung)) {
+								echo '<div class=" col-lg-6 col-md-6 col-sm-12 col-xs-12">
+									<div class="d-flex flex-column align-items-start">
+									<div class="d-flex justify-content-between align-items-end w-100">';
+								echo '<h5 class="entry-title m-0">' . esc_html($bezeichnung) . '</h5>';
+								echo '<div class="mkd-pli-dots" style="border-color: rgba(71,71,71,0.2);border-style: dashed"></div>';
+								echo '<h5 class="mkd-pli-price m-0" style="color: #ae9974">' . esc_html($preis1) .'';
+								if (!empty($preis2)) {
+									echo ' / '. esc_html($preis2) . '</h5>';
+								} else {
+									echo '</h5>';
+								}
+								echo '</div>
+									<div>
+									<div class="clearfix" style="color: #808285">';
+								echo '<p>' . esc_html($beschreibung) . '</p>';
+								echo '</div>
 									</div>
 									</div>
 									</div>';
-						} else {
-							// Fallback-Text für leere Ergebnisse
-							echo '<p class="lead">Keine Speisekarte verfügbar.</p>';
+								$counter++; // Eintrag zählt mit
+							}
 						}
 					}
+				} else {
+					// Fehler-Handling, wenn Pods-Instanz nicht verfügbar ist
+					echo '<p class="lead">Fehler: Speisekarte konnte nicht geladen werden.</p>';
 				}
-			} else {
-				// Fehler-Handling, wenn Pods-Instanz nicht verfügbar ist
-				echo '<p class="lead">Fehler: Speisekarte konnte nicht geladen werden.</p>';
 			}
 
+			// Zähler-Variable initialisieren
+			$eintrags_zaehler = 0;
+			$max_eintraege = 8;
+
+			// Pods-Instanzen
+			$nonalk = pods('alkoholfreie_getraen');
+			$alk = pods('alkoholische_getrank');
+			$kuchen = pods('kuchen_und_susses');
+			$herzhaft = pods('herzhaftes');
+			$spezi = pods('spezialitaten_aus_de');
+
+			// Auszug anzeigen – in Reihenfolge prüfen, bis 8 erreicht sind
+			zeige_speisekarte_auszug($herzhaft, $eintrags_zaehler, $max_eintraege);
+			zeige_speisekarte_auszug($kuchen, $eintrags_zaehler, $max_eintraege);
+			zeige_speisekarte_auszug($nonalk, $eintrags_zaehler, $max_eintraege);
+			zeige_speisekarte_auszug($alk, $eintrags_zaehler, $max_eintraege);
+			zeige_speisekarte_auszug($spezi, $eintrags_zaehler, $max_eintraege);
 			?>
 		</div>
 		<div class="row justify-content-center">

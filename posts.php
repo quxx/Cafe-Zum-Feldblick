@@ -9,7 +9,7 @@ include_once("page-header.php");
   <div class="text-center">
     <h1 class="title text-uppercase">Aktuelles</h1>
     <p class="text-center ps-5 pe-5">
-      Aktuelles zu Events und Veranstaltungen
+      Erfahre, was bei uns passiert – von gemütlichen Events bis hin zu besonderen Aktionen, die du nicht verpassen solltest.
     </p>
   </div>
   <div class="container px-4 pt-3">

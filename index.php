@@ -29,7 +29,7 @@ $page_id = get_option('page_for_posts');
 		<!-- <h1 class="text-uppercase">Fahrradcafé zum Feldblick</h1> -->
 		<div style="z-index:2;" class="text-light col-12 brand">
 			<div class="lc-block mb-4">
-				<img src="<?php echo get_template_directory_uri(); ?>/assets/img/Logo_original_mit_rand.svg" alt="logo" />
+				<img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/assets/img/Logo_original_mit_rand.svg" alt="logo" />
 			</div>
 		</div>
 		<p class="text-center vorstellung">
@@ -128,7 +128,7 @@ $page_id = get_option('page_for_posts');
 			wp_reset_query(); ?>
 		</div>
 		<div class="row justify-content-center">
-			<a href="<?php echo site_url('/aktuelles'); ?>" class="btn btn-outline-primary btn-block col-4">Mehr anzeigen</a>
+			<a href="<?php echo site_url('/aktuelles'); ?>" class="btn btn-outline-primary btn-block col-lg-4 col-md-4 col-sm-6 col-xs-6">Mehr anzeigen</a>
 		</div>
 	</div>
 </section>
@@ -283,7 +283,7 @@ $page_id = get_option('page_for_posts');
 		</p>
 	</div>
 	<div class="row justify-content-center">
-		<a href="<?php echo site_url('/kontakt'); ?>" class="btn btn-outline-primary btn-block col-4">Schreib uns</a>
+		<a href="<?php echo site_url('/kontakt'); ?>" class="btn btn-outline-primary btn-block col-lg-4 col-md-4 col-sm-6 col-xs-6">Schreib uns</a>
 	</div>
 
 </section>

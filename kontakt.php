@@ -10,10 +10,10 @@ include_once("page-header.php");
   <div class="text-center">
     <h1 class="title text-uppercase">Kontakt</h1>
     <p class="text-center ps-5 pe-5">
-      Wir freuen uns über deine Nachricht. Gerne kannst du uns auch direkt anrufen.
+      Schreib uns gerne oder ruf direkt an – wir freuen uns auf dich!
     </p>
-    <p class="text-center ps-5 pe-5">
-      Reservierungen bitte nur telefonisch!
+    <p class="text-center ps-5 pe-5 pb-3">
+      Reservierungen bitte nur telefonisch – so können wir gleich alles persönlich mit dir abstimmen.
     </p>
     <div class="container">
       <div class="row justify-content-center">

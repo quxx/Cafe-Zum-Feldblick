@@ -29,7 +29,7 @@ $page_id = get_option('page_for_posts');
 		<!-- <h1 class="text-uppercase">Fahrradcafé zum Feldblick</h1> -->
 		<div style="z-index:2;" class="text-light col-12 brand">
 			<div class="lc-block mb-4">
-				<img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/assets/img/Logo_original_mit_rand.svg" alt="logo" />
+				<img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/assets/img/Logo_original.svg" alt="logo" />
 			</div>
 		</div>
 		<p class="text-center vorstellung">

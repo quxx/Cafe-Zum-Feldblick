@@ -296,7 +296,7 @@ img {
     .lc-block {
       padding: 0 3rem;
       img {
-        width: 400px;
+        width: 500px;
         height: auto;
       }
     }
@@ -324,21 +324,38 @@ img {
   background-color: $background-color-light;
   background-repeat: no-repeat;
   background-position: left bottom;
-  background-image: url(../assets/img/hintergrund-kraeuter.svg);
-  background-size: 200%;
-}
+  z-index: 1;
+  position: relative;
 
-@include media-breakpoint-up(sm) {
-  .wiese {
-    background-size: 150%;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    height: 300px;
+    width: 300px;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
   }
-}
-@include media-breakpoint-up(md) {
-  .wiese {
-    background-size: 100%;
+
+  &::before {
+    background-image: url(../assets/img/hintergrund-kraeuter.svg);
+    bottom: 20px;
+    left: 50px;
+  }
+
+  &::after {
+    height: 400px;
+    width: 400px;
+    background-image: url(../assets/img/hintergrund-fahrrad.svg);
+    top: -40px;
+    right: 50px;
+  }
+
+  @include media-breakpoint-up(md) {
     .vorstellung {
-      padding-left: 5rem;
-      padding-right: 5rem;
+      padding-left: 15rem;
+      padding-right: 15rem;
     }
   }
 }

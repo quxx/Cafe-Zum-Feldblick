@@ -11,10 +11,10 @@ get_header();
 $page_id = get_option('page_for_posts');
 ?>
 <section id="home" class="position-relative overflow-hidden">
-	<div class="d-flex min-vh-100" lc-helper="video-bg">
+	<div class="d-flex video-height" lc-helper="video-bg">
 		<video id="hero-video"
 			style="object-fit: cover; object-position: 50% 50%;"
-			class="w-100 min-vh-100 parallax-video"
+			class="w-100 video-height parallax-video"
 			autoplay
 			preload="auto"
 			muted
@@ -152,14 +152,15 @@ $page_id = get_option('page_for_posts');
 		<p class="h-small text-uppercase">Auszug aus unserer</p>
 		<h1 class="text-uppercase">Speisekarte</h1>
 		<p class="text-center ps-md-5 pe-md-5 mb-5">
-		Bei uns erwartet euch eine köstliche Auswahl an frisch gebackenen Waffeln, hausgemachten Kuchen, 
-		<br>original DDR-Softeis, kleinen Speisen sowie aromatischem Kaffee und erfrischenden 
-		<br>Getränken – wir freuen uns darauf, euch bei uns verwöhnen zu dürfen.
+			Bei uns erwartet euch eine köstliche Auswahl an frisch gebackenen Waffeln, hausgemachten Kuchen,
+			<br>original DDR-Softeis, kleinen Speisen sowie aromatischem Kaffee und erfrischenden
+			<br>Getränken – wir freuen uns darauf, euch bei uns verwöhnen zu dürfen.
 		</p>
 
 		<div class="row pe-0 ps-0 me-0">
 			<?php
-			function zeige_speisekarte_auszug($pods_instance, &$counter, $max = 8) {
+			function zeige_speisekarte_auszug($pods_instance, &$counter, $max = 8)
+			{
 				if ($pods_instance && $pods_instance->find()) {
 					while ($pods_instance->fetch() && $counter < $max) {
 						$auszug = $pods_instance->display('in_auszug_aus_der_speisekarte_zeigen');
@@ -175,9 +176,9 @@ $page_id = get_option('page_for_posts');
 									<div class="d-flex justify-content-between align-items-end w-100">';
 								echo '<h5 class="entry-title m-0">' . esc_html($bezeichnung) . '</h5>';
 								echo '<div class="mkd-pli-dots" style="border-color: rgba(71,71,71,0.2);border-style: dashed"></div>';
-								echo '<h5 class="mkd-pli-price m-0">' . esc_html($preis1) .'';
+								echo '<h5 class="mkd-pli-price m-0">' . esc_html($preis1) . '';
 								if (!empty($preis2)) {
-									echo ' / '. esc_html($preis2) . '</h5>';
+									echo ' / ' . esc_html($preis2) . '</h5>';
 								} else {
 									echo '</h5>';
 								}

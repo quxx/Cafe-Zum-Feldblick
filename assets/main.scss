@@ -715,6 +715,10 @@ img {
   z-index: -999;
 }
 
+.video-height {
+  min-height: 100dvh;
+}
+
 /**
  * Responsive Design using "mixins/_breakpoints.scss"
  */

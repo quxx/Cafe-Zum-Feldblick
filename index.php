@@ -170,7 +170,7 @@ $page_id = get_option('page_for_posts');
 									<div class="d-flex justify-content-between align-items-end w-100">';
 								echo '<h5 class="entry-title m-0">' . esc_html($bezeichnung) . '</h5>';
 								echo '<div class="mkd-pli-dots" style="border-color: rgba(71,71,71,0.2);border-style: dashed"></div>';
-								echo '<h5 class="mkd-pli-price m-0" style="color: #ae9974">' . esc_html($preis1) .'';
+								echo '<h5 class="mkd-pli-price m-0">' . esc_html($preis1) .'';
 								if (!empty($preis2)) {
 									echo ' / '. esc_html($preis2) . '</h5>';
 								} else {
@@ -178,7 +178,7 @@ $page_id = get_option('page_for_posts');
 								}
 								echo '</div>
 									<div>
-									<div class="clearfix" style="color: #808285">';
+									<div class="mkd-pli-desc clearfix">';
 								echo '<p>' . esc_html($beschreibung) . '</p>';
 								echo '</div>
 									</div>

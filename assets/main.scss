@@ -60,6 +60,7 @@ $feldblick-gruen: #0a462b;
 $feldblick-orange: #ff7300;
 $feldblick-gruen_highlight: #127b4b;
 $feldblick-braun: #462922;
+$feldblick-gold: #ae9974;
 
 // Fonts
 @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap");
@@ -435,6 +436,14 @@ img {
   margin-right: 5px;
   border-width: 1px;
   margin-bottom: 4px;
+}
+
+.mkd-pli-price {
+  color: $feldblick-gold;
+}
+
+.mkd-pli-desc {
+  color: $gray-600;
 }
 
 //Kontakt

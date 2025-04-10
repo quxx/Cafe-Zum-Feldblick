@@ -16,82 +16,86 @@ include_once("page-header.php");
         <h2 class="text-uppercase">Herzhaftes</h2>
         <?php
 			// Hol dir das Pods-Objekt für den Custom Post Type "speise"
-			$pods = pods('speise');
+			$pods = pods('herzhaftes');
 			if ($pods && $pods->find()) {
 				// Speise-Daten aus Pods abrufen
 				while ($pods->fetch()) {
-					$gruppe = $pods->display('gruppe');
-					if ($gruppe == 'Herzhaftes') {
-						$bezeichnung = $pods->display('bezeichnung');
-						$preis = $pods->display('preis');
-						$beschreibung = $pods->display('beschreibung');
-						if (!empty($bezeichnung)) {
-							echo '<div class="col-12">
-									<div class="mkd-pli-content-holder d-flex flex-column align-items-start">
-									<div class="mkd-pli-title-holder d-flex justify-content-between align-items-end w-100">';
-							echo '<h5 class="mkd-pli-title entry-title m-0">' . esc_html($bezeichnung) . '</h5>';
-							echo '<div class="mkd-pli-dots" style="border-color: rgba(71,71,71,0.2);border-style: dashed"></div>';
-							echo '<h5 class="mkd-pli-price m-0" style="color: #ae9974">' . esc_html($preis) . '</h5>';
-							echo '</div>
-									<div class="mkd-pli-bottom-content">
-									<div class="mkd-pli-desc clearfix" style="color: #808285">';
-							echo '<p>' . esc_html($beschreibung) . '</p>';
-							echo '</div>
-									</div>
-									</div>
-									</div>';
+					$bezeichnung = $pods->display('bezeichnung');
+					$preis1 = $pods->display('preis1');
+					$preis2 = $pods->display('preis2');
+					$beschreibung = $pods->display('beschreibung');
+					if (!empty($bezeichnung)) {
+						echo '<div class="col-12">
+								<div class="mkd-pli-content-holder d-flex flex-column align-items-start">
+								<div class="mkd-pli-title-holder d-flex justify-content-between align-items-end w-100">';
+						echo '<h5 class="mkd-pli-title entry-title m-0">' . esc_html($bezeichnung) . '</h5>';
+						echo '<div class="mkd-pli-dots" style="border-color: rgba(71,71,71,0.2);border-style: dashed"></div>';
+						echo '<h5 class="mkd-pli-price m-0">' . esc_html($preis1) .'';
+						if (!empty($preis2)) {
+							echo ' / '. esc_html($preis2) . '</h5>';
 						} else {
-							// Fallback-Text für leere Ergebnisse
-							echo '<p class="lead">Keine Speisekarte verfügbar.</p>';
+							echo '</h5>';
 						}
+						echo '</div>
+								<div class="mkd-pli-bottom-content">
+								<div class="mkd-pli-desc clearfix">';
+						echo '<p>' . esc_html($beschreibung) . '</p>';
+						echo '</div>
+								</div>
+								</div>
+								</div>';
+					} else {
+						// Fallback-Text für leere Ergebnisse
+						echo '<p class="lead">Keine Speisekarte verfügbar.</p>';
 					}
 				}
 			} else {
 				// Fehler-Handling, wenn Pods-Instanz nicht verfügbar ist
 				echo '<p class="lead">Fehler: Speisekarte konnte nicht geladen werden.</p>';
 			}
-
 			?>
       </div>
       <div class="col-12 col-md-6 align-content-top ps-4">
         <h2>KUCHEN UND SÜßES</h2>
         <?php
 			// Hol dir das Pods-Objekt für den Custom Post Type "speise"
-			$pods = pods('speise');
+			$pods = pods('kuchen_und_susses');
 			if ($pods && $pods->find()) {
 				// Speise-Daten aus Pods abrufen
 				while ($pods->fetch()) {
-					$gruppe = $pods->display('gruppe');
-					if ($gruppe == 'Kuchen und Süßes') {
-						$bezeichnung = $pods->display('bezeichnung');
-						$preis = $pods->display('preis');
-						$beschreibung = $pods->display('beschreibung');
-						if (!empty($bezeichnung)) {
-							echo '<div class="col-12">
-									<div class="mkd-pli-content-holder d-flex flex-column align-items-start">
-									<div class="mkd-pli-title-holder d-flex justify-content-between align-items-end w-100">';
-							echo '<h5 class="mkd-pli-title entry-title m-0">' . esc_html($bezeichnung) . '</h5>';
-							echo '<div class="mkd-pli-dots" style="border-color: rgba(71,71,71,0.2);border-style: dashed"></div>';
-							echo '<h5 class="mkd-pli-price m-0" style="color: #ae9974">' . esc_html($preis) . '</h5>';
-							echo '</div>
-									<div class="mkd-pli-bottom-content">
-									<div class="mkd-pli-desc clearfix" style="color: #808285">';
-							echo '<p>' . esc_html($beschreibung) . '</p>';
-							echo '</div>
-									</div>
-									</div>
-									</div>';
+					$bezeichnung = $pods->display('bezeichnung');
+					$preis1 = $pods->display('preis1');
+					$preis2 = $pods->display('preis2');
+					$beschreibung = $pods->display('beschreibung');
+					if (!empty($bezeichnung)) {
+						echo '<div class="col-12">
+								<div class="mkd-pli-content-holder d-flex flex-column align-items-start">
+								<div class="mkd-pli-title-holder d-flex justify-content-between align-items-end w-100">';
+						echo '<h5 class="mkd-pli-title entry-title m-0">' . esc_html($bezeichnung) . '</h5>';
+						echo '<div class="mkd-pli-dots" style="border-color: rgba(71,71,71,0.2);border-style: dashed"></div>';
+						echo '<h5 class="mkd-pli-price m-0">' . esc_html($preis1) .'';
+						if (!empty($preis2)) {
+							echo ' / '. esc_html($preis2) . '</h5>';
 						} else {
-							// Fallback-Text für leere Ergebnisse
-							echo '<p class="lead">Keine Speisekarte verfügbar.</p>';
+							echo '</h5>';
 						}
+						echo '</div>
+								<div class="mkd-pli-bottom-content">
+								<div class="mkd-pli-desc clearfix">';
+						echo '<p>' . esc_html($beschreibung) . '</p>';
+						echo '</div>
+								</div>
+								</div>
+								</div>';
+					} else {
+						// Fallback-Text für leere Ergebnisse
+						echo '<p class="lead">Keine Speisekarte verfügbar.</p>';
 					}
 				}
 			} else {
 				// Fehler-Handling, wenn Pods-Instanz nicht verfügbar ist
 				echo '<p class="lead">Fehler: Speisekarte konnte nicht geladen werden.</p>';
 			}
-
 			?>
       </div>
     </div>
@@ -106,82 +110,86 @@ include_once("page-header.php");
         <h2 class="text-uppercase">Alkoholfreie Getränke</h2>
         <?php
 			// Hol dir das Pods-Objekt für den Custom Post Type "speise"
-			$pods = pods('speise');
+			$pods = pods('alkoholfreie_getraen');
 			if ($pods && $pods->find()) {
 				// Speise-Daten aus Pods abrufen
 				while ($pods->fetch()) {
-					$gruppe = $pods->display('gruppe');
-					if ($gruppe == 'Alkoholfreie Getränke') {
-						$bezeichnung = $pods->display('bezeichnung');
-						$preis = $pods->display('preis');
-						$beschreibung = $pods->display('beschreibung');
-						if (!empty($bezeichnung)) {
-							echo '<div class="col-12">
-									<div class="mkd-pli-content-holder d-flex flex-column align-items-start">
-									<div class="mkd-pli-title-holder d-flex justify-content-between align-items-end w-100">';
-							echo '<h5 class="mkd-pli-title entry-title m-0">' . esc_html($bezeichnung) . '</h5>';
-							echo '<div class="mkd-pli-dots" style="border-color: rgba(71,71,71,0.2);border-style: dashed"></div>';
-							echo '<h5 class="mkd-pli-price m-0" style="color: #ae9974">' . esc_html($preis) . '</h5>';
-							echo '</div>
-									<div class="mkd-pli-bottom-content">
-									<div class="mkd-pli-desc clearfix" style="color: #808285">';
-							echo '<p>' . esc_html($beschreibung) . '</p>';
-							echo '</div>
-									</div>
-									</div>
-									</div>';
+					$bezeichnung = $pods->display('bezeichnung');
+					$preis1 = $pods->display('preis1');
+					$preis2 = $pods->display('preis2');
+					$beschreibung = $pods->display('beschreibung');
+					if (!empty($bezeichnung)) {
+						echo '<div class="col-12">
+								<div class="mkd-pli-content-holder d-flex flex-column align-items-start">
+								<div class="mkd-pli-title-holder d-flex justify-content-between align-items-end w-100">';
+						echo '<h5 class="mkd-pli-title entry-title m-0">' . esc_html($bezeichnung) . '</h5>';
+						echo '<div class="mkd-pli-dots" style="border-color: rgba(71,71,71,0.2);border-style: dashed"></div>';
+						echo '<h5 class="mkd-pli-price m-0">' . esc_html($preis1) .'';
+						if (!empty($preis2)) {
+							echo ' / '. esc_html($preis2) . '</h5>';
 						} else {
-							// Fallback-Text für leere Ergebnisse
-							echo '<p class="lead">Keine Speisekarte verfügbar.</p>';
+							echo '</h5>';
 						}
+						echo '</div>
+								<div class="mkd-pli-bottom-content">
+								<div class="mkd-pli-desc clearfix">';
+						echo '<p>' . esc_html($beschreibung) . '</p>';
+						echo '</div>
+								</div>
+								</div>
+								</div>';
+					} else {
+						// Fallback-Text für leere Ergebnisse
+						echo '<p class="lead">Keine Speisekarte verfügbar.</p>';
 					}
 				}
 			} else {
 				// Fehler-Handling, wenn Pods-Instanz nicht verfügbar ist
 				echo '<p class="lead">Fehler: Speisekarte konnte nicht geladen werden.</p>';
 			}
-
 			?>
       </div>
       <div class="col-12 col-md-6 align-content-top ps-4">
         <h2 class="text-uppercase">Alkoholische Getränke</h2>
         <?php
 			// Hol dir das Pods-Objekt für den Custom Post Type "speise"
-			$pods = pods('speise');
+			$pods = pods('alkoholische_getrank');
 			if ($pods && $pods->find()) {
 				// Speise-Daten aus Pods abrufen
 				while ($pods->fetch()) {
-					$gruppe = $pods->display('gruppe');
-					if ($gruppe == 'Alkoholische Getränke') {
-						$bezeichnung = $pods->display('bezeichnung');
-						$preis = $pods->display('preis');
-						$beschreibung = $pods->display('beschreibung');
-						if (!empty($bezeichnung)) {
-							echo '<div class="col-12">
-									<div class="mkd-pli-content-holder d-flex flex-column align-items-start">
-									<div class="mkd-pli-title-holder d-flex justify-content-between align-items-end w-100">';
-							echo '<h5 class="mkd-pli-title entry-title m-0">' . esc_html($bezeichnung) . '</h5>';
-							echo '<div class="mkd-pli-dots" style="border-color: rgba(71,71,71,0.2);border-style: dashed"></div>';
-							echo '<h5 class="mkd-pli-price m-0" style="color: #ae9974">' . esc_html($preis) . '</h5>';
-							echo '</div>
-									<div class="mkd-pli-bottom-content">
-									<div class="mkd-pli-desc clearfix" style="color: #808285">';
-							echo '<p>' . esc_html($beschreibung) . '</p>';
-							echo '</div>
-									</div>
-									</div>
-									</div>';
+					$bezeichnung = $pods->display('bezeichnung');
+					$preis1 = $pods->display('preis1');
+					$preis2 = $pods->display('preis2');
+					$beschreibung = $pods->display('beschreibung');
+					if (!empty($bezeichnung)) {
+						echo '<div class="col-12">
+								<div class="mkd-pli-content-holder d-flex flex-column align-items-start">
+								<div class="mkd-pli-title-holder d-flex justify-content-between align-items-end w-100">';
+						echo '<h5 class="mkd-pli-title entry-title m-0">' . esc_html($bezeichnung) . '</h5>';
+						echo '<div class="mkd-pli-dots" style="border-color: rgba(71,71,71,0.2);border-style: dashed"></div>';
+						echo '<h5 class="mkd-pli-price m-0">' . esc_html($preis1) .'';
+						if (!empty($preis2)) {
+							echo ' / '. esc_html($preis2) . '</h5>';
 						} else {
-							// Fallback-Text für leere Ergebnisse
-							echo '<p class="lead">Keine Speisekarte verfügbar.</p>';
+							echo '</h5>';
 						}
+						echo '</div>
+								<div class="mkd-pli-bottom-content">
+								<div class="mkd-pli-desc clearfix">';
+						echo '<p>' . esc_html($beschreibung) . '</p>';
+						echo '</div>
+								</div>
+								</div>
+								</div>';
+					} else {
+						// Fallback-Text für leere Ergebnisse
+						echo '<p class="lead">Keine Speisekarte verfügbar.</p>';
 					}
 				}
 			} else {
 				// Fehler-Handling, wenn Pods-Instanz nicht verfügbar ist
 				echo '<p class="lead">Fehler: Speisekarte konnte nicht geladen werden.</p>';
 			}
-
 			?>
       </div>
     </div>
@@ -195,35 +203,44 @@ include_once("page-header.php");
         </div>
         <?php
             // Hol dir das Pods-Objekt für den Custom Post Type "speise"
-            $pods = pods('speise');
+            $pods = pods('spezialitaten_aus_de');
             if ($pods && $pods->find()) {
                 // Speise-Daten aus Pods abrufen
                 while ($pods->fetch()) {
-                    $gruppe = $pods->display('gruppe');
-                    if ($gruppe == 'Spezialitäten aus der Region') {
-                        $bezeichnung = $pods->display('bezeichnung');
-                        $preis = $pods->display('preis');
-                        $beschreibung = $pods->display('beschreibung');
-                        if (!empty($bezeichnung)) {
-                            echo '<div class="eintrag col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                    <div class="mkd-pli-content-holder d-flex flex-column align-items-start">
-                                    <div class="mkd-pli-title-holder d-flex justify-content-between align-items-end w-100">';
-                            echo '<h5 class="mkd-pli-title entry-title m-0">' . esc_html($bezeichnung) . '</h5>';
-                            echo '<div class="mkd-pli-dots" style="border-color: rgba(71,71,71,0.2);border-style: dashed"></div>';
-                            echo '<h5 class="mkd-pli-price m-0" style="color: #ae9974">' . esc_html($preis) . '</h5>';
-                            echo '</div>
-                                    <div class="mkd-pli-bottom-content">
-                                    <div class="mkd-pli-desc clearfix" style="color: #808285">';
-                            echo '<p>' . esc_html($beschreibung) . '</p>';
-                            echo '</div>
-                                    </div>
-                                    </div>
-                                    </div>';
-                        } else {
-                            // Fallback-Text für leere Ergebnisse
-                            echo '<p class="lead">Keine Speisekarte verfügbar.</p>';
-                        }
-                    }
+					$bezeichnung = $pods->display('bezeichnung');
+					$preis1 = $pods->display('preis1');
+					$preis2 = $pods->display('preis2');
+					$beschreibung = $pods->display('beschreibung');
+					$beschreibung2 = $pods->display('beschreibung2');
+					if (!empty($bezeichnung)) {
+						echo '<div class="eintrag col-lg-6 col-md-6 col-sm-12 col-xs-12">
+								<div class="mkd-pli-content-holder d-flex flex-column align-items-start">
+								<div class="mkd-pli-title-holder d-flex justify-content-between align-items-end w-100">';
+						echo '<h5 class="mkd-pli-title entry-title m-0">' . esc_html($bezeichnung) . '</h5>';
+						echo '<div class="mkd-pli-dots" style="border-color: rgba(71,71,71,0.2);border-style: dashed"></div>';
+						echo '<h5 class="mkd-pli-price m-0">' . esc_html($preis1) .'';
+						if (!empty($preis2)) {
+							echo ' / '. esc_html($preis2) . '</h5>';
+						} else {
+							echo '</h5>';
+						}
+						echo '</div>
+								<div class="mkd-pli-bottom-content">
+								<div class="mkd-pli-desc clearfix">';
+						echo '<p>' . esc_html($beschreibung) . '';
+						if (!empty($beschreibung2)) {
+							echo '<br>'. esc_html($beschreibung2) . '</p>';
+						} else {
+							echo '</p>';
+						}
+						echo '</div>
+								</div>
+								</div>
+								</div>';
+					} else {
+						// Fallback-Text für leere Ergebnisse
+						echo '<p class="lead">Keine Speisekarte verfügbar.</p>';
+					}
                 }
             } else {
                 // Fehler-Handling, wenn Pods-Instanz nicht verfügbar ist

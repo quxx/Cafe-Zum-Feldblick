@@ -747,7 +747,7 @@ img {
 }
 
 .video-height {
-  min-height: 100dvh;
+  min-height: calc(var(--vh, 1vh) * 100);
 }
 
 /**
@@ -991,7 +991,7 @@ img {
   #spezi {
     z-index: 1;
     position: relative;
-  
+
     &::before,
     &::after {
       content: "";
@@ -1010,7 +1010,7 @@ img {
       top: -20px;
       left: -80px;
     }
-  
+
     &::after {
       background-image: url(../assets/img/hintergrund-petersilie.svg);
       bottom: -120px;
@@ -1043,7 +1043,7 @@ img {
       left: -120px;
     }
   }
-  
+
   .title {
     font-size: 3.1rem;
     letter-spacing: 0.05em;

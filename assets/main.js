@@ -77,3 +77,14 @@ scrollToTopBtn.addEventListener("click", function () {
     behavior: "smooth",
   });
 });
+
+function setRealViewportHeight() {
+  const vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty("--vh", `${vh}px`);
+}
+
+// Initial aufrufen
+setRealViewportHeight();
+
+// Bei Resize anpassen
+window.addEventListener("resize", setRealViewportHeight);

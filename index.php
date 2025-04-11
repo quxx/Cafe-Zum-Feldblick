@@ -29,7 +29,7 @@ $page_id = get_option('page_for_posts');
 		<!-- <h1 class="text-uppercase">Fahrradcafé zum Feldblick</h1> -->
 		<div style="z-index:2;" class="text-light col-12 brand">
 			<div class="lc-block mb-4">
-				<img class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/assets/img/Logo_original.svg" alt="logo" />
+				<img loading="lazy" decoding="async" class="img-fluid" src="<?php echo get_template_directory_uri(); ?>/assets/img/Logo_original.svg" alt="logo" />
 			</div>
 		</div>
 		<p class="text-center vorstellung">
@@ -80,13 +80,13 @@ $page_id = get_option('page_for_posts');
 	<div class="riss-svg"></div>
 	<div class="row pe-0 ps-0 me-0">
 		<div class=" col-lg-4 col-md-4 col-sm-4 col-xs-12 imagetiles pe-0 ps-0">
-			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/fahrradcafe-1.jpg" height="auto" alt="Das Fahrradcafe von vorne">
+			<img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri(); ?>/assets/img/fahrradcafe-1.jpg" height="auto" alt="Fahrradcafe Scheune und außenbereich">
 		</div>
 		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 imagetiles pe-0 ps-0">
-			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/fahrradcafe-schild.jpg" height="auto" alt="Fahrradcafe Holzschild">
+			<img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri(); ?>/assets/img/fahrradcafe-schild.jpg" height="auto" alt="Fahrradcafe Holzschild">
 		</div>
 		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 imagetiles pe-0 ps-0">
-			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/fahrradcafe-garten.jpg" height="auto" alt="Gartenansicht vom Fahrradcafe">
+			<img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri(); ?>/assets/img/fahrradcafe-garten.jpg" height="auto" alt="Gartenansicht vom Fahrradcafe">
 		</div>
 	</div>
 	<div class="riss-svg bottom"></div>
@@ -95,7 +95,7 @@ $page_id = get_option('page_for_posts');
 	<div class="text-center">
 		<h1 class="text-uppercase">Aktuelles</h1>
 		<p class="text-center ps-5 pe-5">
-			Aktuelles zu Events und Veranstaltungen
+			Hier erfährst du, was bei uns los ist – aktuelle Events, besondere Tage und alles, was du nicht verpassen solltest.
 		</p>
 	</div>
 	<div class="container px-4 pt-3">
@@ -136,13 +136,13 @@ $page_id = get_option('page_for_posts');
 	<div class="riss-svg"></div>
 	<div class="row pe-0 ps-0 me-0">
 		<div class=" col-lg-4 col-md-4 col-sm-4 col-xs-12 imagetiles pe-0 ps-0">
-			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/fahrradcafe-getraenk.jpg" height="auto" alt="Das Fahrradcafe von vorne">
+			<img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri(); ?>/assets/img/fahrradcafe-getraenk.jpg" height="auto" alt="Das Fahrradcafe von vorne">
 		</div>
 		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 imagetiles pe-0 ps-0">
-			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/fahrradcafe-tor.jpg" height="auto" alt="Fahrradcafe Holzschild">
+			<img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri(); ?>/assets/img/fahrradcafe-tor.jpg" height="auto" alt="Fahrradcafe Holzschild">
 		</div>
 		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 imagetiles pe-0 ps-0">
-			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/fahrradcafe-getraenk2.jpg" height="auto" alt="Gartenansicht vom Fahrradcafe">
+			<img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri(); ?>/assets/img/fahrradcafe-getraenk2.jpg" height="auto" alt="Gartenansicht vom Fahrradcafe">
 		</div>
 	</div>
 	<div class="riss-svg bottom"></div>
@@ -262,13 +262,13 @@ $page_id = get_option('page_for_posts');
 	<div class="riss-svg"></div>
 	<div class="row pe-0 ps-0 me-0">
 		<div class=" col-lg-4 col-md-4 col-sm-4 col-xs-12 imagetiles pe-0 ps-0">
-			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/fahrradcafe-fahrrad.jpg" height="auto" alt="Das Fahrradcafe von vorne">
+			<img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri(); ?>/assets/img/fahrradcafe-fahrrad.jpg" height="auto" alt="Das Fahrradcafe von vorne">
 		</div>
 		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 imagetiles pe-0 ps-0">
-			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/fahrradcafe-katze.jpg" height="auto" alt="Fahrradcafe Holzschild">
+			<img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri(); ?>/assets/img/fahrradcafe-katze.jpg" height="auto" alt="Fahrradcafe Holzschild">
 		</div>
 		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 imagetiles pe-0 ps-0">
-			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/fahrradcafe-ausblick.jpg" height="auto" alt="Gartenansicht vom Fahrradcafe">
+			<img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri(); ?>/assets/img/fahrradcafe-ausblick.jpg" height="auto" alt="Gartenansicht vom Fahrradcafe">
 		</div>
 	</div>
 	<div class="riss-svg bottom"></div>
@@ -277,9 +277,9 @@ $page_id = get_option('page_for_posts');
 	<div class="text-center">
 		<h1 class="text-uppercase">Kontakt</h1>
 		<p class="text-center ps-md-5 pe-md-5">
-			Ihr plant einen Besuch mit einer größeren Gruppe oder habt eine spezielle Anfrage? <br>
-			Ihr möchtet eine Feier, einen Brunch oder ein anderes Event bei uns organisieren? <br>
-			Wir freuen uns auf eure Nachricht!
+			Ihr plant einen Besuch mit einer größeren Gruppe oder habt eine spezielle Anfrage?<br>
+			Oder möchtet ihr eine Feier, einen Brunch oder ein Event bei uns organisieren?<br>
+			Dann schreibt uns – wir freuen uns auf eure Nachricht!
 		</p>
 	</div>
 	<div class="row justify-content-center">

@@ -336,6 +336,9 @@ img {
     background-repeat: no-repeat;
     background-position: center;
     z-index: -1;
+    aspect-ratio: 1/1;
+    background-size: contain; // wichtig für korrektes Skalieren
+    max-width: 40vw; // responsive Breite, z.B. max. 30% vom Viewport
   }
 
   &::before {

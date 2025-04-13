@@ -283,7 +283,7 @@ $page_id = get_option('page_for_posts');
 		</p>
 	</div>
 	<div class="row justify-content-center">
-		<a href="<?php echo site_url('/kontakt'); ?>" class="btn btn-outline-primary btn-block col-lg-4 col-md-4 col-sm-6 col-xs-6">Schreib uns</a>
+		<a href="<?php echo site_url('/kontakt'); ?>" class="btn btn-outline-primary btn-block col-lg-4 col-md-4 col-sm-6 col-xs-6">Schreibt uns</a>
 	</div>
 
 </section>

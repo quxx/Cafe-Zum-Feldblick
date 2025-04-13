@@ -455,7 +455,7 @@ if (! function_exists('cafe_zum_feldblick_comment')) {
 						</div><!-- /.reply -->
 					</article><!-- /#comment-## -->
 				</li>
-<?php
+	<?php
 				break;
 		endswitch;
 	}
@@ -736,6 +736,52 @@ function enqueue_hls_video_script()
     ");
 }
 add_action('wp_enqueue_scripts', 'enqueue_hls_video_script');
+
+add_action('admin_enqueue_scripts', function () {
+	wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css');
+});
+
+add_action('admin_head', function () {
+	?>
+	<style>
+		/* Menüpunkt-Slug ermitteln z. B. durch "inspect element" */
+		#adminmenu .menu-icon-alkoholfreie_getraen div.wp-menu-image:before {
+			font-family: "Font Awesome 6 Free" !important;
+			content: "\f7b6";
+			/* Beispiel: fa-utensils */
+			font-weight: 900;
+		}
+
+		#adminmenu .menu-icon-alkoholische_getrank div.wp-menu-image:before {
+			font-family: "Font Awesome 6 Free" !important;
+			content: "\f0fc";
+			/* Beispiel: fa-utensils */
+			font-weight: 900;
+		}
+
+		#adminmenu .menu-icon-herzhaftes div.wp-menu-image:before {
+			font-family: "Font Awesome 6 Free" !important;
+			content: "\f80f";
+			/* Beispiel: fa-utensils */
+			font-weight: 900;
+		}
+
+		#adminmenu .menu-icon-kuchen_und_susses div.wp-menu-image:before {
+			font-family: "Font Awesome 6 Free" !important;
+			content: "\f810";
+			/* Beispiel: fa-utensils */
+			font-weight: 900;
+		}
+
+		#adminmenu .menu-icon-spezialitaten_aus_de div.wp-menu-image:before {
+			font-family: "Font Awesome 6 Free" !important;
+			content: "\f005";
+			/* Beispiel: fa-utensils */
+			font-weight: 900;
+		}
+	</style>
+<?php
+});
 
 create_page('Impressum', '', 'impressum.php');
 create_page('Aktuelles', '', 'posts.php');

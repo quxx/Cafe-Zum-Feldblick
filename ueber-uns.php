@@ -40,7 +40,7 @@ include_once("page-header.php");
   <div class="container px-4 pt-3">
     <div class="row">
       <div class="text-center">
-        <h1 class="text-uppercase h-small">Du möchtest uns unterstützen?</h1>
+        <h1 class="text-uppercase h-small">Ihr möchtet uns unterstützen?</h1>
       </div>
       <script defer src="<?php echo get_template_directory_uri(); ?>/assets/gofundme.js"></script>
       <div class="gfm-embed" data-url="https://www.gofundme.com/f/neueroffnung-fahrradcafe-zum-feldblick/widget/large?sharesheet=fundraiserstory&attribution_id=sl:66956685-2e1c-490c-8a8e-61ad8962480f"></div>
@@ -56,8 +56,8 @@ include_once("page-header.php");
       </div>
       <div class="row">
         <div class="col-12">
-          <p class="fs-3 text-center">Wir haben folgende Stellenangebote:</p>
-          <p class="fs-4 text-center">Bewirb dich direkt über: <a href=" mailto:jobs@fahrradcafe.de">jobs@fahrradcafe.de</a></p>
+          <p class="fs-3 text-center">Gerade haben wir keine offenen Stellen.</p>
+          <p class="fs-4 text-center">Schick uns gern deine Initiativbewerbung – vielleicht passt du ja perfekt zu uns und wir wissen es nur noch nicht.<a href=" mailto:jobs@fahrradcafe.de">jobs@fahrradcafe.de</a></p>
         </div>
       </div>
     </div>

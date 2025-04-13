@@ -33,10 +33,10 @@ $page_id = get_option('page_for_posts');
 			</div>
 		</div>
 		<p class="text-center vorstellung">
-			Genieße bei uns eine Pause vom Alltag und lass dich von der Ruhe und Schönheit der Natur verzaubern. Ob auf einer Fahrradtour oder einfach auf der Suche nach einem besonderen Ort – hier findest du genau das Richtige.
-			<br>Wir verwöhnen dich mit hausgemachtem Kuchen, frischem Kaffee, kleinen Speisen, Bier und Wein.
-			<br>Erlebe einen gemütlichen Ort in der Natur – perfekt für Genuss, Entspannung und schöne Gespräche.
-			<br><br>Wir freuen uns auf deinen Besuch!
+			Genießt bei uns eine Pause vom Alltag und lasst euch von der Ruhe und Schönheit der Natur verzaubern. Ob auf einer Fahrradtour oder einfach auf der Suche nach einem besonderen Ort – hier findet ihr genau das Richtige.
+			<br>Wir verwöhnen euch mit hausgemachtem Kuchen, frischem Kaffee, kleinen Speisen, Bier und Wein.
+			<br>Erlebt einen gemütlichen Ort in der Natur – perfekt für Genuss, Entspannung und schöne Gespräche.
+			<br><br>Wir freuen uns auf euren Besuch!
 		</p>
 		<br>
 		<p class="text-uppercase h-small">
@@ -95,7 +95,7 @@ $page_id = get_option('page_for_posts');
 	<div class="text-center">
 		<h1 class="text-uppercase">Aktuelles</h1>
 		<p class="text-center ps-5 pe-5">
-			Hier erfährst du, was bei uns los ist – aktuelle Events, besondere Tage und alles, was du nicht verpassen solltest.
+			Hier erfahrt ihr, was bei uns los ist – aktuelle Events, besondere Tage und alles, was ihr nicht verpassen solltet.
 		</p>
 	</div>
 	<div class="container px-4 pt-3">

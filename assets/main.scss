@@ -59,6 +59,7 @@ $background-color-light: #f3ece5;
 $feldblick-gruen: #0a462b;
 $feldblick-orange: #ff7300;
 $feldblick-gruen_highlight: #127b4b;
+$footer-gruen: #082f1d;
 $feldblick-braun: #462922;
 $feldblick-gold: #ae9974;
 
@@ -140,6 +141,11 @@ $theme-colors: map-merge(
 
 html {
   scroll-behavior: smooth;
+}
+
+.title {
+  font-size: calc(1.8rem + 1.5vw);
+  letter-spacing: 0.05em;
 }
 
 a {
@@ -357,24 +363,20 @@ img {
 
   @include media-breakpoint-up(md) {
     .vorstellung {
-      padding-left: 15rem;
-      padding-right: 15rem;
+      padding-left: 5rem;
+      padding-right: 5rem;
     }
   }
-}
 
-@include media-breakpoint-up(lg) {
-  .wiese {
+  @include media-breakpoint-up(lg) {
     background-size: contain;
     .vorstellung {
       padding-left: 10rem;
       padding-right: 10rem;
     }
   }
-}
 
-@include media-breakpoint-up(xl) {
-  .wiese {
+  @include media-breakpoint-up(xl) {
     .vorstellung {
       padding-left: 15rem;
       padding-right: 15rem;
@@ -561,7 +563,18 @@ img {
 /* Footer */
 
 #footer {
-  background-color: #fff;
+  background-color: $footer-gruen;
+  color: #fff;
+
+  a,
+  .fa-facebook-f {
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    &:hover {
+      text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
+    }
+  }
 
   .icon {
     font-size: 20px;
@@ -586,7 +599,7 @@ img {
     .bloginfo {
       justify-content: end;
     }
-    @media (max-width: breakpoint-max(sm)) {
+    @media (max-width: breakpoint-max(lg)) {
       .impressum,
       .facebook,
       .bloginfo {
@@ -921,11 +934,6 @@ img {
       text-align: left;
     }
   }
-
-  .title {
-    font-size: 3.1rem;
-    letter-spacing: 0.05em;
-  }
 }
 
 #spenden {
@@ -978,12 +986,6 @@ img {
 }
 
 // Aktuelles-Seite
-#aktuelles {
-  .title {
-    font-size: 3.1rem;
-    letter-spacing: 0.05em;
-  }
-}
 
 // Speisekarte-Seite
 #speisekarte {
@@ -1048,8 +1050,6 @@ img {
   }
 
   .title {
-    font-size: 3.1rem;
-    letter-spacing: 0.05em;
     padding: 0;
     margin-bottom: 1rem;
 
@@ -1089,23 +1089,18 @@ img {
   }
 
   .row3 {
-    .eintrag:nth-child(odd) {
-      padding-left: 1.5rem;
-    }
-    .eintrag:nth-child(2n) {
-      padding-right: 1.5rem;
+    @include media-breakpoint-up(md) {
+      .eintrag:nth-child(odd) {
+        padding-left: 1.5rem;
+      }
+      .eintrag:nth-child(2n) {
+        padding-right: 1.5rem;
+      }
     }
   }
 }
 
 // Kontakt-Seite
-
-#kontakt {
-  .title {
-    font-size: 3.1rem;
-    letter-spacing: 0.05em;
-  }
-}
 
 .gfm-embed {
   padding: 0;

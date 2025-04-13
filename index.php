@@ -157,7 +157,7 @@ $page_id = get_option('page_for_posts');
 			<br>Getränken – wir freuen uns darauf, euch bei uns verwöhnen zu dürfen.
 		</p>
 
-		<div class="row pe-0 ps-0 me-0">
+		<div class="row pe-0 ps-0 me-0 text-start">
 			<?php
 			function zeige_speisekarte_auszug($pods_instance, &$counter, $max = 8)
 			{

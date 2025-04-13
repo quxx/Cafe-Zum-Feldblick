@@ -326,36 +326,86 @@ img {
   margin-top: 0px !important;
 }
 
+// .wiese {
+//   z-index: 1;
+//   position: relative;
+
+//   &::before,
+//   &::after {
+//     content: "";
+//     position: absolute;
+//     height: 300px;
+//     width: 300px;
+//     background-repeat: no-repeat;
+//     background-position: center;
+//     z-index: -1;
+//     aspect-ratio: 1/1;
+//     background-size: contain; // wichtig für korrektes Skalieren
+//     max-width: 40vw; // responsive Breite, z.B. max. 30% vom Viewport
+//   }
+
+//   &::before {
+//     background-image: url(../assets/img/hintergrund-kraeuter.svg);
+//     bottom: 20px;
+//     left: 50px;
+//   }
+
+//   &::after {
+//     height: 400px;
+//     width: 400px;
+//     background-image: url(../assets/img/hintergrund-fahrrad.svg);
+//     top: -40px;
+//     right: 50px;
+//   }
+
+//   @include media-breakpoint-up(md) {
+//     .vorstellung {
+//       padding-left: 5rem;
+//       padding-right: 5rem;
+//     }
+//   }
+
+//   @include media-breakpoint-up(lg) {
+//     background-size: contain;
+//     .vorstellung {
+//       padding-left: 10rem;
+//       padding-right: 10rem;
+//     }
+//   }
+
+//   @include media-breakpoint-up(xl) {
+//     .vorstellung {
+//       padding-left: 15rem;
+//       padding-right: 15rem;
+//     }
+//   }
+// }
+
 .wiese {
   z-index: 1;
   position: relative;
+  overflow: hidden;
 
   &::before,
   &::after {
     content: "";
     position: absolute;
-    height: 300px;
-    width: 300px;
     background-repeat: no-repeat;
     background-position: center;
+    background-size: contain;
     z-index: -1;
-    aspect-ratio: 1/1;
-    background-size: contain; // wichtig für korrektes Skalieren
-    max-width: 40vw; // responsive Breite, z.B. max. 30% vom Viewport
+    aspect-ratio: 1 / 1;
+    width: auto;
   }
 
   &::before {
     background-image: url(../assets/img/hintergrund-kraeuter.svg);
     bottom: 20px;
-    left: 50px;
   }
 
   &::after {
-    height: 400px;
-    width: 400px;
     background-image: url(../assets/img/hintergrund-fahrrad.svg);
     top: -40px;
-    right: 50px;
   }
 
   @include media-breakpoint-up(md) {
@@ -363,13 +413,28 @@ img {
       padding-left: 5rem;
       padding-right: 5rem;
     }
+
+    &::before {
+      height: 250px;
+      left: -30px;
+    }
   }
 
   @include media-breakpoint-up(lg) {
-    background-size: contain;
     .vorstellung {
       padding-left: 10rem;
       padding-right: 10rem;
+    }
+
+    &::before {
+      height: 250px;
+      left: -30px;
+    }
+
+    &::after {
+      height: 300px;
+      right: -60px;
+      top: 15px;
     }
   }
 
@@ -378,12 +443,35 @@ img {
       padding-left: 15rem;
       padding-right: 15rem;
     }
+
+    &::before {
+      height: 300px;
+      left: 25px;
+    }
+
+    &::after {
+      height: 350px;
+      right: -60px;
+    }
+  }
+
+  @include media-breakpoint-up(xxl) {
+    &::before {
+      height: 300px;
+      left: 50px;
+    }
+
+    &::after { 
+      height: 400px;
+      right: 50px;
+    }
   }
 }
 
 .speisen {
   z-index: 1;
   position: relative;
+  overflow: hidden;
 
   &::after {
     content: "";
@@ -398,6 +486,21 @@ img {
     background-image: url(../assets/img/hintergrund-kuchen.svg);
     top: -95px;
     right: 50px;
+  }
+
+  @include media-breakpoint-up(md) {
+    
+  }
+
+  @include media-breakpoint-up(lg) {
+    
+  }
+
+  @include media-breakpoint-up(xl) {
+    &::after {
+      height: 300px;
+      right: 0;
+    }
   }
 }
 

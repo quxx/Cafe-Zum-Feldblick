@@ -327,9 +327,6 @@ img {
 }
 
 .wiese {
-  background-color: $background-color-light;
-  background-repeat: no-repeat;
-  background-position: left bottom;
   z-index: 1;
   position: relative;
 
@@ -381,6 +378,26 @@ img {
       padding-left: 15rem;
       padding-right: 15rem;
     }
+  }
+}
+
+.speisen {
+  z-index: 1;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    height: 300px;
+    width: 300px;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+    height: 400px;
+    width: 400px;
+    background-image: url(../assets/img/hintergrund-kuchen.svg);
+    top: -95px;
+    right: 50px;
   }
 }
 

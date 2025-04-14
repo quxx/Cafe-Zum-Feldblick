@@ -70,21 +70,33 @@ window.onscroll = function () {
   }
 };
 
-// Function to smoothly scroll back to the top
-scrollToTopBtn.addEventListener("click", function () {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
-  });
-});
+(function () {
+  // Nur auf mobilen Geräten aktivieren
+  const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  if (!isMobile) return;
 
-function setRealViewportHeight() {
-  const vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty("--vh", `${vh}px`);
-}
+  const TARGET_SELECTOR = ".video-height";
+  const DEBOUNCE_DELAY = 100;
+  let scrollTimeout;
 
-// Initial aufrufen
-setRealViewportHeight();
+  function updateViewportHeight() {
+    const vh = window.innerHeight;
+    const elements = document.querySelectorAll(TARGET_SELECTOR);
+    elements.forEach((el) => {
+      el.style.height = `${vh}px`;
+    });
+  }
 
-// Bei Resize anpassen
-window.addEventListener("resize", setRealViewportHeight);
+  function debouncedUpdate() {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(updateViewportHeight, DEBOUNCE_DELAY);
+  }
+
+  // Initiales Setzen
+  updateViewportHeight();
+
+  // Events
+  window.addEventListener("resize", debouncedUpdate);
+  window.addEventListener("orientationchange", debouncedUpdate);
+  window.addEventListener("scroll", debouncedUpdate);
+})();

@@ -61,6 +61,14 @@ document.addEventListener("DOMContentLoaded", function () {
   updateNavbarPosition(); // Initial aufrufen
 });
 
+function updateDebug() {
+  const debug = document.getElementById("vh-debug");
+  if (debug) {
+    debug.innerText = `scrollY: ${window.scrollY}px\ninnerHeight: ${window.innerHeight}px`;
+  }
+}
+window.addEventListener("scroll", updateDebug);
+
 // var navbrand = document.getElementById("nav-brand");
 
 // window.addEventListener("scroll", function () {

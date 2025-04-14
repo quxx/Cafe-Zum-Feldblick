@@ -6,7 +6,7 @@ include_once("page-header.php");
 ?>
 <div class="container-fluid block block-padding page-height">
   <div editable="rich">
-    <div class=" row impressum">
+    <div class="row impressum">
       <div class="col-12">
         <h1 class="text-uppercase center">Impressum</h1>
         <h2>Angaben gemäß § 5 TMG</h2>

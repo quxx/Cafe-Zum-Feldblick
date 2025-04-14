@@ -326,6 +326,10 @@ img {
   margin-top: 0px !important;
 }
 
+.oeffnungszeit {
+  color: $feldblick-gruen;
+}
+
 // .wiese {
 //   z-index: 1;
 //   position: relative;
@@ -461,7 +465,7 @@ img {
       left: 50px;
     }
 
-    &::after { 
+    &::after {
       height: 400px;
       right: 50px;
     }
@@ -489,11 +493,9 @@ img {
   }
 
   @include media-breakpoint-up(md) {
-    
   }
 
   @include media-breakpoint-up(lg) {
-    
   }
 
   @include media-breakpoint-up(xl) {
@@ -897,8 +899,17 @@ img {
 }
 
 // Impressum Page
-.impressum {
+.impressum,
+.datenschutz {
   padding: 0 8rem;
+  overflow-wrap: break-word;
+
+  @media (max-width: breakpoint-max(md)) {
+    padding: 0 4rem;
+  }
+  @media (max-width: breakpoint-max(sm)) {
+    padding: 0 0rem;
+  }
 }
 
 //Header Image

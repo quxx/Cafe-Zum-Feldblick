@@ -883,7 +883,7 @@ function custom_columns_content_oeffnungszeit($column, $post_id)
 
 	if ($column === 'text') {
 		$text = $pod->field('text');
-		echo '<p>' . nl2br(esc_html($text ?: '')) . '</p>';
+		echo '<p>' . nl2br($text ?: '') . '</p>';
 	}
 }
 

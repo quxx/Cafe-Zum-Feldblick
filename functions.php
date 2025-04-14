@@ -774,7 +774,7 @@ add_action('admin_head', function () {
 			font-weight: 900;
 		}
 
-		#adminmenu .menu-icon-menu-icon-heissgetranke div.wp-menu-image:before {
+		#adminmenu .menu-icon-heissgetranke div.wp-menu-image:before {
 			font-family: "Font Awesome 6 Free" !important;
 			content: "\f7b6";
 			font-weight: 900;

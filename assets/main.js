@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function getTriggerHeight() {
     // Falls Home-Sektion vorhanden, nutze exakte Höhe
     if (isHome) {
-      return window.innerHeight - nav.offsetHeight; // Hero-Höhe minus Navbar-Höhe
+      return window.innerHeight; // Hero-Höhe minus Navbar-Höhe
     }
     return 200; // Default für Unterseiten
   }

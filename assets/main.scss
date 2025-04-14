@@ -886,8 +886,7 @@ img {
 }
 
 .video-height {
-  height: 100vh; /* fallback für Desktop */
-  min-height: 100vh;
+  height: 100svh;
 }
 
 /**

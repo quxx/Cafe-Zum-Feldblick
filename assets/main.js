@@ -61,34 +61,6 @@ document.addEventListener("DOMContentLoaded", function () {
   updateNavbarPosition(); // Initial aufrufen
 });
 
-(function () {
-  const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-  if (!isMobile) return;
-
-  const DEBOUNCE_DELAY = 100;
-  let scrollTimeout;
-
-  function setVideoHeightToViewport() {
-    const vh = window.innerHeight; // echte Höhe des sichtbaren Bereichs
-    const videoContainer = document.querySelectorAll(".video-height");
-    videoContainer.forEach((el) => {
-      el.style.height = `${vh}px`;
-    });
-  }
-
-  function debouncedUpdate() {
-    clearTimeout(scrollTimeout);
-    scrollTimeout = setTimeout(setVideoHeightToViewport, DEBOUNCE_DELAY);
-  }
-
-  document.addEventListener("DOMContentLoaded", () => {
-    setVideoHeightToViewport();
-    window.addEventListener("resize", debouncedUpdate);
-    window.addEventListener("orientationchange", debouncedUpdate);
-    window.addEventListener("scroll", debouncedUpdate); // wenn Topbar verschwindet
-  });
-})();
-
 // Get the button
 const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 

@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function getTriggerHeight() {
     if (isHome) {
-      return initialInnerHeight - 50;
+      return initialInnerHeight - 56;
     }
     return 200;
   }

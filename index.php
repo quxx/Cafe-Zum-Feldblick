@@ -10,7 +10,6 @@ get_header();
 
 $page_id = get_option('page_for_posts');
 ?>
-<div id="vh-debug" style="position:fixed;top:0;left:0;z-index:9999;background:#000;color:#fff;padding:4px;font-size:12px;"></div>
 <section id="home" class="position-relative overflow-hidden">
 	<div class="d-flex video-height" lc-helper="video-bg">
 		<video id="hero-video"

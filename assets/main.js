@@ -61,23 +61,33 @@ document.addEventListener("DOMContentLoaded", function () {
   updateNavbarPosition(); // Initial aufrufen
 });
 
-function updateDebug() {
-  const debug = document.getElementById("vh-debug");
-  if (debug) {
-    debug.innerText = `scrollY: ${window.scrollY}px\ninnerHeight: ${window.innerHeight}px`;
+(function () {
+  const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  if (!isMobile) return;
+
+  const DEBOUNCE_DELAY = 100;
+  let scrollTimeout;
+
+  function setVideoHeightToViewport() {
+    const vh = window.innerHeight; // echte Höhe des sichtbaren Bereichs
+    const videoContainer = document.querySelectorAll(".video-height");
+    videoContainer.forEach((el) => {
+      el.style.height = `${vh}px`;
+    });
   }
-}
-window.addEventListener("scroll", updateDebug);
 
-// var navbrand = document.getElementById("nav-brand");
+  function debouncedUpdate() {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(setVideoHeightToViewport, DEBOUNCE_DELAY);
+  }
 
-// window.addEventListener("scroll", function () {
-//   if (window.pageYOffset > 100) {
-//     navbrand.classList.remove("hide");
-//   } else {
-//     navbrand.classList.add("hide");
-//   }
-// });
+  document.addEventListener("DOMContentLoaded", () => {
+    setVideoHeightToViewport();
+    window.addEventListener("resize", debouncedUpdate);
+    window.addEventListener("orientationchange", debouncedUpdate);
+    window.addEventListener("scroll", debouncedUpdate); // wenn Topbar verschwindet
+  });
+})();
 
 // Get the button
 const scrollToTopBtn = document.getElementById("scrollToTopBtn");

@@ -883,7 +883,20 @@ function custom_columns_content_oeffnungszeit($column, $post_id)
 
 	if ($column === 'text') {
 		$text = $pod->field('text');
-		echo '<p>' . nl2br($text ?: '') . '</p>';
+
+		// Nur bestimmte HTML-Tags erlauben (z. B. <strong>, <em>, <br>, <ul>, <li>)
+		$allowed_tags = [
+			'strong' => [],
+			'em'     => [],
+			'br'     => [],
+			'ul'     => [],
+			'ol'     => [],
+			'li'     => [],
+			'p'      => [],
+			'span'   => ['class' => true],
+		];
+
+		echo '<div>' . nl2br(wp_kses($text, $allowed_tags)) . '</div>';
 	}
 }
 

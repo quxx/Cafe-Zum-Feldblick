@@ -71,17 +71,15 @@ window.onscroll = function () {
 };
 
 (function () {
-  // Nur auf mobilen Geräten aktivieren
   const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
   if (!isMobile) return;
 
-  const TARGET_SELECTOR = ".video-height";
   const DEBOUNCE_DELAY = 100;
   let scrollTimeout;
 
-  function updateViewportHeight() {
+  function updateHeroHeight() {
     const vh = window.innerHeight;
-    const elements = document.querySelectorAll(TARGET_SELECTOR);
+    const elements = document.querySelectorAll(".video-height");
     elements.forEach((el) => {
       el.style.height = `${vh}px`;
     });
@@ -89,14 +87,13 @@ window.onscroll = function () {
 
   function debouncedUpdate() {
     clearTimeout(scrollTimeout);
-    scrollTimeout = setTimeout(updateViewportHeight, DEBOUNCE_DELAY);
+    scrollTimeout = setTimeout(updateHeroHeight, DEBOUNCE_DELAY);
   }
 
-  // Initiales Setzen
-  updateViewportHeight();
-
-  // Events
-  window.addEventListener("resize", debouncedUpdate);
-  window.addEventListener("orientationchange", debouncedUpdate);
-  window.addEventListener("scroll", debouncedUpdate);
+  document.addEventListener("DOMContentLoaded", () => {
+    updateHeroHeight();
+    window.addEventListener("resize", debouncedUpdate);
+    window.addEventListener("orientationchange", debouncedUpdate);
+    window.addEventListener("scroll", debouncedUpdate);
+  });
 })();

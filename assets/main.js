@@ -32,18 +32,16 @@ document.addEventListener("DOMContentLoaded", function () {
   const nav = document.querySelector("nav");
   const isHome = document.getElementById("home");
 
-  function getTriggerHeight() {
-    // Falls Home-Sektion vorhanden, nutze exakte Höhe
-    if (isHome) {
-      return window.innerHeight - nav.offsetHeight; // Hero-Höhe minus Navbar-Höhe
-    }
-    return 200; // Default für Unterseiten
-  }
+  // function getTriggerHeight() {
+  //   // Falls Home-Sektion vorhanden, nutze exakte Höhe
+  //   if (isHome) {
+  //     return window.innerHeight - nav.offsetHeight; // Hero-Höhe minus Navbar-Höhe
+  //   }
+  //   return 200; // Default für Unterseiten
+  // }
 
   function updateNavbarPosition() {
-    const triggerHeight = getTriggerHeight();
-
-    if (window.scrollY > triggerHeight) {
+    if (window.scrollY > 200) {
       nav.classList.add("fixed-top");
       nav.classList.remove("navbar-absolute", "isFront");
     } else {

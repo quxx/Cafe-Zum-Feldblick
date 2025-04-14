@@ -783,9 +783,123 @@ add_action('admin_head', function () {
 <?php
 });
 
+// Gemeinsame Funktion zur Registrierung der custom columns und deren Inhalte für einen gegebenen Post-Type.
+function custom_register_columns_for_pods($post_type)
+{
+	add_filter("manage_{$post_type}_posts_columns", function ($columns) use ($post_type) {
+		$new_columns = [];
+		foreach ($columns as $key => $value) {
+			if ('title' === $key) {
+				unset($columns['title']);
+				continue;
+			}
+			$new_columns[$key] = $value;
+			if ('cb' === $key) {
+				$new_columns['bezeichnung'] = 'Bezeichnung';
+				$new_columns['beschreibung'] = 'Beschreibung';
+				if ($post_type === 'spezialitaten_aus_de') {
+					$new_columns['beschreibung2'] = 'Beschreibung 2';
+				}
+				$new_columns['preis1'] = 'Preis';
+				$new_columns['preis2'] = 'Preis 2';
+				$new_columns['in_auszug_aus_der_speisekarte_zeigen'] = 'Als Auszug anzeigen?';
+			}
+		}
+		return $new_columns;
+	});
+
+	add_action("manage_{$post_type}_posts_custom_column", function ($column, $post_id) use ($post_type) {
+		$pod = pods($post_type, $post_id);
+
+		switch ($column) {
+			case 'bezeichnung':
+				$bezeichnung = $pod->field('bezeichnung');
+				$edit_link   = get_edit_post_link($post_id);
+				echo '<strong><a href="' . esc_url($edit_link) . '">' . esc_html($bezeichnung ?: '') . '</a></strong>';
+				break;
+
+			case 'beschreibung':
+				$beschreibung = $pod->field('beschreibung');
+				echo '<p>' . esc_html($beschreibung ?: '') . '</p>';
+				break;
+
+			case 'beschreibung2':
+				$beschreibung2 = $pod->field('beschreibung2');
+				echo '<p>' . esc_html($beschreibung2 ?: '') . '</p>';
+				break;
+
+			case 'preis1':
+				$preis1 = $pod->field('preis1');
+				echo $preis1 !== '' && $preis1 !== null ? number_format(floatval($preis1), 2, ',', '.') . ' €' : '';
+				break;
+
+			case 'preis2':
+				$preis2 = $pod->field('preis2');
+				echo $preis2 !== '' && $preis2 !== null ? number_format(floatval($preis2), 2, ',', '.') . ' €' : '';
+				break;
+
+			case 'in_auszug_aus_der_speisekarte_zeigen':
+				$auszug = $pod->field('in_auszug_aus_der_speisekarte_zeigen');
+				echo '<div style="text-align: left; font-size: 18px;">' . ($auszug ? '✓' : '✗') . '</div>';
+				break;
+		}
+	}, 10, 2);
+}
+
+$custom_post_types = [
+	'spezialitaten_aus_de',
+	'kuchen_und_susses',
+	'herzhaftes',
+	'alkoholische_getrank',
+	'alkoholfreie_getraen',
+	'heissgetranke'
+];
+
+
+foreach ($custom_post_types as $post_type) {
+	custom_register_columns_for_pods($post_type);
+}
+
+//Öffnungszeiten
+add_filter('manage_oeffnungszeit_posts_columns', 'custom_columns_oeffnungszeit');
+function custom_columns_oeffnungszeit($columns)
+{
+	$new_columns = [];
+
+	foreach ($columns as $key => $value) {
+		$new_columns[$key] = $value;
+		if ($key === 'title') {
+			$new_columns['text'] = 'Text';
+		}
+	}
+
+	return $new_columns;
+}
+
+add_action('manage_oeffnungszeit_posts_custom_column', 'custom_columns_content_oeffnungszeit', 10, 2);
+function custom_columns_content_oeffnungszeit($column, $post_id)
+{
+	$pod = pods('oeffnungszeit', $post_id);
+
+	if ($column === 'text') {
+		$text = $pod->field('text');
+		echo '<p>' . nl2br(esc_html($text ?: '')) . '</p>';
+	}
+}
+
 create_page('Impressum', '', 'impressum.php');
 create_page('Aktuelles', '', 'posts.php');
 create_page('Kontakt', '', 'kontakt.php');
 create_page('Über uns', '', 'ueber-uns.php');
 create_page('Datenschutz', '', 'datenschutz.php');
 create_page('Speisekarte', '', 'speisekarte.php');
+
+
+function debug_to_console($data)
+{
+	$output = $data;
+	if (is_array($output))
+		$output = implode(',', $output);
+
+	echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
+}

@@ -27,21 +27,20 @@ import * as bootstrap from "bootstrap";
 })();
 
 // Sticky Navbar
-
 document.addEventListener("DOMContentLoaded", function () {
   const nav = document.querySelector("nav");
   const isHome = document.getElementById("home");
 
+  let initialInnerHeight = window.innerHeight;
+
   function getTriggerHeight() {
-    // Falls Home-Sektion vorhanden, nutze exakte Höhe
     if (isHome) {
-      return window.innerHeight - 50; // Hero-Höhe minus Navbar-Höhe
+      return initialInnerHeight - 50;
     }
-    return 200; // Default für Unterseiten
+    return 200;
   }
 
   function updateNavbarPosition() {
-    console.log(window.innerHeight);
     const triggerHeight = getTriggerHeight();
 
     if (window.scrollY > triggerHeight) {
@@ -56,10 +55,18 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Events
+  // Initialer Aufruf
+  updateNavbarPosition();
   window.addEventListener("scroll", updateNavbarPosition);
-  window.addEventListener("resize", updateNavbarPosition);
-  updateNavbarPosition(); // Initial aufrufen
+
+  // Bei Orientierung ändern: neue feste Höhe setzen
+  window.addEventListener("orientationchange", () => {
+    // Warte kurz, bis sich die Höhe stabilisiert hat
+    setTimeout(() => {
+      initialInnerHeight = window.innerHeight;
+      updateNavbarPosition(); // Direkt aktualisieren
+    }, 300);
+  });
 });
 
 // Get the button

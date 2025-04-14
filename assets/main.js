@@ -28,21 +28,37 @@ import * as bootstrap from "bootstrap";
 
 // Sticky Navbar
 
-var nav = document.querySelector("nav");
-var isHome = document.getElementById("home");
+document.addEventListener("DOMContentLoaded", function () {
+  const nav = document.querySelector("nav");
+  const isHome = document.getElementById("home");
 
-window.addEventListener("scroll", function () {
-  let height = 200;
-  if (isHome) {
-    height = window.innerHeight - 50;
+  function getTriggerHeight() {
+    // Falls Home-Sektion vorhanden, nutze exakte Höhe
+    if (isHome) {
+      return window.innerHeight - nav.offsetHeight; // Hero-Höhe minus Navbar-Höhe
+    }
+    return 200; // Default für Unterseiten
   }
-  if (window.scrollY > height) {
-    nav.classList.add("fixed-top");
-    nav.classList.remove("navbar-absolute");
-  } else {
-    nav.classList.remove("fixed-top");
-    nav.classList.add("navbar-absolute");
+
+  function updateNavbarPosition() {
+    const triggerHeight = getTriggerHeight();
+
+    if (window.scrollY > triggerHeight) {
+      nav.classList.add("fixed-top");
+      nav.classList.remove("navbar-absolute", "isFront");
+    } else {
+      nav.classList.remove("fixed-top");
+      nav.classList.add("navbar-absolute");
+      if (isHome) {
+        nav.classList.add("isFront");
+      }
+    }
   }
+
+  // Events
+  window.addEventListener("scroll", updateNavbarPosition);
+  window.addEventListener("resize", updateNavbarPosition);
+  updateNavbarPosition(); // Initial aufrufen
 });
 
 // var navbrand = document.getElementById("nav-brand");
@@ -69,31 +85,3 @@ window.onscroll = function () {
     scrollToTopBtn.classList.remove("show");
   }
 };
-
-(function () {
-  const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-  if (!isMobile) return;
-
-  const DEBOUNCE_DELAY = 100;
-  let scrollTimeout;
-
-  function updateHeroHeight() {
-    const vh = window.innerHeight;
-    const elements = document.querySelectorAll(".video-height");
-    elements.forEach((el) => {
-      el.style.height = `${vh}px`;
-    });
-  }
-
-  function debouncedUpdate() {
-    clearTimeout(scrollTimeout);
-    scrollTimeout = setTimeout(updateHeroHeight, DEBOUNCE_DELAY);
-  }
-
-  document.addEventListener("DOMContentLoaded", () => {
-    updateHeroHeight();
-    window.addEventListener("resize", debouncedUpdate);
-    window.addEventListener("orientationchange", debouncedUpdate);
-    window.addEventListener("scroll", debouncedUpdate);
-  });
-})();

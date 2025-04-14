@@ -262,6 +262,7 @@ img {
   }
   &.isFront {
     bottom: 0;
+    transition: bottom 0.2s ease-in-out;
   }
 }
 

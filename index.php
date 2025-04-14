@@ -39,7 +39,7 @@ $page_id = get_option('page_for_posts');
 			<br><br>Wir freuen uns auf euren Besuch!
 		</p>
 		<br>
-		<p class="text-uppercase h-small oeffnungszeit">
+		<p class="text-uppercase h1 h-small">
 			Öffnungszeiten
 		</p>
 

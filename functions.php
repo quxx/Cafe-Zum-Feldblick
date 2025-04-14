@@ -744,39 +744,39 @@ add_action('admin_enqueue_scripts', function () {
 add_action('admin_head', function () {
 	?>
 	<style>
-		/* Menüpunkt-Slug ermitteln z. B. durch "inspect element" */
 		#adminmenu .menu-icon-alkoholfreie_getraen div.wp-menu-image:before {
 			font-family: "Font Awesome 6 Free" !important;
-			content: "\f7b6";
-			/* Beispiel: fa-utensils */
+			content: "\e4f4";
 			font-weight: 900;
 		}
 
 		#adminmenu .menu-icon-alkoholische_getrank div.wp-menu-image:before {
 			font-family: "Font Awesome 6 Free" !important;
 			content: "\f0fc";
-			/* Beispiel: fa-utensils */
 			font-weight: 900;
 		}
 
 		#adminmenu .menu-icon-herzhaftes div.wp-menu-image:before {
 			font-family: "Font Awesome 6 Free" !important;
 			content: "\f80f";
-			/* Beispiel: fa-utensils */
 			font-weight: 900;
 		}
 
 		#adminmenu .menu-icon-kuchen_und_susses div.wp-menu-image:before {
 			font-family: "Font Awesome 6 Free" !important;
 			content: "\f810";
-			/* Beispiel: fa-utensils */
 			font-weight: 900;
 		}
 
 		#adminmenu .menu-icon-spezialitaten_aus_de div.wp-menu-image:before {
 			font-family: "Font Awesome 6 Free" !important;
 			content: "\f005";
-			/* Beispiel: fa-utensils */
+			font-weight: 900;
+		}
+
+		#adminmenu .menu-icon-menu-icon-heissgetranke div.wp-menu-image:before {
+			font-family: "Font Awesome 6 Free" !important;
+			content: "\f7b6";
 			font-weight: 900;
 		}
 	</style>

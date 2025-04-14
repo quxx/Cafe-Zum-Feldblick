@@ -840,7 +840,7 @@ function custom_register_columns_for_pods($post_type)
 
 			case 'in_auszug_aus_der_speisekarte_zeigen':
 				$auszug = $pod->field('in_auszug_aus_der_speisekarte_zeigen');
-				echo '<div style="text-align: left; font-size: 18px;">' . ($auszug ? '✓ - Ja' : '✗ - Nein') . '</div>';
+				echo '<p><span style="font-size: 18px;">' . ($auszug ? '✓' : '✗') . '</span> - ' . ($auszug ? 'Ja' : 'Nein') . '</p>';
 				break;
 		}
 	}, 10, 2);

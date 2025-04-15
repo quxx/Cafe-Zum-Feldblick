@@ -58,7 +58,7 @@ include_once("page-header.php");
 				?>
 			</div>
 			<div class="col-12 col-md-6 align-content-top ps-md-4">
-				<h2 class="text-uppercase">Herzhaftes</h2>
+				<h2 class="text-uppercase pt-3 pt-md-0">Herzhaftes</h2>
 				<?php
 				// Hol dir das Pods-Objekt für den Custom Post Type "speise"
 				$pods = pods('herzhaftes');
@@ -200,7 +200,7 @@ include_once("page-header.php");
 				?>
 			</div>
 			<div class="col-12 col-md-6 align-content-top ps-md-4">
-				<h2 class="text-uppercase">Alkoholische Getränke</h2>
+				<h2 class="text-uppercase pt-3 pt-md-0">Alkoholische Getränke</h2>
 				<?php
 				// Hol dir das Pods-Objekt für den Custom Post Type "speise"
 				$pods = pods('alkoholische_getrank');

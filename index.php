@@ -172,10 +172,11 @@ $page_id = get_option('page_for_posts');
 					while ($pods_instance->fetch() && $counter < $max) {
 						$auszug = $pods_instance->display('in_auszug_aus_der_speisekarte_zeigen');
 						if ($auszug == 'Ja') {
-							$bezeichnung = $pods_instance->display('bezeichnung');
+							$bezeichnung = useNonBreakingSpace($pods_instance->display('bezeichnung'));
 							$preis1 = $pods_instance->display('preis1');
 							$preis2 = $pods_instance->display('preis2');
-							$beschreibung = $pods_instance->display('beschreibung');
+							$beschreibung = useNonBreakingSpace($pods_instance->display('beschreibung'));
+							$beschreibung2 = useNonBreakingSpace($pods_instance->display('beschreibung2'));
 
 							if (!empty($bezeichnung)) {
 								echo '<div class=" col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -194,7 +195,12 @@ $page_id = get_option('page_for_posts');
 								echo '</div>
 									<div>
 									<div class="mkd-pli-desc clearfix">';
-								echo '<p>' . esc_html($beschreibung) . '</p>';
+								echo '<p>' . esc_html($beschreibung) . '';
+								if (!empty($beschreibung2)) {
+									echo '<br>' . esc_html($beschreibung2) . '</p>';
+								} else {
+									echo '</p>';
+								}
 								echo '</div>
 									</div>
 									</div>
@@ -214,6 +220,7 @@ $page_id = get_option('page_for_posts');
 			$max_eintraege = 8;
 
 			// Pods-Instanzen
+			$heiss = pods('heissgetranke');
 			$nonalk = pods('alkoholfreie_getraen');
 			$alk = pods('alkoholische_getrank');
 			$kuchen = pods('kuchen_und_susses');
@@ -221,6 +228,7 @@ $page_id = get_option('page_for_posts');
 			$spezi = pods('spezialitaten_aus_de');
 
 			// Auszug anzeigen – in Reihenfolge prüfen, bis 8 erreicht sind
+			zeige_speisekarte_auszug($heiss, $eintrags_zaehler, $max_eintraege);
 			zeige_speisekarte_auszug($herzhaft, $eintrags_zaehler, $max_eintraege);
 			zeige_speisekarte_auszug($kuchen, $eintrags_zaehler, $max_eintraege);
 			zeige_speisekarte_auszug($nonalk, $eintrags_zaehler, $max_eintraege);
@@ -231,40 +239,6 @@ $page_id = get_option('page_for_posts');
 		<div class="row justify-content-center">
 			<a href="<?php echo site_url('/speisekarte'); ?>" class="btn btn-outline-primary btn-block col-lg-4 col-md-4 col-sm-6 col-xs-6">Zur Speisekarte</a>
 		</div>
-		<!-- <div class="row pe-0 ps-0 me-0">
-			<div class=" col-lg-6 col-md-6 col-sm-12 col-xs-12">
-				<div class="mkd-pli-content-holder d-flex flex-column align-items-start">
-					<div class="mkd-pli-title-holder d-flex justify-content-between align-items-end w-100">
-						<h5 itemprop="name" class="mkd-pli-title entry-title m-0" style="color: #1f1f1f">RUCOLA SALAT</h5>
-						<div class="mkd-pli-dots" style="border-color: rgba(71,71,71,0.2);border-style: dashed"></div>
-						
-							<h5 class="mkd-pli-price m-0" style="color: #ae9974">9.9</h5>
-						
-					</div>
-					<div class="mkd-pli-bottom-content">
-						<div class="mkd-pli-desc clearfix" style="color: #808285">
-							<p>Mit getrockneten Tomaten und Parmesan</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class=" col-lg-6 col-md-6 col-sm-12 col-xs-12">
-				<div class="mkd-pli-content-holder d-flex flex-column align-items-start">
-					<div class="mkd-pli-title-holder d-flex justify-content-between align-items-end w-100">
-						<h5 itemprop="name" class="mkd-pli-title entry-title m-0" style="color: #1f1f1f">RUCOLA SALAT</h5>
-						<div class="mkd-pli-dots" style="border-color: rgba(71,71,71,0.2);border-style: dashed"></div>
-						
-							<h5 class="mkd-pli-price m-0" style="color: #ae9974">9.9</h5>
-						
-					</div>
-					<div class="mkd-pli-bottom-content">
-						<div class="mkd-pli-desc clearfix" style="color: #808285">
-							<p>Mit getrockneten Tomaten und Parmesan</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div> -->
 	</div>
 </section>
 <section class="container-fluid pe-0 ps-0 ms-0 me-0 block riss-container">

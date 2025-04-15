@@ -20,10 +20,10 @@ include_once("page-header.php");
 				if ($pods && $pods->find()) {
 					// Speise-Daten aus Pods abrufen
 					while ($pods->fetch()) {
-						$bezeichnung = $pods->display('bezeichnung');
+						$bezeichnung = useNonBreakingSpace($pods->display('bezeichnung'));
 						$preis1 = $pods->display('preis1');
 						$preis2 = $pods->display('preis2');
-						$beschreibung = $pods->display('beschreibung');
+						$beschreibung = useNonBreakingSpace($pods->display('beschreibung'));
 						if (!empty($bezeichnung)) {
 							echo '<div class="col-12">
 								<div class="mkd-pli-content-holder d-flex flex-column align-items-start">
@@ -65,10 +65,10 @@ include_once("page-header.php");
 				if ($pods && $pods->find()) {
 					// Speise-Daten aus Pods abrufen
 					while ($pods->fetch()) {
-						$bezeichnung = $pods->display('bezeichnung');
+						$bezeichnung = useNonBreakingSpace($pods->display('bezeichnung'));
 						$preis1 = $pods->display('preis1');
 						$preis2 = $pods->display('preis2');
-						$beschreibung = $pods->display('beschreibung');
+						$beschreibung = useNonBreakingSpace($pods->display('beschreibung'));
 						if (!empty($bezeichnung)) {
 							echo '<div class="col-12">
 								<div class="mkd-pli-content-holder d-flex flex-column align-items-start">
@@ -119,10 +119,10 @@ include_once("page-header.php");
 				if ($pods && $pods->find()) {
 					// Speise-Daten aus Pods abrufen
 					while ($pods->fetch()) {
-						$bezeichnung = $pods->display('bezeichnung');
+						$bezeichnung = useNonBreakingSpace($pods->display('bezeichnung'));
 						$preis1 = $pods->display('preis1');
 						$preis2 = $pods->display('preis2');
-						$beschreibung = $pods->display('beschreibung');
+						$beschreibung = useNonBreakingSpace($pods->display('beschreibung'));
 						if (!empty($bezeichnung)) {
 							echo '<div class="col-12">
 								<div class="mkd-pli-content-holder d-flex flex-column align-items-start">
@@ -162,10 +162,10 @@ include_once("page-header.php");
 				if ($pods && $pods->find()) {
 					// Speise-Daten aus Pods abrufen
 					while ($pods->fetch()) {
-						$bezeichnung = $pods->display('bezeichnung');
+						$bezeichnung = useNonBreakingSpace($pods->display('bezeichnung'));
 						$preis1 = $pods->display('preis1');
 						$preis2 = $pods->display('preis2');
-						$beschreibung = $pods->display('beschreibung');
+						$beschreibung = useNonBreakingSpace($pods->display('beschreibung'));
 						if (!empty($bezeichnung)) {
 							echo '<div class="col-12">
 								<div class="mkd-pli-content-holder d-flex flex-column align-items-start">
@@ -207,10 +207,10 @@ include_once("page-header.php");
 				if ($pods && $pods->find()) {
 					// Speise-Daten aus Pods abrufen
 					while ($pods->fetch()) {
-						$bezeichnung = $pods->display('bezeichnung');
+						$bezeichnung = useNonBreakingSpace($pods->display('bezeichnung'));
 						$preis1 = $pods->display('preis1');
 						$preis2 = $pods->display('preis2');
-						$beschreibung = $pods->display('beschreibung');
+						$beschreibung = useNonBreakingSpace($pods->display('beschreibung'));
 						if (!empty($bezeichnung)) {
 							echo '<div class="col-12">
 								<div class="mkd-pli-content-holder d-flex flex-column align-items-start">
@@ -260,11 +260,11 @@ include_once("page-header.php");
 			if ($pods && $pods->find()) {
 				// Speise-Daten aus Pods abrufen
 				while ($pods->fetch()) {
-					$bezeichnung = $pods->display('bezeichnung');
+					$bezeichnung = useNonBreakingSpace($pods->display('bezeichnung'));
 					$preis1 = $pods->display('preis1');
 					$preis2 = $pods->display('preis2');
-					$beschreibung = $pods->display('beschreibung');
-					$beschreibung2 = $pods->display('beschreibung2');
+					$beschreibung = useNonBreakingSpace($pods->display('beschreibung'));
+					$beschreibung2 = useNonBreakingSpace($pods->display('beschreibung2'));
 					if (!empty($bezeichnung)) {
 						echo '<div class="eintrag col-lg-6 col-md-6 col-sm-12 col-xs-12">
 								<div class="mkd-pli-content-holder d-flex flex-column align-items-start">
@@ -304,6 +304,7 @@ include_once("page-header.php");
 
 			?>
 		</div>
+		<p class="text-center irrtum">Preisangaben ohne Gewähr. Änderungen und Irrtümer vorbehalten.</p>
 	</div>
 </section>
 <?php

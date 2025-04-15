@@ -912,6 +912,20 @@ create_page('Über uns', '', 'ueber-uns.php');
 create_page('Datenschutz', '', 'datenschutz.php');
 create_page('Speisekarte', '', 'speisekarte.php');
 
+function useNonBreakingSpace($text)
+{
+	// Liste der Einheiten
+	$einheiten = ['ml', 'g', 'gr', 'l', 'kg', 'cl', '€'];
+
+	// Für jede Einheit das Leerzeichen davor durch ein geschütztes Leerzeichen ersetzen
+	foreach ($einheiten as $einheit) {
+		// Suche nach optionalem Leerzeichen + Einheit (z.B. " 250 ml") und ersetze es durch "&nbsp;ml"
+		$text = preg_replace('/\s(?=' . $einheit . '\b)/i', '&nbsp;', $text);
+	}
+
+	return $text;
+}
+
 
 function debug_to_console($data)
 {

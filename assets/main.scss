@@ -503,7 +503,7 @@ img {
     }
   }
 
-  @media screen and (min-width:1670px) {
+  @media screen and (min-width: 1670px) {
     .vorstellung {
       padding-left: 25rem;
       padding-right: 25rem;
@@ -564,7 +564,7 @@ img {
     }
   }
 
-  @media screen and (min-width:1670px) {
+  @media screen and (min-width: 1670px) {
     &::after {
       height: 400px;
       top: -95px;
@@ -666,7 +666,15 @@ img {
       max-width: 90%;
       padding-right: 5px;
       line-height: 26px;
-      background: linear-gradient(to bottom, transparent 0%, transparent calc(100% - 10px), $background-color-light calc(100% - 10px), $background-color-light calc(100% - 7px), transparent calc(100% - 7px), transparent 100%);
+      background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        transparent calc(100% - 10px),
+        $background-color-light calc(100% - 10px),
+        $background-color-light calc(100% - 7px),
+        transparent calc(100% - 7px),
+        transparent 100%
+      );
     }
   }
 
@@ -681,12 +689,11 @@ img {
 }
 
 .speisen {
-  .row>* {
+  .row > * {
     padding-right: 0;
   }
 
   h5 {
-   
     @include media-breakpoint-down(sm) {
       font-size: 16px;
     }
@@ -1228,6 +1235,10 @@ img {
 #speisekarte {
   padding-top: 5rem;
   overflow: hidden;
+
+  .irrtum {
+    font-size: 0.75rem;
+  }
 
   #speisen,
   #getraenke,

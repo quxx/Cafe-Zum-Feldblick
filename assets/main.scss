@@ -650,10 +650,6 @@ img {
   .btn {
     margin-top: 1rem;
   }
-
-  // Öffnungzeiten
-  .oeffnungzeiten {
-  }
 }
 
 //Speisekarte Startseite
@@ -668,9 +664,9 @@ img {
     span {
       display: inline;
       max-width: 90%;
-      background-color: $background-color-light;
       padding-right: 5px;
       line-height: 26px;
+      background: linear-gradient(to bottom, transparent 0%, transparent calc(100% - 10px), $background-color-light calc(100% - 10px), $background-color-light calc(100% - 7px), transparent calc(100% - 7px), transparent 100%);
     }
   }
 
@@ -684,6 +680,28 @@ img {
   }
 }
 
+.speisen {
+  .row>* {
+    padding-right: 0;
+  }
+
+  h5 {
+   
+    @include media-breakpoint-down(sm) {
+      font-size: 16px;
+    }
+    @include media-breakpoint-down(xl) {
+      font-size: 18px;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    .container {
+      padding: 0;
+    }
+  }
+}
+
 .mkd-pli-price {
   color: $feldblick-gold;
   white-space: nowrap;
@@ -691,6 +709,9 @@ img {
 
 .mkd-pli-desc {
   color: $gray-600;
+  @include media-breakpoint-down(sm) {
+    font-size: 14px;
+  }
 }
 
 //Kontakt
@@ -1202,8 +1223,6 @@ img {
     margin-top: 2rem;
   }
 }
-
-// Aktuelles-Seite
 
 // Speisekarte-Seite
 #speisekarte {

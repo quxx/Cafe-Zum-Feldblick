@@ -56,8 +56,8 @@ include_once("page-header.php");
       </div>
       <div class="row">
         <div class="col-12">
-          <p class="fs-3 text-center">Gerade haben wir keine offenen Stellen.</p>
-          <p class="fs-4 text-center">Schick uns gern deine Initiativbewerbung – vielleicht passt du ja perfekt zu uns und wir wissen es nur noch nicht.<br>
+          <p class="fs-5 text-center">Gerade haben wir keine offenen Stellen.</p>
+          <p class="fs-5 text-center">Schick uns gern deine Initiativbewerbung – vielleicht passt du ja perfekt zu uns und wir wissen es nur noch nicht.<br>
             <a href=" mailto:jobs@fahrradcafe.de">jobs@fahrradcafe.de</a>
           </p>
         </div>

@@ -72,6 +72,13 @@ document.addEventListener("DOMContentLoaded", function () {
 // Get the button
 const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
+scrollToTopBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+});
+
 // Function to show or hide the button based on scroll position
 window.onscroll = function () {
   if (

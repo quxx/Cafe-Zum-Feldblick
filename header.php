@@ -9,6 +9,23 @@
   <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/assets/img/favIcon.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CafeOrCoffeeShop",
+      "name": "Fahrradcafé Zum Feldblick",
+      "image": "https://fahrradcafe-zumfeldblick.de/cp4rjde4/",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Säritzer Hauptstraße 10",
+        "addressLocality": "Säritz",
+        "postalCode": "03205",
+        "addressCountry": "DE"
+      },
+      "url": "https://fahrradcafe-zumfeldblick.de",
+      "telephone": "+491624578244"
+    }
+  </script>
 </head>
 
 <body <?php body_class(); ?>>

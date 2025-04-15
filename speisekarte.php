@@ -163,9 +163,11 @@ include_once("page-header.php");
 						if (!empty($bezeichnung)) {
 							echo '<div class="col-12">
 								<div class="mkd-pli-content-holder d-flex flex-column align-items-start">
-								<div class="mkd-pli-title-holder d-flex justify-content-between align-items-end w-100">';
-							echo '<h5 class="mkd-pli-title entry-title m-0">' . esc_html($bezeichnung) . '</h5>';
-							echo '<div class="mkd-pli-dots" style="border-color: rgba(71,71,71,0.2);border-style: dashed"></div>';
+								<div class="mkd-pli-title-holder d-flex justify-content-between align-items-end w-100">
+								<div class="dots-container">';
+							echo '<h5 class="entry-title m-0"><span>' . esc_html($bezeichnung) . '</span></h5>';
+							echo '<div class="mkd-pli-dots" style="border-color: rgba(71,71,71,0.2);border-style: dashed"></div>
+								</div>';
 							echo '<h5 class="mkd-pli-price m-0">' . esc_html($preis1) . '';
 							if (!empty($preis2)) {
 								echo ' / ' . esc_html($preis2) . '</h5>';
@@ -206,9 +208,11 @@ include_once("page-header.php");
 						if (!empty($bezeichnung)) {
 							echo '<div class="col-12">
 								<div class="mkd-pli-content-holder d-flex flex-column align-items-start">
-								<div class="mkd-pli-title-holder d-flex justify-content-between align-items-end w-100">';
-							echo '<h5 class="mkd-pli-title entry-title m-0">' . esc_html($bezeichnung) . '</h5>';
-							echo '<div class="mkd-pli-dots" style="border-color: rgba(71,71,71,0.2);border-style: dashed"></div>';
+								<div class="mkd-pli-title-holder d-flex justify-content-between align-items-end w-100">
+								<div class="dots-container">';
+							echo '<h5 class="entry-title m-0"><span>' . esc_html($bezeichnung) . '</span></h5>';
+							echo '<div class="mkd-pli-dots" style="border-color: rgba(71,71,71,0.2);border-style: dashed"></div>
+								</div>';
 							echo '<h5 class="mkd-pli-price m-0">' . esc_html($preis1) . '';
 							if (!empty($preis2)) {
 								echo ' / ' . esc_html($preis2) . '</h5>';

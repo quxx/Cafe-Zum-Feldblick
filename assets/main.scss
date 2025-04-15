@@ -657,12 +657,31 @@ img {
 }
 
 //Speisekarte Startseite
-.mkd-pli-dots {
-  flex-grow: 1;
-  margin-left: 5px;
-  margin-right: 5px;
-  border-width: 1px;
-  margin-bottom: 4px;
+.dots-container {
+  width: 100%;
+
+  h5 {
+    display: inline-block;
+    padding-right: 5px;
+    max-width: 90%;
+
+    span {
+      display: inline;
+      max-width: 90%;
+      background-color: $background-color-light;
+      padding-right: 5px;
+      line-height: 26px;
+    }
+  }
+
+  .mkd-pli-dots {
+    margin-left: 5px;
+    margin-right: 5px;
+    border-width: 1px;
+    margin-bottom: 6px;
+    margin-top: -9px;
+    width: calc(100% - 10px);
+  }
 }
 
 .mkd-pli-price {

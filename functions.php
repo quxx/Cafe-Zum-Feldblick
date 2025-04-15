@@ -870,6 +870,7 @@ function custom_columns_oeffnungszeit($columns)
 		$new_columns[$key] = $value;
 		if ($key === 'title') {
 			$new_columns['text'] = 'Text';
+			$new_columns['info'] = 'Info';
 		}
 	}
 
@@ -897,6 +898,10 @@ function custom_columns_content_oeffnungszeit($column, $post_id)
 		];
 
 		echo '<div>' . nl2br(wp_kses($text, $allowed_tags)) . '</div>';
+	}
+	if ($column === 'info') {
+		$info = $pod->field('info');
+		echo '<p><strong>' . esc_html($info ?: '') . '</strong></p>';
 	}
 }
 

@@ -56,6 +56,13 @@ $page_id = get_option('page_for_posts');
 			// Öffnungszeiten-Daten aus Pods abrufen
 			while ($mypod->fetch()) {
 				$opening_hours = $mypod->display('text');
+				$info = $mypod->display('info');
+			}
+
+			if (!empty($info)) {
+				echo '<p class="h2 h-small">';
+				echo str_replace(['<p>', '</p>'], '', $info);
+				echo '</p>';
 			}
 
 			// Gruppierte Öffnungszeiten anzeigen

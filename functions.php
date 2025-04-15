@@ -779,6 +779,12 @@ add_action('admin_head', function () {
 			content: "\f7b6";
 			font-weight: 900;
 		}
+
+		#adminmenu .menu-icon-oeffnungszeit div.wp-menu-image:before {
+			font-family: "Font Awesome 6 Free" !important;
+			content: "\f017";
+			font-weight: 900;
+		}
 	</style>
 <?php
 });

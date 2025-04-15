@@ -426,12 +426,22 @@ img {
 
   &::before {
     background-image: url(../assets/img/hintergrund-kraeuter.svg);
-    bottom: 20px;
+    bottom: 115px;
+    height: 250px;
+    left: -20px;
   }
 
   &::after {
     background-image: url(../assets/img/hintergrund-fahrrad.svg);
     top: -40px;
+  }
+
+  @include media-breakpoint-up(sm) {
+    &::before {
+      height: 250px;
+      bottom: 60px;
+      left: -30px;
+    }
   }
 
   @include media-breakpoint-up(md) {
@@ -514,23 +524,51 @@ img {
     background-repeat: no-repeat;
     background-position: center;
     z-index: -1;
-    height: 400px;
-    width: 400px;
+    aspect-ratio: 1 / 1;
+    width: auto;
+    height: 250px;
     background-image: url(../assets/img/hintergrund-kuchen.svg);
-    top: -95px;
-    right: 50px;
+    top: 5px;
+    right: -55px;
+  }
+
+  @include media-breakpoint-up(sm) {
+    &::after {
+      height: 270px;
+      top: -35px;
+      right: -40px;
+    }
   }
 
   @include media-breakpoint-up(md) {
+    &::after {
+      height: 300px;
+      top: -65px;
+      right: -25px;
+    }
   }
 
   @include media-breakpoint-up(lg) {
+    &::after {
+      height: 300px;
+      top: -90px;
+      right: 50px;
+    }
   }
 
   @include media-breakpoint-up(xl) {
     &::after {
-      height: 300px;
-      right: 0;
+      height: 350px;
+      top: -90px;
+      right: 70px;
+    }
+  }
+
+  @media screen and (min-width:1670px) {
+    &::after {
+      height: 400px;
+      top: -95px;
+      right: 50px;
     }
   }
 }

@@ -155,7 +155,7 @@ $page_id = get_option('page_for_posts');
 	<div class="riss-svg bottom"></div>
 </section>
 <section class="container-fluid block block-padding ps-5 pe-5 speisen">
-	<div editable="rich" class="text-center oeffnungzeiten">
+	<div editable="rich" class="text-center container">
 		<p class="h-small text-uppercase">Auszug aus unserer</p>
 		<h1 class="text-uppercase">Speisekarte</h1>
 		<p class="text-center ps-md-5 pe-md-5 mb-5">

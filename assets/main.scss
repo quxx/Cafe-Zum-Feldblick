@@ -303,6 +303,27 @@ img {
     .lc-block {
       padding: 0 3rem;
       img {
+        width: 400px;
+        height: auto;
+      }
+    }
+    &.small {
+      .lc-block {
+        img {
+          width: 270px;
+          height: auto;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: breakpoint-min(lg)) {
+  .brand {
+    align-self: end;
+    .lc-block {
+      padding: 0 3rem;
+      img {
         width: 500px;
         height: auto;
       }
@@ -469,6 +490,13 @@ img {
     &::after {
       height: 400px;
       right: 50px;
+    }
+  }
+
+  @media screen and (min-width:1670px) {
+    .vorstellung {
+      padding-left: 25rem;
+      padding-right: 25rem;
     }
   }
 }

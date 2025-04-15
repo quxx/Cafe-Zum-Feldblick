@@ -516,6 +516,17 @@ img {
   position: relative;
   overflow: hidden;
 
+  .row {
+    @include media-breakpoint-up(md) {
+      .eintrag:nth-child(odd) {
+        padding-right: 1.5rem;
+      }
+      .eintrag:nth-child(2n) {
+        padding-left: 1.5rem;
+      }
+    }
+  }
+
   &::after {
     content: "";
     position: absolute;

@@ -179,7 +179,7 @@ $page_id = get_option('page_for_posts');
 							$beschreibung2 = useNonBreakingSpace($pods_instance->display('beschreibung2'));
 
 							if (!empty($bezeichnung)) {
-								echo '<div class=" col-lg-6 col-md-6 col-sm-12 col-xs-12">
+								echo '<div class="eintrag col-lg-6 col-md-6 col-sm-12 col-xs-12">
 									<div class="d-flex flex-column align-items-start">
 									<div class="d-flex justify-content-between align-items-end w-100">
 									<div class="dots-container">';
@@ -228,9 +228,9 @@ $page_id = get_option('page_for_posts');
 			$spezi = pods('spezialitaten_aus_de');
 
 			// Auszug anzeigen – in Reihenfolge prüfen, bis 8 erreicht sind
-			zeige_speisekarte_auszug($heiss, $eintrags_zaehler, $max_eintraege);
 			zeige_speisekarte_auszug($herzhaft, $eintrags_zaehler, $max_eintraege);
 			zeige_speisekarte_auszug($kuchen, $eintrags_zaehler, $max_eintraege);
+			zeige_speisekarte_auszug($heiss, $eintrags_zaehler, $max_eintraege);
 			zeige_speisekarte_auszug($nonalk, $eintrags_zaehler, $max_eintraege);
 			zeige_speisekarte_auszug($alk, $eintrags_zaehler, $max_eintraege);
 			zeige_speisekarte_auszug($spezi, $eintrags_zaehler, $max_eintraege);

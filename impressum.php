@@ -21,7 +21,7 @@ include_once("page-header.php");
         <h2>Kontakt</h2>
         <p>
           Tel: 0162 4578244<br>
-          E-Mail info@fahrradcafe-zumfeldblick.de<br>
+          E-Mail: info@fahrradcafe-zumfeldblick.de<br>
         </p>
         <br>
         <h2>Haftungsausschluss</h2><br>

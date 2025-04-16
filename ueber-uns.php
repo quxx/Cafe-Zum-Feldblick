@@ -58,7 +58,7 @@ include_once("page-header.php");
         <div class="col-12">
           <p class="fs-5 text-center">Gerade haben wir keine offenen Stellen.</p>
           <p class="fs-5 text-center">Schick uns gern deine Initiativbewerbung – vielleicht passt du ja perfekt zu uns und wir wissen es nur noch nicht.<br>
-            <a href=" mailto:jobs@fahrradcafe.de">jobs@fahrradcafe.de</a>
+            <a href=" mailto:jobs@fahrradcafe-zumfeldblick.de">jobs@fahrradcafe-zumfeldblick.de</a>
           </p>
         </div>
       </div>

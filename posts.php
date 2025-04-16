@@ -16,7 +16,13 @@ include_once("page-header.php");
     <div class="row">
       <?php
       query_posts('');
-      while (have_posts()) : the_post(); ?>
+      while (have_posts()) {
+        the_post();
+        $post_id = get_the_ID();
+        $reactions = get_post_meta($post_id, 'post_reactions', true);
+        $reactions = is_array($reactions) ? $reactions : ['like' => 0, 'love' => 0, 'haha' => 0, 'wow' => 0, 'sad' => 0, 'angry' => 0];
+        $total = array_sum($reactions);
+        $reactions_config = require get_template_directory() . '/inc/reactions-config.php'; ?>
         <div class="col-12 col-sm-6 col-lg-4 col-xl-3 mb-5">
           <article class="card border-0 " id="post-<?php the_ID(); ?>" <?php post_class('grid-item'); ?> onclick="document.location='<?php the_permalink(); ?>'">
             <?php
@@ -30,13 +36,32 @@ include_once("page-header.php");
               <h5 class="card-title"><?php echo get_the_title(); ?></h5>
               <p class="card-text"><?php echo get_the_excerpt(); ?></p>
             </div>
-            <div class="card-footer">
-              <small class="text-muted"><?php echo get_the_date() ?></small>
+            <div class="card-footer d-flex justify-content-between align-items-end">
+              <div class="reaction-container d-flex align-items-center">
+                <div class="reaction-stack position-relative">
+                  <?php
+                  $z = 10;
+                  foreach ($reactions_config as $type => $data) :
+                    $count = !empty($reactions[$type]) ? $reactions[$type] : 0;
+                    if ($count > 0) : ?>
+                      <span class="reaction-count-aktuelles reaction-icon-<?php echo $type; ?>" data-reaction="<?php echo $type; ?>" style="z-index: <?php echo $z--; ?>;">
+                        <?php echo $data['emoji']; ?>
+                      </span>
+                  <?php endif;
+                  endforeach; ?>
+                </div>
+                <?php if ($total > 0) : ?>
+                  <small class="reaction-total ms-1 text-muted"><?php echo $total; ?></small>
+                <?php endif; ?>
+              </div>
+              <div>
+                <small class="text-muted"><?php echo get_the_date() ?></small>
+              </div>
             </div>
           </article>
         </div>
       <?php
-      endwhile;
+      }
       wp_reset_query(); ?>
     </div>
   </div>

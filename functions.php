@@ -932,6 +932,78 @@ function useNonBreakingSpace($text)
 	return $text;
 }
 
+// Reactions
+
+add_action('wp_ajax_handle_reaction', 'handle_reaction');
+add_action('wp_ajax_nopriv_handle_reaction', 'handle_reaction');
+
+function handle_reaction()
+{
+	$post_id = intval($_POST['post_id']);
+	$new = sanitize_text_field($_POST['reaction']);
+	$existing = isset($_POST['existing']) ? sanitize_text_field($_POST['existing']) : '';
+
+	$allowed_reactions = ['like', 'love', 'haha', 'wow', 'sad', 'angry']; // ← erweiterbar!
+	if (!$post_id || !in_array($new, $allowed_reactions)) {
+		wp_send_json_error();
+	}
+
+	// IP check (optional, du kannst das hier rausnehmen wenn du nur Cookies nutzt)
+	$ip = $_SERVER['REMOTE_ADDR'];
+	$meta_key = "reaction_ip_{$new}";
+	$ips = get_post_meta($post_id, $meta_key, true);
+	$ips = is_array($ips) ? $ips : [];
+
+	// if (in_array($ip, $ips)) {
+	// 	wp_send_json_error(['message' => 'Already reacted.']);
+	// }
+
+	// Reaction erhöhen
+	$reactions = get_post_meta($post_id, 'post_reactions', true);
+	$reactions = is_array($reactions) ? $reactions : [];
+
+	// Entferne alte Reaktion (wenn vorhanden)
+	if ($existing && $existing !== $new && isset($reactions[$existing]) && $reactions[$existing] > 0) {
+		$reactions[$existing]--;
+	}
+
+	// Falls gleiche nochmal geklickt → entfernen
+	if ($existing === $new) {
+		if (isset($reactions[$new]) && $reactions[$new] > 0) {
+			$reactions[$new]--;
+		}
+		update_post_meta($post_id, 'post_reactions', $reactions);
+		wp_send_json_success([
+			'reactions' => $reactions,
+			'total'     => array_sum($reactions)
+		]);
+	}
+
+	// Neue Reaktion setzen
+	if (!isset($reactions[$new])) $reactions[$new] = 0;
+	$reactions[$new]++;
+
+	update_post_meta($post_id, 'post_reactions', $reactions);
+
+	wp_send_json_success([
+		'reactions' => $reactions,
+		'total'     => array_sum($reactions)
+	]);
+}
+
+function enqueue_reaction_script()
+{
+	wp_enqueue_script('main-js', get_template_directory_uri() . '/main.js', [], false, true);
+
+	$reactions_config = require get_template_directory() . '/inc/reactions-config.php';
+
+	wp_localize_script('main-js', 'reactionData', [
+		'ajaxUrl' => admin_url('admin-ajax.php'),
+		'config'  => $reactions_config,
+	]);
+}
+add_action('wp_enqueue_scripts', 'enqueue_reaction_script');
+
 
 function debug_to_console($data)
 {

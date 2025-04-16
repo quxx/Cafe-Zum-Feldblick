@@ -97,7 +97,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const postId = container.dataset.post;
     const cookieKey = `reaction_${postId}`;
     let savedReaction = getCookie(cookieKey);
-    let isProcessing = false;
 
     // Direkt gespeicherte Reaktion anzeigen
     if (savedReaction) {
@@ -156,8 +155,9 @@ function handleReaction(
   onSuccess
 ) {
   if (!postId || !clickedReaction) return;
+  if (container.isProcessing) return;
 
-  let isProcessing = true;
+  container.isProcessing = true;
 
   fetch(reactionData.ajaxUrl, {
     method: "POST",
@@ -185,7 +185,7 @@ function handleReaction(
     })
     .finally(() => {
       setTimeout(() => {
-        isProcessing = false;
+        container.isProcessing = false; // 👈 wieder freigeben
       }, 800);
     });
 }
@@ -193,10 +193,6 @@ function handleReaction(
 function updatePlaceholderBtn(container, reaction) {
   const reactionsConfig = reactionData?.config || {};
   const btn = container.querySelector(".placeholder-btn");
-  console.log(
-    "Deckblätter | updatePlaceholderBtn | reactionsConfig:",
-    reactionsConfig
-  );
   if (!btn || !reaction || !reactionsConfig[reaction]) return;
 
   const { emoji, label } = reactionsConfig[reaction];

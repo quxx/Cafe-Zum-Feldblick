@@ -109,7 +109,7 @@ include_once("page-header.php");
             <h4 class="mb-3 pt-3 h-small color-primary">
               Klingt nach dir? Dann freuen wir uns auf deine Nachricht!
             </h4>
-            <p class="mb-3 fs-5">Bewerbungen bitte per E-Mail an uns senden.<br>
+            <p class="mb-3 fs-5">Bewerbungen bitte per E&#x2011;Mail an uns senden.<br>
               <a href=" mailto:jobs@fahrradcafe-zumfeldblick.de">jobs@fahrradcafe-zumfeldblick.de</a>
             </p>
           </div>

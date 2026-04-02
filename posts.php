@@ -32,9 +32,10 @@ include_once("page-header.php");
               echo '<img class="card-img-top card-img" src="' . get_template_directory_uri() . '/assets/img/fahrradcafe-schild-2.jpg" alt="Card image cap">';
             }
             ?>
-            <div class="card-body">
+            <div class="card-body position-relative">
               <h5 class="card-title"><?php echo get_the_title(); ?></h5>
               <p class="card-text"><?php echo get_the_excerpt(); ?></p>
+              <u class="position-absolute bottom-0 readMore text-muted mb-0">Weiterlesen</u>
             </div>
             <div class="card-footer d-flex justify-content-between align-items-end">
               <div class="reaction-container d-flex align-items-center">

@@ -143,6 +143,10 @@ html {
   scroll-behavior: smooth;
 }
 
+.color-primary {
+  color: $primary;
+}
+
 .title {
   font-size: calc(1.8rem + 1.5vw);
   letter-spacing: 0.05em;
@@ -1208,6 +1212,14 @@ img {
 
   .content {
     padding-top: 4rem;
+  }
+
+  .info-text {
+    max-width: 800px;
+  }
+
+  .list {
+    padding-left: calc(3rem + 20px);
   }
 }
 

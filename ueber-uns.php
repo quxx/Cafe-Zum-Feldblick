@@ -56,10 +56,63 @@ include_once("page-header.php");
       </div>
       <div class="row">
         <div class="col-12">
-          <p class="fs-5 text-center">Gerade haben wir keine offenen Stellen.</p>
+          <!-- <p class="fs-5 text-center">Gerade haben wir keine offenen Stellen.</p>
           <p class="fs-5 text-center">Schick uns gern deine Initiativbewerbung – vielleicht passt du ja perfekt zu uns und wir wissen es nur noch nicht.<br>
             <a href=" mailto:jobs@fahrradcafe-zumfeldblick.de">jobs@fahrradcafe-zumfeldblick.de</a>
-          </p>
+          </p> -->
+          <div class="text-center mb-4">
+            <p class="mx-auto fs-5 info-text">
+              Unser kleines, uriges Fahrradcafé „Zum Feldblick“ sucht ab <strong>April 2026</strong> Verstärkung!<br>
+              Vor allem für <strong>Samstage und Sonntage</strong>, aber auch <strong>unter der Woche ab Mittwoch</strong>.<br>
+              Da wir ein Café mit viel Herz und regionalem Bezug sind, wäre es ideal, wenn du aus der Umgebung kommst.
+            </p>
+          </div>
+
+          <!-- 2 Spalten -->
+          <div class="row justify-content-center mb-4">
+
+            <!-- Anforderungen -->
+            <div class="col-12 col-md-6 col-lg-5 mb-4">
+              <div class="p-4 h-100">
+                <h4 class="mb-3 text-uppercase pt-3 h-small color-primary">Das bringst du mit</h4>
+                <ul class="mb-0">
+                  <li>Empathie und ein offenes Herz für Menschen</li>
+                  <li>Freude am Bedienen und im Umgang mit Gästen</li>
+                  <li>Menschenfreundlichkeit und ein positives Auftreten</li>
+                  <li>Geduld und Ruhe</li>
+                  <li>Sinn für Ordnung</li>
+                  <li>Ehrlichkeit und Zuverlässigkeit</li>
+                  <li>Reflektiertes und verantwortungsbewusstes Verhalten</li>
+                  <li>Selbstständige Arbeitsweise</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Rahmenbedingungen -->
+            <div class="col-12 col-md-6 col-lg-5 mb-4">
+              <div class="p-4 h-100">
+                <h4 class="mb-3 text-uppercase pt-3 h-small color-primary">Rahmenbedingungen</h4>
+                <ul class="mb-0">
+                  <li><strong>Start:</strong> April 2026</li>
+                  <li><strong>Art:</strong> Minijob (Nebentätigkeit)</li>
+                  <li><strong>Zeiten:</strong> Wochenende + ab Mittwoch</li>
+                  <li><strong>Voraussetzung:</strong> Krankenversicherung</li>
+                  <li><strong>Lohn:</strong> 15 € / Stunde + Trinkgeld</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Call to Action -->
+          <div class="text-center bg-light p-4">
+            <h4 class="mb-3 pt-3 h-small color-primary">
+              Klingt nach dir? Dann freuen wir uns auf deine Nachricht!
+            </h4>
+            <p class="mb-3 fs-5">Bewerbungen bitte per E-Mail an uns senden.<br>
+              <a href=" mailto:jobs@fahrradcafe-zumfeldblick.de">jobs@fahrradcafe-zumfeldblick.de</a>
+            </p>
+          </div>
         </div>
       </div>
     </div>

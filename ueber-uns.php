@@ -73,7 +73,7 @@ include_once("page-header.php");
 
             <!-- Anforderungen -->
             <div class="col-12 col-md-6 col-lg-5 mb-4">
-              <div class="p-4 h-100">
+              <div class="p-md-4 h-100">
                 <h4 class="mb-3 text-uppercase pt-3 h-small color-primary">Das bringst du mit</h4>
                 <ul class="mb-0">
                   <li>Empathie und ein offenes Herz für Menschen</li>
@@ -90,7 +90,7 @@ include_once("page-header.php");
 
             <!-- Rahmenbedingungen -->
             <div class="col-12 col-md-6 col-lg-5 mb-4">
-              <div class="p-4 h-100">
+              <div class="p-md-4 h-100">
                 <h4 class="mb-3 text-uppercase pt-3 h-small color-primary">Rahmenbedingungen</h4>
                 <ul class="mb-0">
                   <li><strong>Start:</strong> April 2026</li>

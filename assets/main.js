@@ -17,7 +17,7 @@ import * as bootstrap from "bootstrap";
 
   // Initialize Popovers: https://getbootstrap.com/docs/5.0/components/popovers
   var popoverTriggerList = [].slice.call(
-    document.querySelectorAll('[data-bs-toggle="popover"]')
+    document.querySelectorAll('[data-bs-toggle="popover"]'),
   );
   var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
     return new bootstrap.Popover(popoverTriggerEl, {
@@ -107,9 +107,10 @@ document.addEventListener("DOMContentLoaded", function () {
     container.querySelectorAll(".reaction-button").forEach((btn) => {
       btn.addEventListener("click", (e) => {
         e.stopPropagation();
-        if (isProcessing) return;
+        if (container.isProcessing) return;
 
         const clickedReaction = btn.dataset.reaction;
+        const previousReaction = savedReaction;
         const isSame = savedReaction === clickedReaction;
         handleReaction(
           container,
@@ -120,7 +121,10 @@ document.addEventListener("DOMContentLoaded", function () {
           cookieKey,
           () => {
             savedReaction = isSame ? null : clickedReaction;
-          }
+          },
+          () => {
+            savedReaction = previousReaction;
+          },
         );
       });
     });
@@ -129,6 +133,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const placeholderBtn = container.querySelector(".placeholder-btn");
     if (placeholderBtn) {
       placeholderBtn.addEventListener("click", () => {
+        if (container.isProcessing) return;
+        const previousReaction = savedReaction;
+
         handleReaction(
           container,
           postId,
@@ -138,7 +145,10 @@ document.addEventListener("DOMContentLoaded", function () {
           cookieKey,
           () => {
             savedReaction = savedReaction ? null : "like";
-          }
+          },
+          () => {
+            savedReaction = previousReaction;
+          },
         );
       });
     }
@@ -152,12 +162,28 @@ function handleReaction(
   savedReaction,
   isSame,
   cookieKey,
-  onSuccess
+  onSuccess,
+  onError,
 ) {
   if (!postId || !clickedReaction) return;
   if (container.isProcessing) return;
 
+  const previousReaction = savedReaction || null;
+  const nextReaction = isSame ? null : clickedReaction;
+  const previousCounts = getCurrentReactions(container);
+
   container.isProcessing = true;
+  applyOptimisticReaction(container, previousCounts, previousReaction, nextReaction);
+
+  if (nextReaction) {
+    document.cookie = `${cookieKey}=${nextReaction}; path=/; max-age=31536000`;
+    updatePlaceholderBtn(container, nextReaction);
+  } else {
+    document.cookie = `${cookieKey}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+    resetPlaceholderBtn(container);
+  }
+
+  onSuccess();
 
   fetch(reactionData.ajaxUrl, {
     method: "POST",
@@ -168,25 +194,31 @@ function handleReaction(
   })
     .then((res) => res.json())
     .then((data) => {
-      if (!data.success) return;
-      updateCounts(container, data.data.reactions);
-
-      if (isSame) {
-        // Reaction wurde entfernt
-        document.cookie = `${cookieKey}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
-        resetPlaceholderBtn(container);
-      } else {
-        // Neue Reaction
-        document.cookie = `${cookieKey}=${clickedReaction}; path=/; max-age=31536000`;
-        updatePlaceholderBtn(container, clickedReaction);
+      if (!data.success) {
+        throw new Error("Reaction request failed");
       }
 
-      onSuccess(); // Callback → aktualisiere savedReaction
+      updateCounts(container, data.data.reactions);
+    })
+    .catch(() => {
+      updateCounts(container, previousCounts);
+
+      if (previousReaction) {
+        document.cookie = `${cookieKey}=${previousReaction}; path=/; max-age=31536000`;
+        updatePlaceholderBtn(container, previousReaction);
+      } else {
+        document.cookie = `${cookieKey}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+        resetPlaceholderBtn(container);
+      }
+
+      if (onError) {
+        onError();
+      }
     })
     .finally(() => {
       setTimeout(() => {
         container.isProcessing = false; // 👈 wieder freigeben
-      }, 800);
+      }, 200);
     });
 }
 
@@ -215,9 +247,12 @@ function resetPlaceholderBtn(container) {
 }
 
 function updateCounts(container, reactions) {
+  const countContainer = container.querySelector(".reaction-count-container");
+  let hasVisibleReactions = false;
+
   for (const [type, count] of Object.entries(reactions)) {
     const wrapper = container.querySelector(
-      `.reaction-count[data-reaction="${type}"]`
+      `.reaction-count[data-reaction="${type}"]`,
     );
     const countEl = wrapper?.querySelector(".count");
     if (countEl) {
@@ -225,11 +260,47 @@ function updateCounts(container, reactions) {
 
       if (count > 0) {
         wrapper.style.display = "inline-block";
+        hasVisibleReactions = true;
       } else {
         wrapper.style.display = "none";
       }
     }
   }
+
+  if (countContainer) {
+    countContainer.style.display = hasVisibleReactions ? "flex" : "none";
+  }
+}
+
+function getCurrentReactions(container) {
+  const reactions = {};
+
+  container.querySelectorAll(".reaction-count").forEach((item) => {
+    const type = item.dataset.reaction;
+    reactions[type] = Number(item.querySelector(".count")?.textContent || 0);
+  });
+
+  return reactions;
+}
+
+function applyOptimisticReaction(
+  container,
+  currentReactions,
+  previousReaction,
+  nextReaction,
+) {
+  const optimisticReactions = { ...currentReactions };
+
+  if (previousReaction && optimisticReactions[previousReaction] > 0) {
+    optimisticReactions[previousReaction]--;
+  }
+
+  if (nextReaction) {
+    optimisticReactions[nextReaction] =
+      (optimisticReactions[nextReaction] || 0) + 1;
+  }
+
+  updateCounts(container, optimisticReactions);
 }
 
 function getCookie(name) {
@@ -247,7 +318,7 @@ document.addEventListener("DOMContentLoaded", function () {
       reactionIcons.forEach((icon, i) => {
         setTimeout(() => {
           icon.classList.add("show");
-        }, i * 100);
+        }, i * 45);
       });
     });
 

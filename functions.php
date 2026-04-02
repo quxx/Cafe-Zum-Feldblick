@@ -993,11 +993,9 @@ function handle_reaction()
 
 function enqueue_reaction_script()
 {
-	wp_enqueue_script('main-js', get_template_directory_uri() . '/main.js', [], false, true);
-
 	$reactions_config = require get_template_directory() . '/inc/reactions-config.php';
 
-	wp_localize_script('main-js', 'reactionData', [
+	wp_localize_script('mainjs', 'reactionData', [
 		'ajaxUrl' => admin_url('admin-ajax.php'),
 		'config'  => $reactions_config,
 	]);

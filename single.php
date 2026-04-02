@@ -57,7 +57,8 @@ if (have_posts()) {
             <div class="reaction-box">
               <?php foreach ($reactions_config as $type => $data) : ?>
                 <div class="reaction-button reaction-icon <?php echo $type; ?>" data-reaction="<?php echo $type; ?>">
-                  <label><?php echo $data['label']; ?></label>
+                  <span class="reaction-emoji"><?php echo $data['emoji']; ?></span>
+                  <!-- <label><?php echo $data['label']; ?></label> -->
                 </div>
               <?php endforeach; ?>
             </div>

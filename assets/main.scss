@@ -1426,7 +1426,7 @@ img {
 // Reactions
 $reaction-list: like, love, haha, wow, sad, angry;
 $reaction-size: 40;
-$fadeIn: 0.2s;
+$fadeIn: 0.12s;
 .feed {
   position: relative;
   padding-bottom: 50px;
@@ -1470,17 +1470,28 @@ $fadeIn: 0.2s;
       }
 
       .reaction-icon {
-        display: inline-block;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
         width: $reaction-size * 1px;
         height: $reaction-size * 1px;
         background: #f0c674;
         border-radius: 20px;
         margin: 8px -1px 0 8px;
         text-align: center;
+        line-height: 1;
         // Animation
         transition: all $fadeIn cubic-bezier(0.175, 0.885, 0.32, 1.275);
         opacity: 0;
         transform: translate(0, 100px) scale(0);
+
+        .reaction-emoji {
+          display: block;
+          font-size: 30px;
+          line-height: 1;
+          transform: translateY(1px);
+          pointer-events: none;
+        }
 
         label {
           padding: 3px 5px 3px 5px;

@@ -71,6 +71,9 @@ $page_id = get_option('page_for_posts');
 				// Öffnungszeiten in HTML formatieren
 				echo str_replace(['<p>', '</p>'], '', $opening_hours);
 				echo '</p>';
+				echo '<p class="text-center irrtum"><br>Öffnungszeiten ohne Gewähr. Änderungen siehe ';
+				echo '<a target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&query=Fahrradcafé+Zum+Feldblick">Google Maps</a>';
+				echo '.</p>';
 			} else {
 				// Fallback-Text für leere Ergebnisse
 				echo '<p class="lead">Keine Öffnungszeiten verfügbar.</p>';

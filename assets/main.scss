@@ -356,6 +356,10 @@ img {
   color: $feldblick-gruen;
 }
 
+.irrtum {
+  font-size: 0.75rem;
+}
+
 // .wiese {
 //   z-index: 1;
 //   position: relative;
@@ -1271,10 +1275,6 @@ img {
     @include media-breakpoint-down(xl) {
       font-size: 18px;
     }
-  }
-
-  .irrtum {
-    font-size: 0.75rem;
   }
 
   #speisen,

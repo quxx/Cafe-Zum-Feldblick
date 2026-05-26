@@ -15,6 +15,9 @@ include_once("page-header.php");
     <p class="text-center ps-5 pe-5 pb-3">
       Reservierungen bitte nur telefonisch – so können wir gleich alles persönlich mit euch abstimmen.
     </p>
+    <p class="text-center ps-5 pe-5 pb-3">
+      Für Gruppen ab 10 Personen bitten wir um Reservierung.
+    </p>
     <div class="container">
       <div class="row justify-content-center">
         <p class="ps-3 pe-3 col-12 col-md-4 col-lg-3"><i class="fa-solid fa-phone"></i><a href="tel:+491624578244"> 0162 4578244</a></p>
